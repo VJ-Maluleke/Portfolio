@@ -1,28 +1,30 @@
-# Honours Terms Portfolio (Google Sites embed)
+# Honours Project Portfolio
 
-This is a **single-file** portfolio page designed to be embedded into Google Sites.
-All artwork is **inline SVG** (no external image files and no data URLs), so images cannot "go missing".
+This portfolio presents the term-by-term progress of my honours project in a clear and organised way.
 
-## Host it (recommended)
-### Option A: Netlify Drop (fastest; works even if your GitHub repo is private)
-1. Open Netlify Drop (search: “Netlify Drop”).
-2. Drag `index.html` onto the page.
-3. Copy the URL Netlify gives you.
-4. Google Sites → Insert → Embed → By URL → paste the Netlify URL.
+Each term includes:
+- a report
+- slides
+- a video
 
-### Option B: GitHub Pages (repo must be **public** on most free plans)
-1. Create a new repo and upload:
-   - `index.html`
-   - `.nojekyll`
-2. Repo → Settings → Pages → Deploy from branch → `main` → `/(root)`
-3. Use the published URL in Google Sites → Insert → Embed → By URL.
+Together, these materials show how the project develops from analysis and design through implementation and final testing.
 
-## Add your term submissions
-Open `index.html` and edit the `CONFIG` object near the bottom.
+## Overview
+I structured this portfolio by term to make it easy to follow my progress and review the main academic deliverables for each stage of the project.
 
-For each term, paste:
-- `items.report.url` → Drive file link OR Google Doc link
-- `items.slides.url` → Google Slides link
-- `items.video.url`  → YouTube link OR Drive video link
+## Term Content
+Each term section provides access to:
+- the written report
+- the presentation slides
+- the project video or demonstration
 
-Drive previews require: **Anyone with the link → Viewer**.
+## Updating the Portfolio
+To update the portfolio content, I edit the `CONFIG` object in `index.html`.
+
+The links for each term are stored under:
+- `items.report.url`
+- `items.slides.url`
+- `items.video.url`
+
+## Note
+All linked resources should have the correct viewing permissions so they can open properly.
