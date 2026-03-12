@@ -1,0 +1,1004 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Honours project portfolio: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling." />
+  <title>Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio</title>
+
+  <style>
+    :root{
+      --bg0:#070b12;
+      --bg1:#0a1222;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --border: rgba(255,255,255,.14);
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --r: 18px;
+
+      /* Thesis theme accents */
+      --maize: #ffcc33;
+      --leaf:  #34d399;
+      --water: #60a5fa;
+      --ai:    #a78bfa;
+
+      --maxw: 1120px;
+      --stickyH: 62px;
+    }
+
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg0:#f7fafc;
+        --bg1:#eef2ff;
+        --card: rgba(0,0,0,.045);
+        --card2: rgba(0,0,0,.07);
+        --text: rgba(6,10,20,.92);
+        --muted: rgba(6,10,20,.66);
+        --border: rgba(6,10,20,.16);
+        --shadow: 0 18px 60px rgba(2,10,30,.12);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 520px at 18% 10%, color-mix(in oklab, var(--water) 28%, transparent), transparent 60%),
+        radial-gradient(860px 520px at 82% 18%, color-mix(in oklab, var(--ai) 22%, transparent), transparent 55%),
+        radial-gradient(1000px 700px at 50% 102%, color-mix(in oklab, var(--leaf) 18%, transparent), transparent 60%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      min-height:100vh;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:18px 16px 72px}
+
+    /* Top bar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(14px);
+      background: color-mix(in oklab, var(--bg0) 65%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .topbarInner{
+      max-width:var(--maxw); margin:0 auto;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 16px;
+      min-height: var(--stickyH);
+      gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:0;}
+    .brandMark{
+      width:34px; height:34px; border-radius:10px;
+      border:1px solid var(--border);
+      background: linear-gradient(135deg,
+        color-mix(in oklab, var(--leaf) 46%, transparent),
+        color-mix(in oklab, var(--water) 46%, transparent),
+        color-mix(in oklab, var(--maize) 40%, transparent));
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      display:grid; place-items:center;
+      overflow:hidden;
+    }
+    .brandMark svg{width:26px; height:26px; display:block}
+    .brandText{display:flex; flex-direction:column; min-width:0}
+    .brandText strong{font-size:13px; letter-spacing:.2px}
+    .brandText span{font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+
+    .navPills{display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end}
+    .pill{
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 80%, transparent);
+      padding:8px 10px;
+      border-radius:999px;
+      font-size:12px;
+      color:var(--muted);
+      cursor:pointer;
+      user-select:none;
+      transition: transform .12s ease, background .12s ease, color .12s ease, border-color .12s ease;
+      outline:none;
+    }
+    .pill:hover{background: color-mix(in oklab, var(--card2) 90%, transparent); color:var(--text)}
+    .pill:active{transform: scale(.98)}
+    .pill[aria-current="true"]{
+      color:var(--text);
+      border-color: color-mix(in oklab, var(--water) 55%, var(--border));
+      background:
+        linear-gradient(135deg,
+          color-mix(in oklab, var(--water) 22%, transparent),
+          color-mix(in oklab, var(--leaf) 18%, transparent));
+    }
+
+    /* Hero */
+    header.hero{
+      margin-top: 16px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 70%, transparent), color-mix(in oklab, var(--card) 60%, transparent));
+      border-radius: calc(var(--r) + 6px);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 18px;
+      align-items:center;
+    }
+    @media (min-width: 920px){
+      .heroGrid{grid-template-columns: 1.12fr .88fr; padding: 26px}
+    }
+    .kicker{margin:0 0 8px; font-size:13px; color:var(--muted); letter-spacing:.2px}
+    h1{margin:0 0 10px; font-size: clamp(22px, 3.1vw, 38px); line-height:1.14}
+    .sub{margin:0; color:var(--muted); max-width: 78ch}
+
+    .metaRow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:12px; color:var(--muted);
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 80%, transparent);
+      padding:8px 10px;
+      border-radius: 999px;
+    }
+    .chip b{color:var(--text); font-weight:600}
+
+    .heroCTARow{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;
+      align-items:center;
+    }
+    .ctaBtn{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid color-mix(in oklab, var(--water) 50%, var(--border));
+      background: linear-gradient(135deg,
+        color-mix(in oklab, var(--water) 16%, transparent),
+        color-mix(in oklab, var(--leaf) 12%, transparent));
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.18);
+    }
+    .ctaBtn:hover{filter: brightness(1.05)}
+    .ctaHint{font-size:12px; color: var(--muted)}
+
+    .heroArt{
+      border-radius: calc(var(--r) + 2px);
+      border: 1px solid var(--border);
+      background: radial-gradient(700px 280px at 30% 0%, color-mix(in oklab, var(--maize) 20%, transparent), transparent 60%),
+                  radial-gradient(700px 300px at 65% 10%, color-mix(in oklab, var(--water) 20%, transparent), transparent 62%),
+                  radial-gradient(900px 340px at 50% 120%, color-mix(in oklab, var(--leaf) 16%, transparent), transparent 60%),
+                  color-mix(in oklab, var(--card) 70%, transparent);
+      padding: 12px;
+      overflow:hidden;
+    }
+    .heroArt svg{width:100%; height:auto; display:block}
+
+    /* Sections */
+    .sectionTitle{
+      margin: 22px 0 10px;
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
+    }
+    .sectionTitle h2{margin:0; font-size:16px}
+    .sectionTitle p{margin:0; font-size:12px; color:var(--muted)}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+    .card{
+      grid-column: span 12;
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 85%, transparent);
+      border-radius: var(--r);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      overflow:hidden;
+      scroll-margin-top: calc(var(--stickyH) + 18px);
+    }
+    @media (min-width: 980px){
+      .card{grid-column: span 6}
+    }
+    .cardHead{
+      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
+      padding: 16px 16px 12px;
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 70%, transparent), transparent);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .termTitle{margin:0; font-size:15px}
+    .termMeta{margin:6px 0 0; font-size:12px; color:var(--muted); max-width: 60ch}
+    .badge{
+      font-size:11px; color:var(--muted);
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 75%, transparent);
+      padding: 6px 10px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .cardBody{
+      padding: 14px 16px 16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .termArt{
+      border:1px solid var(--border);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--card) 70%, transparent);
+      padding: 10px;
+      overflow:hidden;
+    }
+    .termArt svg{width:100%; height:auto; display:block}
+
+    /* Deliverables */
+    .deliverables{display:grid; gap:10px}
+    details{
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 14px;
+      background: color-mix(in oklab, var(--card) 82%, transparent);
+      overflow:hidden;
+    }
+    summary{
+      list-style:none;
+      cursor:pointer;
+      padding: 12px 12px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    summary::-webkit-details-marker{display:none}
+    .row{display:flex; align-items:center; gap:10px; min-width:0}
+    .icon{font-size:18px}
+    .label{display:flex; flex-direction:column; gap:2px; min-width:0}
+    .label strong{font-size:13px}
+    .label span{font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .actions{display:flex; gap:8px; flex-shrink:0}
+    .btn{
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card2) 70%, transparent);
+      padding: 7px 10px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .btn:hover{background: color-mix(in oklab, var(--card2) 90%, transparent)}
+    .btn[aria-disabled="true"]{
+      opacity: .55;
+      pointer-events: none;
+      filter: grayscale(1);
+    }
+    .preview{
+      border-top: 1px solid rgba(255,255,255,.10);
+      padding: 12px;
+      background: rgba(0,0,0,.10);
+    }
+    iframe{
+      width:100%;
+      height: 420px;
+      border:0;
+      border-radius: 12px;
+      background: color-mix(in oklab, var(--card) 70%, transparent);
+    }
+
+    /* Links box */
+    .links{
+      margin-top: 16px;
+      border:1px solid var(--border);
+      background: color-mix(in oklab, var(--card) 88%, transparent);
+      border-radius: var(--r);
+      padding: 14px 16px;
+    }
+    .linksHeader{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
+    }
+    .linksHeader strong{display:block}
+    .linksHeader span{color:var(--muted); font-size:12px}
+    .links ul{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted)}
+    .links li{margin:8px 0}
+    .links a{
+      color: color-mix(in oklab, var(--water) 76%, var(--text));
+      text-decoration: underline;
+      text-underline-offset: 3px
+    }
+
+    /* Footer (upgraded) */
+    .siteFooter{
+      margin-top: 18px;
+      border:1px solid var(--border);
+      background: linear-gradient(180deg,
+        color-mix(in oklab, var(--card2) 55%, transparent),
+        color-mix(in oklab, var(--card) 75%, transparent));
+      border-radius: var(--r);
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+      overflow:hidden;
+    }
+    .footerGrid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+    @media (min-width: 920px){
+      .footerGrid{ grid-template-columns: 1.15fr 1fr .85fr; align-items:start; }
+    }
+    .footerTitle{
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 13px;
+    }
+    .footerMeta{
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    .footerKicker{
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .2px;
+    }
+    .footerThesis{
+      margin-top: 6px;
+      font-size: 12px;
+      color: var(--text);
+      opacity: .9;
+    }
+    .footerCenter{
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 10px;
+    }
+    @media (min-width: 920px){
+      .footerCenter{
+        border-top: 0;
+        padding-top: 0;
+        padding-left: 12px;
+        border-left: 1px solid rgba(255,255,255,.08);
+      }
+    }
+    .footerLinks{
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 10px;
+    }
+    @media (min-width: 920px){
+      .footerLinks{
+        border-top: 0;
+        padding-top: 0;
+        padding-left: 12px;
+        border-left: 1px solid rgba(255,255,255,.08);
+      }
+    }
+    .footerList{
+      margin: 8px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+    }
+    .footerList a{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      font-size: 12px;
+      color: color-mix(in oklab, var(--water) 76%, var(--text));
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ✅ Footer bottom text (new) */
+    .footerBottom{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:center;
+      padding: 10px 14px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: var(--muted);
+      font-size: 12px;
+      background: rgba(0,0,0,.10);
+    }
+    .dot{ opacity: .7; }
+
+    @media (max-width: 420px){
+      .topbarInner{padding:10px 12px}
+      .wrap{padding-left:12px; padding-right:12px}
+      iframe{height: 360px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar" role="navigation" aria-label="Term navigation">
+    <div class="topbarInner">
+      <div class="brand">
+        <div class="brandMark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z"
+              stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            <path d="M7 19c3.6-1.2 6.2-3.7 8.8-7.2" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+          </svg>
+        </div>
+        <div class="brandText">
+          <strong id="brandName">Honours Portfolio</strong>
+          <span id="brandLine">BSc Honours Computer Science • Deep RL for maize irrigation</span>
+        </div>
+      </div>
+
+      <div class="navPills" aria-label="Term links">
+        <button class="pill" type="button" data-goto="term1">Term 1</button>
+        <button class="pill" type="button" data-goto="term2">Term 2</button>
+        <button class="pill" type="button" data-goto="term3">Term 3</button>
+        <button class="pill" type="button" data-goto="term4">Term 4</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <header class="hero" id="top">
+      <div class="heroGrid">
+        <div>
+          <p class="kicker">Honours project portfolio</p>
+          <h1 id="thesisTitleH1">
+            A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling
+          </h1>
+          <p class="sub">
+            A term-by-term project portfolio hub containing a report, slides, and video for each term. Each term documents progress from analysis and design to implementation and final testing.
+          </p>
+
+          <div class="metaRow" aria-label="Student and project details">
+            <div class="chip">👤 <b>Student:</b> <span id="studentNameChip"></span></div>
+            <div class="chip">🎓 <b>Program:</b> <span id="degreeChip"></span></div>
+            <div class="chip">🧑‍🏫 <b>Supervisor:</b> <span id="supervisorChip"></span></div>
+            <div class="chip">🆔 <b>Student No.:</b> <span id="studentNoChip"></span></div>
+          </div>
+
+          <div class="metaRow" aria-label="Research snapshot">
+            <div class="chip">🌽 <b>Crop:</b> Maize</div>
+            <div class="chip">💧 <b>Goal:</b> Adaptive irrigation</div>
+            <div class="chip">🤖 <b>Methods:</b> Deep RL algorithms</div>
+            <div class="chip">📊 <b>Output:</b> Benchmark + analysis</div>
+          </div>
+
+          <div class="heroCTARow" aria-label="Quick actions">
+            <a class="ctaBtn" href="#terms" aria-label="Jump to the term submissions">📌 Jump to submissions</a>
+            <a class="ctaBtn" href="#project-links" aria-label="Jump to project links">🔗 Project links</a>
+          </div>
+        </div>
+
+        <!-- HERO ART: inline SVG -->
+        <div class="heroArt" aria-label="AgriTech hero artwork">
+          <svg viewBox="0 0 720 480" role="img" aria-label="Maize, irrigation, and RL network illustration">
+            <defs>
+              <linearGradient id="gSky" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="rgba(96,165,250,.30)"/>
+                <stop offset="1" stop-color="rgba(52,211,153,.14)"/>
+              </linearGradient>
+              <linearGradient id="gSoil" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="rgba(255,204,51,.20)"/>
+                <stop offset="1" stop-color="rgba(167,139,250,.16)"/>
+              </linearGradient>
+              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="8" result="b"/>
+                <feColorMatrix in="b" type="matrix"
+                  values="1 0 0 0 0
+                          0 1 0 0 0
+                          0 0 1 0 0
+                          0 0 0 .8 0"/>
+                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+
+            <rect x="0" y="0" width="720" height="480" rx="22" fill="url(#gSky)"/>
+
+            <g opacity=".75" filter="url(#soft)">
+              <path d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190" fill="none" stroke="rgba(167,139,250,.55)" stroke-width="3"/>
+              <path d="M110 260 C230 210, 300 240, 380 290 S 540 360, 660 330" fill="none" stroke="rgba(96,165,250,.55)" stroke-width="3"/>
+              <g fill="rgba(255,255,255,.85)">
+                <circle cx="70" cy="130" r="6"/><circle cx="210" cy="98" r="6"/><circle cx="350" cy="150" r="6"/>
+                <circle cx="520" cy="250" r="6"/><circle cx="650" cy="190" r="6"/>
+                <circle cx="110" cy="260" r="6"/><circle cx="280" cy="235" r="6"/><circle cx="380" cy="290" r="6"/>
+                <circle cx="540" cy="360" r="6"/><circle cx="660" cy="330" r="6"/>
+              </g>
+            </g>
+
+            <path d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z"
+                  fill="url(#gSoil)" opacity=".9"/>
+            <path d="M0 356 C160 322, 260 380, 360 356 S 560 318, 720 356" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
+
+            <g transform="translate(310 150)">
+              <path d="M60 210 C50 140, 56 90, 72 30" fill="none" stroke="rgba(255,255,255,.68)" stroke-width="6" stroke-linecap="round"/>
+              <path d="M68 94 C35 80, 18 66, 6 44 C34 42, 58 54, 72 72" fill="rgba(52,211,153,.30)" stroke="rgba(52,211,153,.75)" stroke-width="2"/>
+              <path d="M70 118 C104 108, 130 92, 148 64 C116 60, 90 74, 72 96" fill="rgba(52,211,153,.24)" stroke="rgba(52,211,153,.70)" stroke-width="2"/>
+              <path d="M70 150 C38 140, 18 126, 4 104 C36 100, 58 114, 72 132" fill="rgba(52,211,153,.22)" stroke="rgba(52,211,153,.65)" stroke-width="2"/>
+              <path d="M72 170 C104 165, 132 150, 156 126 C124 120, 96 132, 74 150" fill="rgba(52,211,153,.20)" stroke="rgba(52,211,153,.62)" stroke-width="2"/>
+              <ellipse cx="92" cy="142" rx="16" ry="34" fill="rgba(255,204,51,.35)" stroke="rgba(255,204,51,.85)" stroke-width="2"/>
+              <path d="M82 122 L102 162" stroke="rgba(255,204,51,.55)" stroke-width="2" opacity=".9"/>
+              <path d="M82 136 L102 176" stroke="rgba(255,204,51,.55)" stroke-width="2" opacity=".9"/>
+            </g>
+
+            <g opacity=".95">
+              <path d="M570 92 C548 120, 536 142, 536 162 a34 34 0 0 0 68 0 c0-20-12-42-34-70Z"
+                    fill="rgba(96,165,250,.22)" stroke="rgba(96,165,250,.75)" stroke-width="2"/>
+              <path d="M610 130 C598 146, 592 158, 592 170 a18 18 0 0 0 36 0 c0-12-6-24-18-40Z"
+                    fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.65)" stroke-width="2"/>
+              <circle cx="560" cy="212" r="6" fill="rgba(96,165,250,.55)"/>
+              <circle cx="610" cy="226" r="5" fill="rgba(96,165,250,.45)"/>
+              <circle cx="585" cy="244" r="4" fill="rgba(96,165,250,.40)"/>
+            </g>
+
+            <g opacity=".9">
+              <rect x="26" y="26" rx="12" width="330" height="44" fill="rgba(0,0,0,.20)" stroke="rgba(255,255,255,.14)"/>
+              <text x="44" y="54" fill="rgba(255,255,255,.86)" font-size="14" font-family="ui-sans-serif, system-ui">
+                DRL policy → irrigation decisions
+              </text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <div class="sectionTitle">
+      <h2>Terms & submissions</h2>
+      <p>Report • Slides • Video (preview + open)</p>
+    </div>
+
+    <section class="grid" id="terms" aria-label="Term cards"></section>
+
+    <section class="links" id="project-links" aria-label="Project links">
+      <div class="linksHeader">
+        <strong>Project links</strong>
+        <span>References, datasets, and starter code</span>
+      </div>
+      <ul id="projectLinks"></ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="siteFooter" aria-label="Footer">
+      <div class="footerGrid">
+        <div class="footerCol">
+          <div class="footerTitle" id="footerOwner">Vukosi Jayson Maluleke</div>
+          <div class="footerMeta">
+            <span id="footerDegree">BSc Honours Computer Science</span>
+            <span class="dot">•</span>
+            Student No. <span id="footerStudentNo">4279123</span><br />
+            Supervisor: <span id="footerSupervisor">Prof. Clement N. Nyirenda</span>
+          </div>
+        </div>
+
+        <div class="footerCol footerCenter">
+          <div class="footerKicker">Thesis</div>
+          <div class="footerThesis" id="footerThesis"></div>
+        </div>
+
+        <div class="footerCol footerLinks">
+          <div class="footerKicker">Quick links</div>
+          <ul class="footerList" id="footerLinks"></ul>
+        </div>
+      </div>
+
+      <!-- ✅ New footer text output -->
+      <div class="footerBottom" id="footerBottom"></div>
+    </footer>
+  </div>
+
+  <script>
+    // --- CONFIG (edit only this block) ---
+    const CONFIG = {
+      studentName: "Vukosi Jayson Maluleke",
+      degree: "BSc Honours Computer Science",
+      studentNumber: "4279123",
+      supervisor: "Prof. Clement N. Nyirenda",
+      thesisTitle:
+        "A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling",
+      links: [
+        { label: "MDPI — Data Availability Statement", url: "https://www.mdpi.com/2227-7390/13/4/595#Data_Availability_Statement" },
+        { label: "AquaCropGymnasium — startup code", url: "https://github.com/alkaffulm/aquacropgymnasium" }
+      ],
+      terms: [
+        {
+          id: "term1",
+          title: "Term 1",
+          badge: "Project Analysis",
+          summary:
+            "Define the research problem and benchmarking goals; review DRL + irrigation scheduling literature; set up the simulation environment (e.g., AquaCropGymnasium); establish baseline policies and evaluation criteria.",
+          art: "analysis",
+          items: {
+            report: { url: "TERM1_REPORT_URL_OR_ID" },
+            slides: { url: "TERM1_SLIDES_URL_OR_ID" },
+            video: { url: "TERM1_VIDEO_URL_OR_ID" }
+          }
+        },
+        {
+          id: "term2",
+          title: "Term 2",
+          badge: "Project Design",
+          summary:
+            "Finalize the benchmark design: state/action/reward definitions for adaptive maize irrigation; select DRL algorithms for comparison; implement the training pipeline; run initial experiments and sanity checks.",
+          art: "design",
+          items: {
+            report: { url: "TERM2_REPORT_URL_OR_ID" },
+            slides: { url: "TERM2_SLIDES_URL_OR_ID" },
+            video: { url: "TERM2_VIDEO_URL_OR_ID" }
+          }
+        },
+        {
+          id: "term3",
+          title: "Term 3",
+          badge: "Project Implementation",
+          summary:
+            "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics (yield/water-use efficiency/stability); conduct ablations and robustness analysis.",
+          art: "implementation",
+          items: {
+            report: { url: "TERM3_REPORT_URL_OR_ID" },
+            slides: { url: "TERM3_SLIDES_URL_OR_ID" },
+            video: { url: "TERM3_VIDEO_URL_OR_ID" }
+          }
+        },
+        {
+          id: "term4",
+          title: "Term 4",
+          badge: "Project Testing",
+          summary:
+            "Validate final results with rigorous testing (generalization, stress scenarios, statistical comparisons); finalize thesis write-up; produce the final presentation and demo video; clean up and document the code/reproducibility bundle.",
+          art: "testing",
+          items: {
+            report: { url: "TERM4_REPORT_URL_OR_ID" },
+            slides: { url: "TERM4_SLIDES_URL_OR_ID" },
+            video: { url: "TERM4_VIDEO_URL_OR_ID" }
+          }
+        }
+      ]
+    };
+
+    // --- Helpers: accept IDs or share URLs, produce working embed + open links ---
+    const isLikelyGoogleId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{20,}$/.test(s.trim());
+    const isLikelyYoutubeId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{6,15}$/.test(s.trim());
+
+    function normalizeDriveFileUrl(input){
+      if(!input || typeof input !== "string") return null;
+      const s = input.trim();
+      if(isLikelyGoogleId(s)) return { open:`https://drive.google.com/file/d/${s}/view`, embed:`https://drive.google.com/file/d/${s}/preview` };
+      const m = s.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
+      if(m) return { open:`https://drive.google.com/file/d/${m[1]}/view`, embed:`https://drive.google.com/file/d/${m[1]}/preview` };
+      return null;
+    }
+
+    function normalizeDocsUrl(input){
+      if(!input || typeof input !== "string") return null;
+      const s = input.trim();
+      const m = s.match(/docs\.google\.com\/document\/d\/([^/]+)/i);
+      if(m) return { open:`https://docs.google.com/document/d/${m[1]}/edit`, embed:`https://docs.google.com/document/d/${m[1]}/preview` };
+      if(isLikelyGoogleId(s)) return { open:`https://docs.google.com/document/d/${s}/edit`, embed:`https://docs.google.com/document/d/${s}/preview` };
+      return null;
+    }
+
+    function normalizeSlidesUrl(input){
+      if(!input || typeof input !== "string") return null;
+      const s = input.trim();
+      const m = s.match(/docs\.google\.com\/presentation\/d\/([^/]+)/i);
+      const id = (m && m[1]) || (isLikelyGoogleId(s) ? s : null);
+      if(!id) return null;
+      return {
+        open: `https://docs.google.com/presentation/d/${id}/edit`,
+        embed: `https://docs.google.com/presentation/d/${id}/embed?start=false&loop=false&delayms=3000`
+      };
+    }
+
+    function normalizeYoutubeUrl(input){
+      if(!input || typeof input !== "string") return null;
+      const s = input.trim();
+      let id = null;
+
+      let m = s.match(/youtu\.be\/([^?]+)/i);
+      if(m) id = m[1];
+
+      m = s.match(/[?&]v=([^&]+)/i);
+      if(m) id = m[1];
+
+      m = s.match(/youtube\.com\/embed\/([^?]+)/i);
+      if(m) id = m[1];
+
+      if(!id && isLikelyYoutubeId(s)) id = s;
+
+      if(!id) return null;
+      return { open: `https://www.youtube.com/watch?v=${id}`, embed: `https://www.youtube.com/embed/${id}` };
+    }
+
+    function bestReport(input){
+      return normalizeDriveFileUrl(input) || normalizeDocsUrl(input);
+    }
+
+    // --- Inline SVG mini-arts (match badge names; guaranteed to render) ---
+    function safeId(s){
+      return (s || "").toString().replace(/[^a-zA-Z0-9_-]/g, "-");
+    }
+
+    function termArtSvg(kind, uid){
+      const common = `viewBox="0 0 720 240" role="img" aria-label="Term illustration"`;
+      const u = safeId(uid || kind || "term");
+      const grad = `${u}-grad`;
+
+      if(kind === "analysis"){
+        return `<svg ${common}>
+          <defs>
+            <linearGradient id="${grad}" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(52,211,153,.22)"/>
+              <stop offset="1" stop-color="rgba(96,165,250,.20)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
+          <path d="M28 176 C140 110, 250 208, 360 150 S 570 86, 692 150" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="4"/>
+          <g>
+            <rect x="52" y="48" rx="12" width="300" height="120" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.14)"/>
+            <text x="74" y="82" fill="rgba(255,255,255,.88)" font-size="16" font-family="ui-sans-serif,system-ui">Project analysis</text>
+            <text x="74" y="110" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• problem definition</text>
+            <text x="74" y="134" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• literature review</text>
+            <text x="74" y="158" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• baselines + metrics</text>
+          </g>
+          <g transform="translate(500 34)">
+            <path d="M70 20c-30 30-50 58-50 84a50 50 0 0 0 100 0c0-26-20-54-50-84Z"
+              fill="rgba(96,165,250,.22)" stroke="rgba(96,165,250,.75)" stroke-width="2"/>
+            <path d="M32 116c18 18 52 18 76 0" stroke="rgba(255,255,255,.30)" stroke-width="3" fill="none"/>
+            <text x="8" y="170" fill="rgba(255,255,255,.70)" font-size="12" font-family="ui-sans-serif,system-ui">data + environment</text>
+          </g>
+        </svg>`;
+      }
+
+      if(kind === "design"){
+        return `<svg ${common}>
+          <defs>
+            <linearGradient id="${grad}" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(167,139,250,.20)"/>
+              <stop offset="1" stop-color="rgba(96,165,250,.18)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
+
+          <g transform="translate(52 44)">
+            <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
+            <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project design</text>
+            <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">state • action • reward • scenarios</text>
+
+            <g transform="translate(22 88)" opacity=".95">
+              <rect x="0" y="0" width="160" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
+              <text x="16" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Environment</text>
+
+              <path d="M170 22 H240" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
+              <polygon points="240,22 232,16 232,28" fill="rgba(255,255,255,.22)"/>
+
+              <rect x="252" y="0" width="170" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
+              <text x="268" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">DRL Agent</text>
+
+              <path d="M434 22 H504" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
+              <polygon points="504,22 496,16 496,28" fill="rgba(255,255,255,.22)"/>
+
+              <rect x="516" y="0" width="78" height="44" rx="12" fill="rgba(52,211,153,.14)" stroke="rgba(52,211,153,.40)"/>
+              <text x="530" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Policy</text>
+            </g>
+          </g>
+        </svg>`;
+      }
+
+      if(kind === "implementation"){
+        return `<svg ${common}>
+          <defs>
+            <linearGradient id="${grad}" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(255,204,51,.18)"/>
+              <stop offset="1" stop-color="rgba(52,211,153,.16)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
+          <g opacity=".9">
+            <path d="M40 70 H300" stroke="rgba(255,255,255,.22)" stroke-width="4"/>
+            <path d="M40 120 H380" stroke="rgba(255,255,255,.18)" stroke-width="4"/>
+            <path d="M40 170 H260" stroke="rgba(255,255,255,.14)" stroke-width="4"/>
+          </g>
+          <g transform="translate(390 40)" opacity=".95">
+            <rect x="0" y="0" width="290" height="160" rx="16" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.14)"/>
+            <path d="M26 122 C66 72, 112 140, 152 88 S 224 46, 258 78" fill="none" stroke="rgba(52,211,153,.55)" stroke-width="4"/>
+            <g fill="rgba(255,255,255,.86)">
+              <circle cx="26" cy="122" r="5"/><circle cx="92" cy="114" r="5"/><circle cx="152" cy="88" r="5"/>
+              <circle cx="224" cy="46" r="5"/><circle cx="258" cy="78" r="5"/>
+            </g>
+            <text x="22" y="32" fill="rgba(255,255,255,.86)" font-size="15" font-family="ui-sans-serif,system-ui">Implementation</text>
+            <text x="22" y="56" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">training • logging • reproducibility</text>
+          </g>
+        </svg>`;
+      }
+
+      if(kind === "testing"){
+        return `<svg ${common}>
+          <defs>
+            <linearGradient id="${grad}" x1="0" x2="1">
+              <stop offset="0" stop-color="rgba(96,165,250,.20)"/>
+              <stop offset="1" stop-color="rgba(167,139,250,.18)"/>
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
+
+          <g transform="translate(52 44)">
+            <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
+            <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project testing</text>
+            <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">generalization • stress tests • statistical comparisons</text>
+
+            <g transform="translate(22 86)" opacity=".95">
+              <path d="M0 30 L18 48 L54 10" fill="none" stroke="rgba(52,211,153,.78)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="70" y="36" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">validation checklist</text>
+
+              <g transform="translate(360 0)">
+                <rect x="0" y="0" width="210" height="56" rx="14" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
+                <path d="M18 40 C44 20, 68 48, 92 28 S 140 12, 190 26" fill="none" stroke="rgba(255,204,51,.55)" stroke-width="4"/>
+                <circle cx="18" cy="40" r="4" fill="rgba(255,255,255,.86)"/>
+                <circle cx="92" cy="28" r="4" fill="rgba(255,255,255,.86)"/>
+                <circle cx="190" cy="26" r="4" fill="rgba(255,255,255,.86)"/>
+              </g>
+            </g>
+          </g>
+        </svg>`;
+      }
+
+      return `<svg ${common}><rect x="0" y="0" width="720" height="240" rx="18" fill="rgba(255,255,255,.06)"/></svg>`;
+    }
+
+    function buildDeliverable(kind, raw){
+      const label = kind === "report" ? "Report (Doc/PDF)" : kind === "slides" ? "Presentation (Slides)" : "Video update";
+      const icon  = kind === "report" ? "📄" : kind === "slides" ? "🖥️" : "🎥";
+
+      let norm = null;
+      if(kind === "report") norm = bestReport(raw);
+      if(kind === "slides") norm = normalizeSlidesUrl(raw);
+      if(kind === "video") norm = normalizeYoutubeUrl(raw) || normalizeDriveFileUrl(raw);
+
+      const missing = !norm;
+      const open = missing ? "#" : norm.open;
+      const embed = missing ? "" : norm.embed;
+
+      const subtitle = missing
+        ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
+        : (kind === "video" ? "Embedded player" : "Preview inside this page");
+
+      const previewHtml = missing ? `
+        <div class="preview">
+          <div style="padding:14px; color: var(--muted); border:1px dashed rgba(255,255,255,.16); border-radius:12px;">
+            Add your ${label} link in <code>CONFIG</code> → <code>terms[].items.${kind}.url</code>.
+          </div>
+        </div>` : `
+        <div class="preview">
+          <iframe src="${embed}" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>`;
+
+      return `
+        <details>
+          <summary>
+            <div class="row">
+              <div class="icon" aria-hidden="true">${icon}</div>
+              <div class="label">
+                <strong>${label}</strong>
+                <span>${subtitle}</span>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" ${missing ? 'aria-disabled="true"' : ''} target="_blank" rel="noopener" href="${open}">Open</a>
+            </div>
+          </summary>
+          ${previewHtml}
+        </details>`;
+    }
+
+    function buildTermCard(t){
+      return `
+        <article class="card" id="${t.id}" data-term="${t.id}">
+          <div class="cardHead">
+            <div>
+              <h3 class="termTitle">${t.title}</h3>
+              <p class="termMeta">${t.summary}</p>
+            </div>
+            <div class="badge">${t.badge}</div>
+          </div>
+
+          <div class="cardBody">
+            <div class="termArt" aria-label="${t.title} illustration">
+              ${termArtSvg(t.art, t.id)}
+            </div>
+
+            <div class="deliverables" aria-label="${t.title} deliverables">
+              ${buildDeliverable("report", t.items?.report?.url)}
+              ${buildDeliverable("slides", t.items?.slides?.url)}
+              ${buildDeliverable("video", t.items?.video?.url)}
+            </div>
+          </div>
+        </article>`;
+    }
+
+    // --- Render ---
+    const now = new Date();
+    const year = now.getFullYear();
+    const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
+
+    // Brand + hero identity
+    document.getElementById("brandName").textContent = `${CONFIG.studentName} — Honours Portfolio`;
+    document.getElementById("brandLine").textContent = `${CONFIG.degree} • Deep RL benchmark for maize irrigation`;
+    document.getElementById("studentNameChip").textContent = CONFIG.studentName;
+    document.getElementById("degreeChip").textContent = CONFIG.degree;
+    document.getElementById("supervisorChip").textContent = CONFIG.supervisor;
+    document.getElementById("studentNoChip").textContent = CONFIG.studentNumber;
+
+    // Thesis title (sync from config)
+    document.getElementById("thesisTitleH1").textContent = CONFIG.thesisTitle;
+
+    // Footer identity panels
+    document.getElementById("footerOwner").textContent = CONFIG.studentName;
+    document.getElementById("footerDegree").textContent = CONFIG.degree;
+    document.getElementById("footerStudentNo").textContent = CONFIG.studentNumber;
+    document.getElementById("footerSupervisor").textContent = CONFIG.supervisor;
+    document.getElementById("footerThesis").textContent = CONFIG.thesisTitle;
+
+    // Terms
+    const termsEl = document.getElementById("terms");
+    termsEl.innerHTML = CONFIG.terms.map(buildTermCard).join("");
+
+    // Links section (full list)
+    const linksEl = document.getElementById("projectLinks");
+    linksEl.innerHTML = CONFIG.links
+      .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">${l.label}</a></li>`)
+      .join("");
+
+    // Footer quick links (top 3)
+    document.getElementById("footerLinks").innerHTML = CONFIG.links
+      .slice(0, 3)
+      .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">↗ ${l.label}</a></li>`)
+      .join("");
+
+    // ✅ New footer text (clean, academic, interesting — includes your required copyright)
+    document.getElementById("footerBottom").innerHTML =
+      `© ${year} <span class="dot">•</span> ` +
+      `Academic Portfolio in Computer Science ` +
+      `<span class="dot">•</span> All rights reserved` +
+      `<span class="dot">•</span> Updated ${updatedStr}`;
+
+    // Term navigation: robust in iframes (Google Sites)
+    function goToTerm(id){
+      const el = document.getElementById(id);
+      if(!el) return;
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      try { history.replaceState(null, "", "#" + id); } catch {}
+    }
+
+    document.querySelectorAll("[data-goto]").forEach(btn => {
+      btn.addEventListener("click", () => goToTerm(btn.getAttribute("data-goto")));
+    });
+
+    // On load with #termX, scroll to it
+    function scrollToHash(){
+      const id = (location.hash || "").replace("#", "");
+      if(!id) return;
+      const el = document.getElementById(id);
+      if(!el) return;
+      setTimeout(() => el.scrollIntoView({ behavior:"smooth", block:"start" }), 60);
+    }
+    window.addEventListener("load", scrollToHash);
+
+    // Scroll spy: highlight active pill
+    const pills = Array.from(document.querySelectorAll(".pill[data-goto]"));
+    const setActive = (id) => {
+      pills.forEach(p => p.setAttribute("aria-current", p.getAttribute("data-goto") === id ? "true" : "false"));
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
+      if(visible?.target?.id) setActive(visible.target.id);
+    }, { root: null, threshold: [0.25, 0.35, 0.5, 0.65] });
+
+    CONFIG.terms.forEach(t => {
+      const el = document.getElementById(t.id);
+      if(el) observer.observe(el);
+    });
+
+    setActive("term1");
+  </script>
+</body>
+</html>
