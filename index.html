@@ -843,7 +843,7 @@
     }
 
     function buildDeliverable(kind, raw){
-      const label = kind === "report" ? "Report (Doc/PDF)" : kind === "slides" ? "Presentation (Slides)" : "Video update";
+      const label = kind === "report" ? "Report (PDF)" : kind === "slides" ? "Presentation (Slides)" : "Video (Demo)";
       const icon  = kind === "report" ? "📄" : kind === "slides" ? "🖥️" : "🎥";
 
       let norm = null;
@@ -918,7 +918,7 @@
     const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
 
     // Brand + hero identity
-    document.getElementById("brandName").textContent = `${CONFIG.studentName} — Honours Portfolio`;
+    document.getElementById("brandName").textContent = `${CONFIG.studentName} — Honours Project`;
     document.getElementById("brandLine").textContent = `${CONFIG.degree} • Deep RL benchmark for maize irrigation`;
     document.getElementById("studentNameChip").textContent = CONFIG.studentName;
     document.getElementById("degreeChip").textContent = CONFIG.degree;
