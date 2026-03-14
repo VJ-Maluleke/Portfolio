@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
-  <meta name="description" content="Honours project portfolio: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling." />
+  <meta name="description" content="Honours project: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling." />
   <title>Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio</title>
 
   <style>
@@ -311,6 +311,7 @@
       background: linear-gradient(180deg,
         color-mix(in oklab, var(--card2) 55%, transparent),
         color-mix(in oklab, var(--card) 75%, transparent));
+      
       box-shadow: 0 14px 45px rgba(0,0,0,.22);
       overflow:hidden;
     }
@@ -438,7 +439,7 @@
     <header class="hero" id="top">
       <div class="heroGrid">
         <div>
-          <p class="kicker">Honours project portfolio</p>
+          <p class="kicker">Honours project</p>
           <h1 id="thesisTitleH1">
             A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling
           </h1>
@@ -552,29 +553,28 @@
       </div>
       <ul id="projectLinks"></ul>
     </section>
-  
+
+   
   </div>
 
- <!-- Footer -->
+   <!-- Footer -->
     <footer class="siteFooter" aria-label="Footer">
       <div class="footerGrid">
-        <div class="footerCol">
-          <div class="footerTitle" id="footerOwner">Vukosi Jayson Maluleke</div>
+          <div class="footerCol">
+          <div class="footerTitle"><strong>Empowering Sustainable Agriculture</strong></div>
           <div class="footerMeta">
-            <span id="footerDegree">BSc Honours Computer Science</span>
-            <span class="dot">•</span>
-            Student No. <span id="footerStudentNo">4279123</span><br />
-            Supervisor: <span id="footerSupervisor">Prof. Clement N. Nyirenda</span>
+            Bringing the power of AI to farming: improving crop yields, conserving water, and enabling smarter, more resilient agricultural practices.  
+            Our mission is to support farmers with innovative solutions that make food production sustainable, efficient, and future-ready.
           </div>
         </div>
-
+          
         <div class="footerCol footerCenter">
-          <div class="footerKicker">Thesis</div>
+          <div class="footerKicker"><strong>Thesis</strong></div>
           <div class="footerThesis" id="footerThesis"></div>
         </div>
 
         <div class="footerCol footerLinks">
-          <div class="footerKicker">Quick links</div>
+          <div class="footerKicker"><strong>Quick links</strong></div>
           <ul class="footerList" id="footerLinks"></ul>
         </div>
       </div>
@@ -582,7 +582,7 @@
       <!-- ✅ New footer text output -->
       <div class="footerBottom" id="footerBottom"></div>
     </footer>
-     
+    
   <script>
     // --- CONFIG (edit only this block) ---
     const CONFIG = {
@@ -929,10 +929,6 @@
     document.getElementById("thesisTitleH1").textContent = CONFIG.thesisTitle;
 
     // Footer identity panels
-    document.getElementById("footerOwner").textContent = CONFIG.studentName;
-    document.getElementById("footerDegree").textContent = CONFIG.degree;
-    document.getElementById("footerStudentNo").textContent = CONFIG.studentNumber;
-    document.getElementById("footerSupervisor").textContent = CONFIG.supervisor;
     document.getElementById("footerThesis").textContent = CONFIG.thesisTitle;
 
     // Terms
