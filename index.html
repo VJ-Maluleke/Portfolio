@@ -3,40 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="dark" />
   <meta name="description" content="Honours project: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling." />
   <title>Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio</title>
 
   <style>
     :root{
-      --bg0:#06101f;
-      --bg1:#0b2344;
-      --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.10);
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.72);
-      --border: rgba(120,170,255,.18);
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --bg0:#07140d;
+      --bg1:#0f2f1f;
+      --card: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.94);
+      --muted: rgba(255,255,255,.76);
+      --border: rgba(160,220,170,.18);
+      --shadow: 0 18px 60px rgba(0,0,0,.42);
       --r: 18px;
       --maize: #ffcc33;
       --leaf:  #34d399;
       --water: #60a5fa;
-      --ai:    #7c9cff;
+      --ai:    #86efac;
       --maxw: 1120px;
       --stickyH: 62px;
-    }
-
-    @media (prefers-color-scheme: light){
-      :root{
-        --bg0:#dbeafe;
-        --bg1:#93c5fd;
-        --card: rgba(255,255,255,.45);
-        --card2: rgba(255,255,255,.60);
-        --text: rgba(8,20,40,.92);
-        --muted: rgba(8,20,40,.68);
-        --border: rgba(37,99,235,.18);
-        --shadow: 0 18px 60px rgba(2,10,30,.12);
-      }
+      --bg-image: url("MAIZE IRRIGATION.png");
     }
 
     *{box-sizing:border-box}
@@ -46,9 +34,11 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 18% 10%, rgba(96,165,250,.30), transparent 60%),
-        radial-gradient(860px 520px at 82% 18%, rgba(59,130,246,.22), transparent 55%),
-        radial-gradient(1000px 700px at 50% 102%, rgba(37,99,235,.18), transparent 60%),
+        linear-gradient(rgba(4,16,10,.72), rgba(9,30,18,.78)),
+        radial-gradient(900px 520px at 18% 10%, rgba(52,211,153,.14), transparent 60%),
+        radial-gradient(860px 520px at 82% 18%, rgba(163,230,53,.12), transparent 55%),
+        radial-gradient(1000px 700px at 50% 102%, rgba(22,163,74,.16), transparent 60%),
+        var(--bg-image) center center / cover no-repeat fixed,
         linear-gradient(180deg, var(--bg0), var(--bg1));
       min-height:100vh;
     }
@@ -59,7 +49,7 @@
     .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
-      background: color-mix(in oklab, var(--bg0) 65%, transparent);
+      background: color-mix(in oklab, var(--bg0) 72%, transparent);
       border-bottom:1px solid var(--border);
     }
     .topbarInner{
@@ -75,8 +65,8 @@
       border:1px solid var(--border);
       background: linear-gradient(135deg,
         color-mix(in oklab, var(--leaf) 46%, transparent),
-        color-mix(in oklab, var(--water) 46%, transparent),
-        color-mix(in oklab, var(--maize) 40%, transparent));
+        color-mix(in oklab, var(--water) 32%, transparent),
+        color-mix(in oklab, var(--maize) 34%, transparent));
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
       display:grid; place-items:center;
       overflow:hidden;
@@ -89,7 +79,7 @@
     .navPills{display:flex; flex-wrap:wrap; gap:8px; justify-content:flex-end}
     .pill{
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 80%, transparent);
+      background: color-mix(in oklab, var(--card) 86%, transparent);
       padding:8px 10px;
       border-radius:999px;
       font-size:12px;
@@ -99,24 +89,25 @@
       transition: transform .12s ease, background .12s ease, color .12s ease, border-color .12s ease;
       outline:none;
     }
-    .pill:hover{background: color-mix(in oklab, var(--card2) 90%, transparent); color:var(--text)}
+    .pill:hover{background: color-mix(in oklab, var(--card2) 92%, transparent); color:var(--text)}
     .pill:active{transform: scale(.98)}
     .pill[aria-current="true"]{
       color:var(--text);
-      border-color: color-mix(in oklab, var(--water) 55%, var(--border));
+      border-color: color-mix(in oklab, var(--leaf) 52%, var(--border));
       background:
         linear-gradient(135deg,
-          color-mix(in oklab, var(--water) 22%, transparent),
-          color-mix(in oklab, var(--leaf) 18%, transparent));
+          color-mix(in oklab, var(--leaf) 22%, transparent),
+          color-mix(in oklab, var(--water) 16%, transparent));
     }
 
     header.hero{
       margin-top: 16px;
       border:1px solid var(--border);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 70%, transparent), color-mix(in oklab, var(--card) 60%, transparent));
+      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 72%, transparent), color-mix(in oklab, var(--card) 66%, transparent));
       border-radius: calc(var(--r) + 6px);
       box-shadow: var(--shadow);
       overflow:hidden;
+      backdrop-filter: blur(8px);
     }
     .heroGrid{
       display:grid;
@@ -137,9 +128,10 @@
       display:inline-flex; align-items:center; gap:8px;
       font-size:12px; color:var(--muted);
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 80%, transparent);
+      background: color-mix(in oklab, var(--card) 88%, transparent);
       padding:8px 10px;
       border-radius: 999px;
+      backdrop-filter: blur(8px);
     }
     .chip b{color:var(--text); font-weight:600}
 
@@ -149,10 +141,10 @@
     }
     .ctaBtn{
       display:inline-flex; align-items:center; gap:10px;
-      border:1px solid color-mix(in oklab, var(--water) 50%, var(--border));
+      border:1px solid color-mix(in oklab, var(--leaf) 48%, var(--border));
       background: linear-gradient(135deg,
-        color-mix(in oklab, var(--water) 16%, transparent),
-        color-mix(in oklab, var(--leaf) 12%, transparent));
+        color-mix(in oklab, var(--leaf) 16%, transparent),
+        color-mix(in oklab, var(--water) 12%, transparent));
       color: var(--text);
       padding: 10px 12px;
       border-radius: 999px;
@@ -160,17 +152,19 @@
       box-shadow: 0 10px 30px rgba(0,0,0,.18);
     }
     .ctaBtn:hover{filter: brightness(1.05)}
-    .ctaHint{font-size:12px; color: var(--muted)}
 
     .heroArt{
       border-radius: calc(var(--r) + 2px);
       border: 1px solid var(--border);
-      background: radial-gradient(700px 280px at 30% 0%, color-mix(in oklab, var(--maize) 20%, transparent), transparent 60%),
-                  radial-gradient(700px 300px at 65% 10%, color-mix(in oklab, var(--water) 20%, transparent), transparent 62%),
-                  radial-gradient(900px 340px at 50% 120%, color-mix(in oklab, var(--leaf) 16%, transparent), transparent 60%),
-                  color-mix(in oklab, var(--card) 70%, transparent);
+      background:
+        linear-gradient(rgba(8,24,14,.26), rgba(8,24,14,.26)),
+        radial-gradient(700px 280px at 30% 0%, color-mix(in oklab, var(--maize) 20%, transparent), transparent 60%),
+        radial-gradient(700px 300px at 65% 10%, color-mix(in oklab, var(--water) 20%, transparent), transparent 62%),
+        radial-gradient(900px 340px at 50% 120%, color-mix(in oklab, var(--leaf) 18%, transparent), transparent 60%),
+        color-mix(in oklab, var(--card) 72%, transparent);
       padding: 12px;
       overflow:hidden;
+      backdrop-filter: blur(8px);
     }
     .heroArt svg{width:100%; height:auto; display:block}
 
@@ -189,11 +183,12 @@
     .card{
       grid-column: span 12;
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 85%, transparent);
+      background: color-mix(in oklab, var(--card) 90%, transparent);
       border-radius: var(--r);
       box-shadow: 0 12px 40px rgba(0,0,0,.25);
       overflow:hidden;
       scroll-margin-top: calc(var(--stickyH) + 18px);
+      backdrop-filter: blur(8px);
     }
     @media (min-width: 980px){
       .card{grid-column: span 6}
@@ -209,7 +204,7 @@
     .badge{
       font-size:11px; color:var(--muted);
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 75%, transparent);
+      background: color-mix(in oklab, var(--card) 78%, transparent);
       padding: 6px 10px;
       border-radius: 999px;
       white-space: nowrap;
@@ -223,7 +218,7 @@
     .termArt{
       border:1px solid var(--border);
       border-radius: 14px;
-      background: color-mix(in oklab, var(--card) 70%, transparent);
+      background: color-mix(in oklab, var(--card) 74%, transparent);
       padding: 10px;
       overflow:hidden;
     }
@@ -233,7 +228,7 @@
     details{
       border: 1px solid rgba(255,255,255,.12);
       border-radius: 14px;
-      background: color-mix(in oklab, var(--card) 82%, transparent);
+      background: color-mix(in oklab, var(--card) 86%, transparent);
       overflow:hidden;
     }
     summary{
@@ -251,13 +246,13 @@
     .actions{display:flex; gap:8px; flex-shrink:0}
     .btn{
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card2) 70%, transparent);
+      background: color-mix(in oklab, var(--card2) 74%, transparent);
       padding: 7px 10px;
       border-radius: 10px;
       font-size: 12px;
       color: var(--text);
     }
-    .btn:hover{background: color-mix(in oklab, var(--card2) 90%, transparent)}
+    .btn:hover{background: color-mix(in oklab, var(--card2) 94%, transparent)}
     .btn[aria-disabled="true"]{
       opacity: .55;
       pointer-events: none;
@@ -266,7 +261,7 @@
     .preview{
       border-top: 1px solid rgba(255,255,255,.10);
       padding: 12px;
-      background: rgba(0,0,0,.10);
+      background: rgba(0,0,0,.12);
     }
     iframe{
       width:100%;
@@ -279,9 +274,10 @@
     .links{
       margin-top: 16px;
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 88%, transparent);
+      background: color-mix(in oklab, var(--card) 90%, transparent);
       border-radius: var(--r);
       padding: 14px 16px;
+      backdrop-filter: blur(8px);
     }
     .linksHeader{
       display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
@@ -291,7 +287,7 @@
     .links ul{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted)}
     .links li{margin:8px 0}
     .links a{
-      color: color-mix(in oklab, var(--water) 76%, var(--text));
+      color: color-mix(in oklab, var(--leaf) 42%, var(--text));
       text-decoration: underline;
       text-underline-offset: 3px
     }
@@ -300,10 +296,11 @@
       margin-top: 18px;
       border:1px solid var(--border);
       background: linear-gradient(180deg,
-        color-mix(in oklab, var(--card2) 55%, transparent),
-        color-mix(in oklab, var(--card) 75%, transparent));
+        color-mix(in oklab, var(--card2) 58%, transparent),
+        color-mix(in oklab, var(--card) 80%, transparent));
       box-shadow: 0 14px 45px rgba(0,0,0,.22);
       overflow:hidden;
+      backdrop-filter: blur(8px);
     }
     .footerGrid{
       display:grid;
@@ -372,7 +369,7 @@
       gap:8px;
       align-items:center;
       font-size: 12px;
-      color: color-mix(in oklab, var(--water) 76%, var(--text));
+      color: color-mix(in oklab, var(--leaf) 42%, var(--text));
       text-decoration: underline;
       text-underline-offset: 3px;
     }
@@ -386,7 +383,7 @@
       border-top: 1px solid rgba(255,255,255,.10);
       color: var(--muted);
       font-size: 12px;
-      background: rgba(0,0,0,.10);
+      background: rgba(0,0,0,.12);
     }
     .dot{ opacity: .7; }
 
@@ -404,8 +401,7 @@
       <div class="brand">
         <div class="brandMark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z"
-              stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            <path d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
             <path d="M7 19c3.6-1.2 6.2-3.7 8.8-7.2" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
           </svg>
         </div>
@@ -460,12 +456,12 @@
           <svg viewBox="0 0 720 480" role="img" aria-label="Maize, irrigation, and RL network illustration">
             <defs>
               <linearGradient id="gSky" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="rgba(96,165,250,.30)"/>
-                <stop offset="1" stop-color="rgba(52,211,153,.14)"/>
+                <stop offset="0" stop-color="rgba(134,239,172,.25)"/>
+                <stop offset="1" stop-color="rgba(52,211,153,.12)"/>
               </linearGradient>
               <linearGradient id="gSoil" x1="0" x2="1" y1="0" y2="0">
                 <stop offset="0" stop-color="rgba(255,204,51,.20)"/>
-                <stop offset="1" stop-color="rgba(167,139,250,.16)"/>
+                <stop offset="1" stop-color="rgba(134,239,172,.12)"/>
               </linearGradient>
               <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="8" result="b"/>
@@ -481,8 +477,8 @@
             <rect x="0" y="0" width="720" height="480" rx="22" fill="url(#gSky)"/>
 
             <g opacity=".75" filter="url(#soft)">
-              <path d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190" fill="none" stroke="rgba(167,139,250,.55)" stroke-width="3"/>
-              <path d="M110 260 C230 210, 300 240, 380 290 S 540 360, 660 330" fill="none" stroke="rgba(96,165,250,.55)" stroke-width="3"/>
+              <path d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190" fill="none" stroke="rgba(134,239,172,.45)" stroke-width="3"/>
+              <path d="M110 260 C230 210, 300 240, 380 290 S 540 360, 660 330" fill="none" stroke="rgba(96,165,250,.45)" stroke-width="3"/>
               <g fill="rgba(255,255,255,.85)">
                 <circle cx="70" cy="130" r="6"/><circle cx="210" cy="98" r="6"/><circle cx="350" cy="150" r="6"/>
                 <circle cx="520" cy="250" r="6"/><circle cx="650" cy="190" r="6"/>
@@ -491,15 +487,14 @@
               </g>
             </g>
 
-            <path d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z"
-                  fill="url(#gSoil)" opacity=".9"/>
+            <path d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z" fill="url(#gSoil)" opacity=".9"/>
             <path d="M0 356 C160 322, 260 380, 360 356 S 560 318, 720 356" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
 
             <g transform="translate(310 150)">
               <path d="M60 210 C50 140, 56 90, 72 30" fill="none" stroke="rgba(255,255,255,.68)" stroke-width="6" stroke-linecap="round"/>
               <path d="M68 94 C35 80, 18 66, 6 44 C34 42, 58 54, 72 72" fill="rgba(52,211,153,.30)" stroke="rgba(52,211,153,.75)" stroke-width="2"/>
-              <path d="M70 118 C104 108, 130 92, 148 64 C116 60, 90 74, 72 96" fill="rgba(52,211,153,.24)" stroke="rgba(52,211,153,.70)" stroke-width="2"/>
-              <path d="M70 150 C38 140, 18 126, 4 104 C36 100, 58 114, 72 132" fill="rgba(52,211,153,.22)" stroke="rgba(52,211,153,.65)" stroke-width="2"/>
+              <path d="M70 118 C104 108, 130 92, 148 64 C116 60, 90 74, 72 96" fill="rgba(74,222,128,.24)" stroke="rgba(74,222,128,.70)" stroke-width="2"/>
+              <path d="M70 150 C38 140, 18 126, 4 104 C36 100, 58 114, 72 132" fill="rgba(34,197,94,.22)" stroke="rgba(34,197,94,.65)" stroke-width="2"/>
               <path d="M72 170 C104 165, 132 150, 156 126 C124 120, 96 132, 74 150" fill="rgba(52,211,153,.20)" stroke="rgba(52,211,153,.62)" stroke-width="2"/>
               <ellipse cx="92" cy="142" rx="16" ry="34" fill="rgba(255,204,51,.35)" stroke="rgba(255,204,51,.85)" stroke-width="2"/>
               <path d="M82 122 L102 162" stroke="rgba(255,204,51,.55)" stroke-width="2" opacity=".9"/>
@@ -507,13 +502,11 @@
             </g>
 
             <g opacity=".95">
-              <path d="M570 92 C548 120, 536 142, 536 162 a34 34 0 0 0 68 0 c0-20-12-42-34-70Z"
-                    fill="rgba(96,165,250,.22)" stroke="rgba(96,165,250,.75)" stroke-width="2"/>
-              <path d="M610 130 C598 146, 592 158, 592 170 a18 18 0 0 0 36 0 c0-12-6-24-18-40Z"
-                    fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.65)" stroke-width="2"/>
-              <circle cx="560" cy="212" r="6" fill="rgba(96,165,250,.55)"/>
-              <circle cx="610" cy="226" r="5" fill="rgba(96,165,250,.45)"/>
-              <circle cx="585" cy="244" r="4" fill="rgba(96,165,250,.40)"/>
+              <path d="M570 92 C548 120, 536 142, 536 162 a34 34 0 0 0 68 0 c0-20-12-42-34-70Z" fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.68)" stroke-width="2"/>
+              <path d="M610 130 C598 146, 592 158, 592 170 a18 18 0 0 0 36 0 c0-12-6-24-18-40Z" fill="rgba(96,165,250,.14)" stroke="rgba(96,165,250,.58)" stroke-width="2"/>
+              <circle cx="560" cy="212" r="6" fill="rgba(96,165,250,.45)"/>
+              <circle cx="610" cy="226" r="5" fill="rgba(96,165,250,.38)"/>
+              <circle cx="585" cy="244" r="4" fill="rgba(96,165,250,.34)"/>
             </g>
 
             <g opacity=".9">
@@ -705,8 +698,8 @@
         return `<svg ${common}>
           <defs>
             <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(52,211,153,.22)"/>
-              <stop offset="1" stop-color="rgba(96,165,250,.20)"/>
+              <stop offset="0" stop-color="rgba(74,222,128,.22)"/>
+              <stop offset="1" stop-color="rgba(96,165,250,.18)"/>
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
@@ -719,8 +712,7 @@
             <text x="74" y="158" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• baselines + metrics</text>
           </g>
           <g transform="translate(500 34)">
-            <path d="M70 20c-30 30-50 58-50 84a50 50 0 0 0 100 0c0-26-20-54-50-84Z"
-              fill="rgba(96,165,250,.22)" stroke="rgba(96,165,250,.75)" stroke-width="2"/>
+            <path d="M70 20c-30 30-50 58-50 84a50 50 0 0 0 100 0c0-26-20-54-50-84Z" fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.68)" stroke-width="2"/>
             <path d="M32 116c18 18 52 18 76 0" stroke="rgba(255,255,255,.30)" stroke-width="3" fill="none"/>
             <text x="8" y="170" fill="rgba(255,255,255,.70)" font-size="12" font-family="ui-sans-serif,system-ui">data + environment</text>
           </g>
@@ -731,30 +723,24 @@
         return `<svg ${common}>
           <defs>
             <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(167,139,250,.20)"/>
-              <stop offset="1" stop-color="rgba(96,165,250,.18)"/>
+              <stop offset="0" stop-color="rgba(134,239,172,.18)"/>
+              <stop offset="1" stop-color="rgba(96,165,250,.16)"/>
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-
           <g transform="translate(52 44)">
             <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
             <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project design</text>
             <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">state • action • reward • scenarios</text>
-
             <g transform="translate(22 88)" opacity=".95">
               <rect x="0" y="0" width="160" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
               <text x="16" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Environment</text>
-
               <path d="M170 22 H240" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
               <polygon points="240,22 232,16 232,28" fill="rgba(255,255,255,.22)"/>
-
               <rect x="252" y="0" width="170" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
               <text x="268" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">DRL Agent</text>
-
               <path d="M434 22 H504" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
               <polygon points="504,22 496,16 496,28" fill="rgba(255,255,255,.22)"/>
-
               <rect x="516" y="0" width="78" height="44" rx="12" fill="rgba(52,211,153,.14)" stroke="rgba(52,211,153,.40)"/>
               <text x="530" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Policy</text>
             </g>
@@ -767,7 +753,7 @@
           <defs>
             <linearGradient id="${grad}" x1="0" x2="1">
               <stop offset="0" stop-color="rgba(255,204,51,.18)"/>
-              <stop offset="1" stop-color="rgba(52,211,153,.16)"/>
+              <stop offset="1" stop-color="rgba(74,222,128,.16)"/>
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
@@ -778,7 +764,7 @@
           </g>
           <g transform="translate(390 40)" opacity=".95">
             <rect x="0" y="0" width="290" height="160" rx="16" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.14)"/>
-            <path d="M26 122 C66 72, 112 140, 152 88 S 224 46, 258 78" fill="none" stroke="rgba(52,211,153,.55)" stroke-width="4"/>
+            <path d="M26 122 C66 72, 112 140, 152 88 S 224 46, 258 78" fill="none" stroke="rgba(74,222,128,.55)" stroke-width="4"/>
             <g fill="rgba(255,255,255,.86)">
               <circle cx="26" cy="122" r="5"/><circle cx="92" cy="114" r="5"/><circle cx="152" cy="88" r="5"/>
               <circle cx="224" cy="46" r="5"/><circle cx="258" cy="78" r="5"/>
@@ -793,21 +779,18 @@
         return `<svg ${common}>
           <defs>
             <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(96,165,250,.20)"/>
-              <stop offset="1" stop-color="rgba(167,139,250,.18)"/>
+              <stop offset="0" stop-color="rgba(96,165,250,.18)"/>
+              <stop offset="1" stop-color="rgba(134,239,172,.18)"/>
             </linearGradient>
           </defs>
           <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-
           <g transform="translate(52 44)">
             <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
             <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project testing</text>
             <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">generalization • stress tests • statistical comparisons</text>
-
             <g transform="translate(22 86)" opacity=".95">
-              <path d="M0 30 L18 48 L54 10" fill="none" stroke="rgba(52,211,153,.78)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0 30 L18 48 L54 10" fill="none" stroke="rgba(74,222,128,.78)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
               <text x="70" y="36" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">validation checklist</text>
-
               <g transform="translate(360 0)">
                 <rect x="0" y="0" width="210" height="56" rx="14" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
                 <path d="M18 40 C44 20, 68 48, 92 28 S 140 12, 190 26" fill="none" stroke="rgba(255,204,51,.55)" stroke-width="4"/>
@@ -898,7 +881,7 @@
     const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
 
     document.getElementById("brandName").textContent = `${CONFIG.studentName} — Honours Project`;
-    document.getElementById("brandLine").textContent = `${CONFIG.degree} • DRL benchmark for maize irrigation`;
+    document.getElementById("brandLine").textContent = `${CONFIG.degree} • DRL for maize irrigation`;
     document.getElementById("studentNameChip").textContent = CONFIG.studentName;
     document.getElementById("degreeChip").textContent = CONFIG.degree;
     document.getElementById("supervisorChip").textContent = CONFIG.supervisor;
