@@ -9,35 +9,32 @@
 
   <style>
     :root{
-      --bg0:#070b12;
-      --bg1:#0a1222;
+      --bg0:#06101f;
+      --bg1:#0b2344;
       --card: rgba(255,255,255,.06);
       --card2: rgba(255,255,255,.10);
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --border: rgba(255,255,255,.14);
+      --muted: rgba(255,255,255,.72);
+      --border: rgba(120,170,255,.18);
       --shadow: 0 18px 60px rgba(0,0,0,.45);
       --r: 18px;
-
-      /* Thesis theme accents */
       --maize: #ffcc33;
       --leaf:  #34d399;
       --water: #60a5fa;
-      --ai:    #a78bfa;
-
+      --ai:    #7c9cff;
       --maxw: 1120px;
       --stickyH: 62px;
     }
 
     @media (prefers-color-scheme: light){
       :root{
-        --bg0:#f7fafc;
-        --bg1:#eef2ff;
-        --card: rgba(0,0,0,.045);
-        --card2: rgba(0,0,0,.07);
-        --text: rgba(6,10,20,.92);
-        --muted: rgba(6,10,20,.66);
-        --border: rgba(6,10,20,.16);
+        --bg0:#dbeafe;
+        --bg1:#93c5fd;
+        --card: rgba(255,255,255,.45);
+        --card2: rgba(255,255,255,.60);
+        --text: rgba(8,20,40,.92);
+        --muted: rgba(8,20,40,.68);
+        --border: rgba(37,99,235,.18);
         --shadow: 0 18px 60px rgba(2,10,30,.12);
       }
     }
@@ -49,9 +46,9 @@
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        radial-gradient(900px 520px at 18% 10%, color-mix(in oklab, var(--water) 28%, transparent), transparent 60%),
-        radial-gradient(860px 520px at 82% 18%, color-mix(in oklab, var(--ai) 22%, transparent), transparent 55%),
-        radial-gradient(1000px 700px at 50% 102%, color-mix(in oklab, var(--leaf) 18%, transparent), transparent 60%),
+        radial-gradient(900px 520px at 18% 10%, rgba(96,165,250,.30), transparent 60%),
+        radial-gradient(860px 520px at 82% 18%, rgba(59,130,246,.22), transparent 55%),
+        radial-gradient(1000px 700px at 50% 102%, rgba(37,99,235,.18), transparent 60%),
         linear-gradient(180deg, var(--bg0), var(--bg1));
       min-height:100vh;
     }
@@ -59,7 +56,6 @@
     a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--maxw); margin:0 auto; padding:18px 16px 72px}
 
-    /* Top bar */
     .topbar{
       position:sticky; top:0; z-index:50;
       backdrop-filter: blur(14px);
@@ -114,7 +110,6 @@
           color-mix(in oklab, var(--leaf) 18%, transparent));
     }
 
-    /* Hero */
     header.hero{
       margin-top: 16px;
       border:1px solid var(--border);
@@ -179,7 +174,6 @@
     }
     .heroArt svg{width:100%; height:auto; display:block}
 
-    /* Sections */
     .sectionTitle{
       margin: 22px 0 10px;
       display:flex; align-items:flex-end; justify-content:space-between; gap:10px;
@@ -235,7 +229,6 @@
     }
     .termArt svg{width:100%; height:auto; display:block}
 
-    /* Deliverables */
     .deliverables{display:grid; gap:10px}
     details{
       border: 1px solid rgba(255,255,255,.12);
@@ -283,7 +276,6 @@
       background: color-mix(in oklab, var(--card) 70%, transparent);
     }
 
-    /* Links box */
     .links{
       margin-top: 16px;
       border:1px solid var(--border);
@@ -304,14 +296,12 @@
       text-underline-offset: 3px
     }
 
-    /* Footer (upgraded) */
     .siteFooter{
       margin-top: 18px;
       border:1px solid var(--border);
       background: linear-gradient(180deg,
         color-mix(in oklab, var(--card2) 55%, transparent),
         color-mix(in oklab, var(--card) 75%, transparent));
-      
       box-shadow: 0 14px 45px rgba(0,0,0,.22);
       overflow:hidden;
     }
@@ -387,7 +377,6 @@
       text-underline-offset: 3px;
     }
 
-    /* ✅ Footer bottom text (new) */
     .footerBottom{
       display:flex;
       flex-wrap:wrap;
@@ -422,7 +411,7 @@
         </div>
         <div class="brandText">
           <strong id="brandName">Honours Portfolio</strong>
-          <span id="brandLine">BSc Honours Computer Science • Deep RL for maize irrigation</span>
+          <span id="brandLine">BSc Honours Computer Science • DRL for maize irrigation</span>
         </div>
       </div>
 
@@ -457,7 +446,7 @@
           <div class="metaRow" aria-label="Research snapshot">
             <div class="chip">🌽 <b>Crop:</b> Maize</div>
             <div class="chip">💧 <b>Goal:</b> Adaptive irrigation</div>
-            <div class="chip">🤖 <b>Methods:</b> Deep RL algorithms</div>
+            <div class="chip">🤖 <b>Methods:</b> DRL algorithms</div>
             <div class="chip">📊 <b>Output:</b> Benchmark + analysis</div>
           </div>
 
@@ -467,7 +456,6 @@
           </div>
         </div>
 
-        <!-- HERO ART: inline SVG -->
         <div class="heroArt" aria-label="AgriTech hero artwork">
           <svg viewBox="0 0 720 480" role="img" aria-label="Maize, irrigation, and RL network illustration">
             <defs>
@@ -553,38 +541,33 @@
       </div>
       <ul id="projectLinks"></ul>
     </section>
-
-   
   </div>
 
-   <!-- Footer -->
-    <footer class="siteFooter" aria-label="Footer">
-      <div class="footerGrid">
-          <div class="footerCol">
-          <div class="footerTitle"><strong>Empowering Sustainable Agriculture</strong></div>
-          <div class="footerMeta">
-            Bringing the power of AI to farming: improving crop yields, conserving water, and enabling smarter, more resilient agricultural practices.  
-            Our mission is to support farmers with innovative solutions that make food production sustainable, efficient, and future-ready.
-          </div>
-        </div>
-          
-        <div class="footerCol footerCenter">
-          <div class="footerKicker"><strong>Thesis</strong></div>
-          <div class="footerThesis" id="footerThesis"></div>
-        </div>
-
-        <div class="footerCol footerLinks">
-          <div class="footerKicker"><strong>Quick links</strong></div>
-          <ul class="footerList" id="footerLinks"></ul>
+  <footer class="siteFooter" aria-label="Footer">
+    <div class="footerGrid">
+      <div class="footerCol">
+        <div class="footerTitle"><strong>Empowering Sustainable Agriculture</strong></div>
+        <div class="footerMeta">
+          Bringing the power of AI to farming: improving crop yields, conserving water, and enabling smarter, more resilient agricultural practices.
+          Our mission is to support farmers with innovative solutions that make food production sustainable, efficient, and future-ready.
         </div>
       </div>
 
-      <!-- ✅ New footer text output -->
-      <div class="footerBottom" id="footerBottom"></div>
-    </footer>
-    
+      <div class="footerCol footerCenter">
+        <div class="footerKicker"><strong>Thesis</strong></div>
+        <div class="footerThesis" id="footerThesis"></div>
+      </div>
+
+      <div class="footerCol footerLinks">
+        <div class="footerKicker"><strong>Quick links</strong></div>
+        <ul class="footerList" id="footerLinks"></ul>
+      </div>
+    </div>
+
+    <div class="footerBottom" id="footerBottom"></div>
+  </footer>
+
   <script>
-    // --- CONFIG (edit only this block) ---
     const CONFIG = {
       studentName: "Vukosi Jayson Maluleke",
       degree: "BSc Honours Computer Science",
@@ -605,9 +588,9 @@
             "Define the research problem and benchmarking goals; review DRL + irrigation scheduling literature; set up the simulation environment (e.g., AquaCropGymnasium); establish baseline policies and evaluation criteria.",
           art: "analysis",
           items: {
-            report: { url: "TERM1_REPORT_URL_OR_ID" },
-            slides: { url: "TERM1_SLIDES_URL_OR_ID" },
-            video: { url: "TERM1_VIDEO_URL_OR_ID" }
+            report: { url: "https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link" },
+            slides: { url: "https://docs.google.com/presentation/d/1zi6z14HVEv3RKb4IdeorgHlfXZud0x6c/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true" },
+            video: { url: "https://drive.google.com/file/d/1fVHormta0Zn48foNDMMCIGamwHkeTN7Y/view?usp=drive_link" }
           }
         },
         {
@@ -652,7 +635,6 @@
       ]
     };
 
-    // --- Helpers: accept IDs or share URLs, produce working embed + open links ---
     const isLikelyGoogleId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{20,}$/.test(s.trim());
     const isLikelyYoutubeId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{6,15}$/.test(s.trim());
 
@@ -710,7 +692,6 @@
       return normalizeDriveFileUrl(input) || normalizeDocsUrl(input);
     }
 
-    // --- Inline SVG mini-arts (match badge names; guaranteed to render) ---
     function safeId(s){
       return (s || "").toString().replace(/[^a-zA-Z0-9_-]/g, "-");
     }
@@ -912,49 +893,39 @@
         </article>`;
     }
 
-    // --- Render ---
     const now = new Date();
     const year = now.getFullYear();
     const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
 
-    // Brand + hero identity
     document.getElementById("brandName").textContent = `${CONFIG.studentName} — Honours Project`;
-    document.getElementById("brandLine").textContent = `${CONFIG.degree} • Deep RL benchmark for maize irrigation`;
+    document.getElementById("brandLine").textContent = `${CONFIG.degree} • DRL benchmark for maize irrigation`;
     document.getElementById("studentNameChip").textContent = CONFIG.studentName;
     document.getElementById("degreeChip").textContent = CONFIG.degree;
     document.getElementById("supervisorChip").textContent = CONFIG.supervisor;
     document.getElementById("studentNoChip").textContent = CONFIG.studentNumber;
 
-    // Thesis title (sync from config)
     document.getElementById("thesisTitleH1").textContent = CONFIG.thesisTitle;
-
-    // Footer identity panels
     document.getElementById("footerThesis").textContent = CONFIG.thesisTitle;
 
-    // Terms
     const termsEl = document.getElementById("terms");
     termsEl.innerHTML = CONFIG.terms.map(buildTermCard).join("");
 
-    // Links section (full list)
     const linksEl = document.getElementById("projectLinks");
     linksEl.innerHTML = CONFIG.links
       .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">${l.label}</a></li>`)
       .join("");
 
-    // Footer quick links (top 3)
     document.getElementById("footerLinks").innerHTML = CONFIG.links
       .slice(0, 3)
       .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">↗ ${l.label}</a></li>`)
       .join("");
 
-    // ✅ New footer text (clean, academic, interesting — includes your required copyright)
     document.getElementById("footerBottom").innerHTML =
       `© ${year} <span class="dot">•</span> ` +
       `Academic Portfolio in Computer Science ` +
       `<span class="dot">•</span> All rights reserved` +
       `<span class="dot">•</span> Updated ${updatedStr}`;
 
-    // Term navigation: robust in iframes (Google Sites)
     function goToTerm(id){
       const el = document.getElementById(id);
       if(!el) return;
@@ -966,7 +937,6 @@
       btn.addEventListener("click", () => goToTerm(btn.getAttribute("data-goto")));
     });
 
-    // On load with #termX, scroll to it
     function scrollToHash(){
       const id = (location.hash || "").replace("#", "");
       if(!id) return;
@@ -976,7 +946,6 @@
     }
     window.addEventListener("load", scrollToHash);
 
-    // Scroll spy: highlight active pill
     const pills = Array.from(document.querySelectorAll(".pill[data-goto]"));
     const setActive = (id) => {
       pills.forEach(p => p.setAttribute("aria-current", p.getAttribute("data-goto") === id ? "true" : "false"));
