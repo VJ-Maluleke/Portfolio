@@ -50,7 +50,7 @@
         radial-gradient(900px 520px at 18% 10%, rgba(52,211,153,.14), transparent 60%),
         radial-gradient(860px 520px at 82% 18%, rgba(163,230,53,.12), transparent 55%),
         radial-gradient(1000px 700px at 50% 102%, rgba(22,163,74,.16), transparent 60%),
-        var(--bg-image) center center / cover no-repeat,
+        var(--bg-image) center center / cover no-repeat fixed,
         linear-gradient(180deg, var(--bg0), var(--bg1));
       min-height:100vh;
     }
@@ -753,10 +753,6 @@
     }
 
     @media (max-width: 640px){
-      body{
-        background-attachment:scroll;
-      }
-
       .wrap{
         width:100%;
         max-width:100%;
@@ -1187,6 +1183,7 @@
     function normalizeDriveFileUrl(input){
       if(!input || typeof input !== "string") return null;
       const s = input.trim();
+
       if(isLikelyGoogleId(s)) {
         return {
           open:`https://drive.google.com/file/d/${s}/view`,
@@ -1195,6 +1192,7 @@
       }
 
       const m = s.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
+
       if(m) {
         return {
           open:`https://drive.google.com/file/d/${m[1]}/view`,
