@@ -27,22 +27,10 @@
       --bg-image: url("MAIZE IRRIGATION.png");
     }
 
-    *{
-      box-sizing:border-box;
-    }
-
-    html{
-      scroll-behavior:smooth;
-      width:100%;
-      max-width:100%;
-      overflow-x:hidden;
-    }
-
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
-      width:100%;
-      max-width:100%;
-      overflow-x:hidden;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
@@ -55,26 +43,9 @@
       min-height:100vh;
     }
 
-    a{
-      color:inherit;
-      text-decoration:none;
-    }
-
-    img{
-      max-width:100%;
-      display:block;
-    }
-
-    svg{
-      max-width:100%;
-    }
-
-    .wrap{
-      width:100%;
-      max-width:var(--maxw);
-      margin:0 auto;
-      padding:18px 16px 72px;
-    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .wrap{max-width:var(--maxw); margin:0 auto; padding:18px 16px 72px}
 
     .topbar{
       position:sticky;
@@ -217,8 +188,6 @@
       box-shadow:var(--shadow);
       overflow:hidden;
       backdrop-filter: blur(8px);
-      width:100%;
-      max-width:100%;
     }
 
     .heroGrid{
@@ -358,8 +327,6 @@
       display:grid;
       grid-template-columns: repeat(12, 1fr);
       gap:14px;
-      width:100%;
-      max-width:100%;
     }
 
     .card{
@@ -371,8 +338,6 @@
       overflow:hidden;
       scroll-margin-top: calc(var(--stickyH) + 18px);
       backdrop-filter: blur(8px);
-      width:100%;
-      max-width:100%;
     }
 
     @media (min-width: 980px){
@@ -529,7 +494,6 @@
 
     iframe{
       width:100%;
-      max-width:100%;
       height:420px;
       border:0;
       border-radius:12px;
@@ -543,8 +507,6 @@
       border-radius:var(--r);
       padding:14px 16px;
       backdrop-filter: blur(8px);
-      width:100%;
-      max-width:100%;
     }
 
     .linksHeader{
@@ -589,8 +551,6 @@
       box-shadow:0 14px 45px rgba(0,0,0,.22);
       overflow:hidden;
       backdrop-filter: blur(8px);
-      width:100%;
-      max-width:100%;
     }
 
     .footerGrid{
@@ -754,9 +714,7 @@
 
     @media (max-width: 640px){
       .wrap{
-        width:100%;
-        max-width:100%;
-        padding:14px 10px 56px;
+        padding:14px 12px 56px;
       }
 
       .topbarInner{
@@ -764,7 +722,6 @@
       }
 
       .heroGrid{
-        grid-template-columns:1fr;
         padding:14px;
       }
 
@@ -795,22 +752,6 @@
         width:100%;
       }
 
-      .heroArt{
-        display:none;
-      }
-
-      .sectionTitle h2{
-        font-size:15px;
-      }
-
-      .termTitle{
-        font-size:14px;
-      }
-
-      .termMeta{
-        font-size:12.5px;
-      }
-
       .cardHead{
         flex-direction:column;
         align-items:flex-start;
@@ -825,12 +766,6 @@
         align-items:stretch;
       }
 
-      .label span{
-        white-space:normal;
-        overflow:visible;
-        text-overflow:unset;
-      }
-
       .actions{
         width:100%;
       }
@@ -840,9 +775,7 @@
       }
 
       iframe{
-        width:100%;
-        max-width:100%;
-        height:260px;
+        height:300px;
       }
 
       .links,
@@ -902,37 +835,6 @@
 
       .footerBottom{
         font-size:11px;
-      }
-    }
-
-    @media (max-width: 420px){
-      .wrap{
-        padding-left:8px;
-        padding-right:8px;
-      }
-
-      h1{
-        font-size:21px;
-        line-height:1.22;
-      }
-
-      .sub{
-        font-size:13.5px;
-      }
-
-      .chip{
-        font-size:11.5px;
-        padding:8px;
-      }
-
-      .cardHead,
-      .cardBody{
-        padding-left:10px;
-        padding-right:10px;
-      }
-
-      iframe{
-        height:220px;
       }
     }
   </style>
@@ -1127,7 +1029,7 @@
           title: "Term 1",
           badge: "Project Analysis",
           summary:
-            "Define the research problem and benchmarking goals; review DRL + irrigation scheduling literature; set up the simulation environment such as AquaCropGymnasium; establish baseline policies and evaluation criteria.",
+            "Define the research problem and benchmarking goals; review DRL + irrigation scheduling literature; set up the simulation environment (e.g., AquaCropGymnasium); establish baseline policies and evaluation criteria.",
           art: "analysis",
           items: {
             report: { url: "https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link" },
@@ -1153,7 +1055,7 @@
           title: "Term 3",
           badge: "Project Implementation",
           summary:
-            "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics including yield, water-use efficiency, and stability; conduct ablations and robustness analysis.",
+            "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics (yield/water-use efficiency/stability); conduct ablations and robustness analysis.",
           art: "implementation",
           items: {
             report: { url: "TERM3_REPORT_URL_OR_ID" },
@@ -1166,7 +1068,7 @@
           title: "Term 4",
           badge: "Project Testing",
           summary:
-            "Validate final results with rigorous testing including generalization, stress scenarios, and statistical comparisons; finalize thesis write-up; produce the final presentation and demo video; clean up and document the code/reproducibility bundle.",
+            "Validate final results with rigorous testing (generalization, stress scenarios, statistical comparisons); finalize thesis write-up; produce the final presentation and demo video; clean up and document the code/reproducibility bundle.",
           art: "testing",
           items: {
             report: { url: "TERM4_REPORT_URL_OR_ID" },
@@ -1183,23 +1085,9 @@
     function normalizeDriveFileUrl(input){
       if(!input || typeof input !== "string") return null;
       const s = input.trim();
-
-      if(isLikelyGoogleId(s)) {
-        return {
-          open:`https://drive.google.com/file/d/${s}/view`,
-          embed:`https://drive.google.com/file/d/${s}/preview`
-        };
-      }
-
+      if(isLikelyGoogleId(s)) return { open:`https://drive.google.com/file/d/${s}/view`, embed:`https://drive.google.com/file/d/${s}/preview` };
       const m = s.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
-
-      if(m) {
-        return {
-          open:`https://drive.google.com/file/d/${m[1]}/view`,
-          embed:`https://drive.google.com/file/d/${m[1]}/preview`
-        };
-      }
-
+      if(m) return { open:`https://drive.google.com/file/d/${m[1]}/view`, embed:`https://drive.google.com/file/d/${m[1]}/preview` };
       return null;
     }
 
@@ -1207,21 +1095,8 @@
       if(!input || typeof input !== "string") return null;
       const s = input.trim();
       const m = s.match(/docs\.google\.com\/document\/d\/([^/]+)/i);
-
-      if(m) {
-        return {
-          open:`https://docs.google.com/document/d/${m[1]}/edit`,
-          embed:`https://docs.google.com/document/d/${m[1]}/preview`
-        };
-      }
-
-      if(isLikelyGoogleId(s)) {
-        return {
-          open:`https://docs.google.com/document/d/${s}/edit`,
-          embed:`https://docs.google.com/document/d/${s}/preview`
-        };
-      }
-
+      if(m) return { open:`https://docs.google.com/document/d/${m[1]}/edit`, embed:`https://docs.google.com/document/d/${m[1]}/preview` };
+      if(isLikelyGoogleId(s)) return { open:`https://docs.google.com/document/d/${s}/edit`, embed:`https://docs.google.com/document/d/${s}/preview` };
       return null;
     }
 
@@ -1230,9 +1105,7 @@
       const s = input.trim();
       const m = s.match(/docs\.google\.com\/presentation\/d\/([^/]+)/i);
       const id = (m && m[1]) || (isLikelyGoogleId(s) ? s : null);
-
       if(!id) return null;
-
       return {
         open: `https://docs.google.com/presentation/d/${id}/edit`,
         embed: `https://docs.google.com/presentation/d/${id}/embed?start=false&loop=false&delayms=3000`
@@ -1256,11 +1129,7 @@
       if(!id && isLikelyYoutubeId(s)) id = s;
 
       if(!id) return null;
-
-      return {
-        open: `https://www.youtube.com/watch?v=${id}`,
-        embed: `https://www.youtube.com/embed/${id}`
-      };
+      return { open: `https://www.youtube.com/watch?v=${id}`, embed: `https://www.youtube.com/embed/${id}` };
     }
 
     function bestReport(input){
@@ -1402,7 +1271,7 @@
       const embed = missing ? "" : norm.embed;
 
       const subtitle = missing
-        ? "Paste a Drive/Docs/Slides/YouTube link or ID into CONFIG"
+        ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
         : (kind === "video" ? "Embedded player" : "Preview inside this page");
 
       const previewHtml = missing ? `
@@ -1463,20 +1332,19 @@
     const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
 
     function updateBrandText() {
-      const isSmallScreen = window.innerWidth <= 640;
+    const isSmallScreen = window.innerWidth <= 640;
 
-      document.getElementById("brandName").textContent = isSmallScreen
-        ? "Vukosi Maluleke"
-        : `${CONFIG.studentName} — Honours Project`;
+    document.getElementById("brandName").textContent = isSmallScreen
+      ? "Vukosi Maluleke"
+      : `${CONFIG.studentName} — Honours Project`;
 
-      document.getElementById("brandLine").textContent = isSmallScreen
-        ? "Honours Portfolio • DRL Irrigation"
-        : `${CONFIG.degree} • DRL for maize irrigation`;
-    }
+    document.getElementById("brandLine").textContent = isSmallScreen
+      ? "Honours Portfolio • DRL Irrigation"
+      : `${CONFIG.degree} • DRL for maize irrigation`;
+  }
 
-    updateBrandText();
-    window.addEventListener("resize", updateBrandText);
-
+updateBrandText();
+window.addEventListener("resize", updateBrandText);
     document.getElementById("studentNameChip").textContent = CONFIG.studentName;
     document.getElementById("degreeChip").textContent = CONFIG.degree;
     document.getElementById("supervisorChip").textContent = CONFIG.supervisor;
@@ -1504,25 +1372,17 @@
       `<span class="dot">•</span> All rights reserved` +
       `<span class="dot">•</span> Updated ${updatedStr}`;
 
-    const navToggle = document.querySelector(".navToggle");
-    const topbarInner = document.querySelector(".topbarInner");
-    const siteNav = document.getElementById("siteNav");
-
     function goToTerm(id){
       const el = document.getElementById(id);
       if(!el) return;
       el.scrollIntoView({ behavior: "smooth", block: "start" });
-
-      try {
-        history.replaceState(null, "", "#" + id);
-      } catch {}
+      try { history.replaceState(null, "", "#" + id); } catch {}
     }
 
     document.querySelectorAll("[data-goto]").forEach(btn => {
       btn.addEventListener("click", () => {
         goToTerm(btn.getAttribute("data-goto"));
-
-        if (window.innerWidth <= 860 && topbarInner && navToggle) {
+        if (window.innerWidth <= 860) {
           topbarInner.classList.remove("navOpen");
           navToggle.setAttribute("aria-expanded", "false");
         }
@@ -1532,33 +1392,23 @@
     function scrollToHash(){
       const id = (location.hash || "").replace("#", "");
       if(!id) return;
-
       const el = document.getElementById(id);
       if(!el) return;
-
       setTimeout(() => el.scrollIntoView({ behavior:"smooth", block:"start" }), 60);
     }
-
     window.addEventListener("load", scrollToHash);
 
     const pills = Array.from(document.querySelectorAll(".pill[data-goto]"));
-
     const setActive = (id) => {
-      pills.forEach(p => {
-        p.setAttribute("aria-current", p.getAttribute("data-goto") === id ? "true" : "false");
-      });
+      pills.forEach(p => p.setAttribute("aria-current", p.getAttribute("data-goto") === id ? "true" : "false"));
     };
 
     const observer = new IntersectionObserver((entries) => {
       const visible = entries
         .filter(e => e.isIntersecting)
-        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
-
+        .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
       if(visible?.target?.id) setActive(visible.target.id);
-    }, {
-      root: null,
-      threshold: [0.25, 0.35, 0.5, 0.65]
-    });
+    }, { root: null, threshold: [0.25, 0.35, 0.5, 0.65] });
 
     CONFIG.terms.forEach(t => {
       const el = document.getElementById(t.id);
@@ -1566,6 +1416,10 @@
     });
 
     setActive("term1");
+
+    const navToggle = document.querySelector(".navToggle");
+    const topbarInner = document.querySelector(".topbarInner");
+    const siteNav = document.getElementById("siteNav");
 
     if (navToggle && topbarInner && siteNav) {
       navToggle.addEventListener("click", () => {
