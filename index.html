@@ -973,7 +973,7 @@
 
     <div class="sectionTitle">
       <h2>Terms & submissions</h2>
-      <p>Report • Slides • Video (preview + open)</p>
+      <p>Report • Slides • Presentation (VoiceOver) • Prototype Demo(Video) (preview + open)</p>
     </div>
 
     <section class="grid" id="terms" aria-label="Term cards"></section>
@@ -1029,7 +1029,7 @@
           title: "Term 1",
           badge: "Project Analysis",
           summary:
-            "Define the research problem and benchmarking goals; review DRL + irrigation scheduling literature; set up the simulation environment (e.g., AquaCropGymnasium); establish baseline policies and evaluation criteria.",
+            "Define the research problem and benchmarking goals for adaptive maize irrigation, focusing on water conservation, crop yield, and climate-resilient farming. Review DRL and irrigation scheduling literature, set up the AquaCropGymnasium/AquaCrop simulation workflow, establish fixed and rule-based baseline policies, and define evaluation criteria such as yield, water use, water-use efficiency, reward, training stability, and reproducibility.",
           art: "analysis",
           items: {
             report: { url: "https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link" },
@@ -1042,12 +1042,13 @@
           title: "Term 2",
           badge: "Project Design",
           summary:
-            "Finalize the benchmark design: state/action/reward definitions for adaptive maize irrigation; select DRL algorithms for comparison; implement the training pipeline; run initial experiments and sanity checks.",
+            "Finalize the benchmark design: state/action/reward definitions for adaptive maize irrigation; select DRL algorithms for comparison; implement the training pipeline; run initial experiments, sanity checks, and the prototype demo video.",
           art: "design",
           items: {
-            report: { url: "TERM2_REPORT_URL_OR_ID" },
-            slides: { url: "TERM2_SLIDES_URL_OR_ID" },
-            video: { url: "TERM2_VIDEO_URL_OR_ID" }
+            report: { url: "https://drive.google.com/file/d/17VyJqLPiGc1MOezfUtSbaEc2bhMJ5XNN/view?usp=sharing" },
+            slides: { url: "https://docs.google.com/presentation/d/15tHue_AA27vYGeLVBoAy5KBm6OPhUvW5/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true" },
+            video: { url: "https://drive.google.com/file/d/1Y9rdwiHsqWsHociD8PoAaJm_m9h_Gu-8/view?usp=sharing" },
+            prototypeDemo: { url: "https://drive.google.com/file/d/1dAZF6iX8bRnhjwMiTYjIEmDv1Ky8Ff38/view?usp=sharing" }
           }
         },
         {
@@ -1258,13 +1259,25 @@
     }
 
     function buildDeliverable(kind, raw){
-      const label = kind === "report" ? "Report (PDF)" : kind === "slides" ? "Presentation (Slides)" : "Video (VoiceOver)";
-      const icon  = kind === "report" ? "📄" : kind === "slides" ? "🖥️" : "🎥";
+      const labels = {
+        report: "Report (PDF)",
+        slides: "Presentation (Slides)",
+        video: "Presentation (VoiceOver)",
+        prototypeDemo: "Prototype Demo(Video)"
+      };
+      const icons = {
+        report: "📄",
+        slides: "🖥️",
+        video: "🎥",
+        prototypeDemo: "🎬"
+      };
+      const label = labels[kind] || "Submission";
+      const icon = icons[kind] || "📌";
 
       let norm = null;
       if(kind === "report") norm = bestReport(raw);
       if(kind === "slides") norm = normalizeSlidesUrl(raw);
-      if(kind === "video") norm = normalizeYoutubeUrl(raw) || normalizeDriveFileUrl(raw);
+      if(kind === "video" || kind === "prototypeDemo") norm = normalizeYoutubeUrl(raw) || normalizeDriveFileUrl(raw);
 
       const missing = !norm;
       const open = missing ? "#" : norm.open;
@@ -1272,7 +1285,7 @@
 
       const subtitle = missing
         ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
-        : (kind === "video" ? "Embedded player" : "Preview inside this page");
+        : ((kind === "video" || kind === "prototypeDemo") ? "Embedded player" : "Preview inside this page");
 
       const previewHtml = missing ? `
         <div class="preview">
@@ -1322,6 +1335,7 @@
               ${buildDeliverable("report", t.items?.report?.url)}
               ${buildDeliverable("slides", t.items?.slides?.url)}
               ${buildDeliverable("video", t.items?.video?.url)}
+              ${t.items?.prototypeDemo ? buildDeliverable("prototypeDemo", t.items.prototypeDemo.url) : ""}
             </div>
           </div>
         </article>`;
