@@ -1,58 +1,80 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark" />
-  <meta name="description" content="Honours project: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling." />
-  <title>Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio</title>
+  <meta
+    name="description"
+    content="Honours project: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling."
+  />
+  <title>
+    Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio
+  </title>
 
   <style>
     :root{
       --bg0:#07140d;
       --bg1:#0f2f1f;
-      --card: rgba(255,255,255,.08);
-      --card2: rgba(255,255,255,.12);
-      --text: rgba(255,255,255,.94);
-      --muted: rgba(255,255,255,.76);
-      --border: rgba(160,220,170,.18);
-      --shadow: 0 18px 60px rgba(0,0,0,.42);
-      --r: 18px;
-      --maize: #ffcc33;
-      --leaf: #34d399;
-      --water: #60a5fa;
-      --ai: #86efac;
-      --maxw: 1120px;
-      --stickyH: 62px;
-      --bg-image: url("MAIZE IRRIGATION.png");
+      --card:rgba(255,255,255,.08);
+      --card2:rgba(255,255,255,.12);
+      --text:rgba(255,255,255,.94);
+      --muted:rgba(255,255,255,.76);
+      --border:rgba(160,220,170,.18);
+      --shadow:0 18px 60px rgba(0,0,0,.42);
+      --r:18px;
+      --maize:#ffcc33;
+      --leaf:#34d399;
+      --water:#60a5fa;
+      --ai:#86efac;
+      --maxw:1120px;
+      --stickyH:62px;
+      --bg-image:url("MAIZE IRRIGATION.png");
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:
-        linear-gradient(rgba(4,16,10,.72), rgba(9,30,18,.78)),
-        radial-gradient(900px 520px at 18% 10%, rgba(52,211,153,.14), transparent 60%),
-        radial-gradient(860px 520px at 82% 18%, rgba(163,230,53,.12), transparent 55%),
-        radial-gradient(1000px 700px at 50% 102%, rgba(22,163,74,.16), transparent 60%),
+        linear-gradient(rgba(4,16,10,.72),rgba(9,30,18,.78)),
+        radial-gradient(900px 520px at 18% 10%,rgba(52,211,153,.14),transparent 60%),
+        radial-gradient(860px 520px at 82% 18%,rgba(163,230,53,.12),transparent 55%),
+        radial-gradient(1000px 700px at 50% 102%,rgba(22,163,74,.16),transparent 60%),
         var(--bg-image) center center / cover no-repeat fixed,
-        linear-gradient(180deg, var(--bg0), var(--bg1));
+        linear-gradient(180deg,var(--bg0),var(--bg1));
       min-height:100vh;
     }
 
-    a{color:inherit; text-decoration:none}
-    img{max-width:100%; display:block}
-    .wrap{max-width:var(--maxw); margin:0 auto; padding:18px 16px 72px}
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .wrap{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:18px 16px 72px;
+    }
 
     .topbar{
       position:sticky;
       top:0;
       z-index:50;
-      backdrop-filter: blur(14px);
-      background: color-mix(in oklab, var(--bg0) 78%, transparent);
+      backdrop-filter:blur(14px);
+      background:color-mix(in oklab,var(--bg0) 78%,transparent);
       border-bottom:1px solid var(--border);
     }
 
@@ -60,7 +82,7 @@
       max-width:var(--maxw);
       margin:0 auto;
       display:grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns:1fr auto;
       align-items:center;
       gap:12px;
       padding:10px 16px;
@@ -80,10 +102,12 @@
       min-width:36px;
       border-radius:10px;
       border:1px solid var(--border);
-      background: linear-gradient(135deg,
-        color-mix(in oklab, var(--leaf) 46%, transparent),
-        color-mix(in oklab, var(--water) 32%, transparent),
-        color-mix(in oklab, var(--maize) 34%, transparent));
+      background:linear-gradient(
+        135deg,
+        color-mix(in oklab,var(--leaf) 46%,transparent),
+        color-mix(in oklab,var(--water) 32%,transparent),
+        color-mix(in oklab,var(--maize) 34%,transparent)
+      );
       box-shadow:0 10px 30px rgba(0,0,0,.25);
       display:grid;
       place-items:center;
@@ -124,7 +148,7 @@
       height:42px;
       border-radius:12px;
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 90%, transparent);
+      background:color-mix(in oklab,var(--card) 90%,transparent);
       align-items:center;
       justify-content:center;
       gap:4px;
@@ -138,7 +162,7 @@
       height:2px;
       border-radius:999px;
       background:var(--text);
-      transition:transform .2s ease, opacity .2s ease;
+      transition:transform .2s ease,opacity .2s ease;
     }
 
     .navPills{
@@ -151,43 +175,49 @@
 
     .pill{
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 86%, transparent);
+      background:color-mix(in oklab,var(--card) 86%,transparent);
       padding:8px 12px;
       border-radius:999px;
       font-size:12px;
       color:var(--muted);
       cursor:pointer;
       user-select:none;
-      transition: transform .12s ease, background .12s ease, color .12s ease, border-color .12s ease;
+      transition:transform .12s ease,background .12s ease,color .12s ease,border-color .12s ease;
       outline:none;
       min-height:38px;
     }
 
     .pill:hover{
-      background: color-mix(in oklab, var(--card2) 92%, transparent);
+      background:color-mix(in oklab,var(--card2) 92%,transparent);
       color:var(--text);
     }
 
     .pill:active{
-      transform: scale(.98);
+      transform:scale(.98);
     }
 
     .pill[aria-current="true"]{
       color:var(--text);
-      border-color: color-mix(in oklab, var(--leaf) 52%, var(--border));
-      background: linear-gradient(135deg,
-        color-mix(in oklab, var(--leaf) 22%, transparent),
-        color-mix(in oklab, var(--water) 16%, transparent));
+      border-color:color-mix(in oklab,var(--leaf) 52%,var(--border));
+      background:linear-gradient(
+        135deg,
+        color-mix(in oklab,var(--leaf) 22%,transparent),
+        color-mix(in oklab,var(--water) 16%,transparent)
+      );
     }
 
     header.hero{
       margin-top:16px;
       border:1px solid var(--border);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 72%, transparent), color-mix(in oklab, var(--card) 66%, transparent));
+      background:linear-gradient(
+        180deg,
+        color-mix(in oklab,var(--card2) 72%,transparent),
+        color-mix(in oklab,var(--card) 66%,transparent)
+      );
       border-radius:calc(var(--r) + 6px);
       box-shadow:var(--shadow);
       overflow:hidden;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
     }
 
     .heroGrid{
@@ -198,9 +228,9 @@
       align-items:center;
     }
 
-    @media (min-width: 920px){
+    @media (min-width:920px){
       .heroGrid{
-        grid-template-columns: 1.08fr .92fr;
+        grid-template-columns:1.08fr .92fr;
         padding:26px;
         gap:18px;
       }
@@ -215,7 +245,7 @@
 
     h1{
       margin:0 0 10px;
-      font-size: clamp(24px, 3.1vw, 38px);
+      font-size:clamp(24px,3.1vw,38px);
       line-height:1.14;
       text-wrap:balance;
     }
@@ -241,10 +271,10 @@
       font-size:12px;
       color:var(--muted);
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 88%, transparent);
+      background:color-mix(in oklab,var(--card) 88%,transparent);
       padding:8px 10px;
       border-radius:999px;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
       min-height:38px;
       max-width:100%;
     }
@@ -267,10 +297,12 @@
       align-items:center;
       justify-content:center;
       gap:10px;
-      border:1px solid color-mix(in oklab, var(--leaf) 48%, var(--border));
-      background: linear-gradient(135deg,
-        color-mix(in oklab, var(--leaf) 16%, transparent),
-        color-mix(in oklab, var(--water) 12%, transparent));
+      border:1px solid color-mix(in oklab,var(--leaf) 48%,var(--border));
+      background:linear-gradient(
+        135deg,
+        color-mix(in oklab,var(--leaf) 16%,transparent),
+        color-mix(in oklab,var(--water) 12%,transparent)
+      );
       color:var(--text);
       padding:10px 14px;
       border-radius:999px;
@@ -280,21 +312,21 @@
     }
 
     .ctaBtn:hover{
-      filter: brightness(1.05);
+      filter:brightness(1.05);
     }
 
     .heroArt{
-      border-radius: calc(var(--r) + 2px);
+      border-radius:calc(var(--r) + 2px);
       border:1px solid var(--border);
       background:
-        linear-gradient(rgba(8,24,14,.26), rgba(8,24,14,.26)),
-        radial-gradient(700px 280px at 30% 0%, color-mix(in oklab, var(--maize) 20%, transparent), transparent 60%),
-        radial-gradient(700px 300px at 65% 10%, color-mix(in oklab, var(--water) 20%, transparent), transparent 62%),
-        radial-gradient(900px 340px at 50% 120%, color-mix(in oklab, var(--leaf) 18%, transparent), transparent 60%),
-        color-mix(in oklab, var(--card) 72%, transparent);
+        linear-gradient(rgba(8,24,14,.26),rgba(8,24,14,.26)),
+        radial-gradient(700px 280px at 30% 0%,color-mix(in oklab,var(--maize) 20%,transparent),transparent 60%),
+        radial-gradient(700px 300px at 65% 10%,color-mix(in oklab,var(--water) 20%,transparent),transparent 62%),
+        radial-gradient(900px 340px at 50% 120%,color-mix(in oklab,var(--leaf) 18%,transparent),transparent 60%),
+        color-mix(in oklab,var(--card) 72%,transparent);
       padding:12px;
       overflow:hidden;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
       min-height:220px;
     }
 
@@ -325,24 +357,24 @@
 
     .grid{
       display:grid;
-      grid-template-columns: repeat(12, 1fr);
+      grid-template-columns:repeat(12,1fr);
       gap:14px;
     }
 
     .card{
-      grid-column: span 12;
+      grid-column:span 12;
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 90%, transparent);
+      background:color-mix(in oklab,var(--card) 90%,transparent);
       border-radius:var(--r);
       box-shadow:0 12px 40px rgba(0,0,0,.25);
       overflow:hidden;
-      scroll-margin-top: calc(var(--stickyH) + 18px);
-      backdrop-filter: blur(8px);
+      scroll-margin-top:calc(var(--stickyH) + 18px);
+      backdrop-filter:blur(8px);
     }
 
-    @media (min-width: 980px){
+    @media (min-width:980px){
       .card{
-        grid-column: span 6;
+        grid-column:span 6;
       }
     }
 
@@ -352,7 +384,11 @@
       justify-content:space-between;
       gap:12px;
       padding:16px 16px 12px;
-      background: linear-gradient(180deg, color-mix(in oklab, var(--card2) 70%, transparent), transparent);
+      background:linear-gradient(
+        180deg,
+        color-mix(in oklab,var(--card2) 70%,transparent),
+        transparent
+      );
       border-bottom:1px solid rgba(255,255,255,.06);
     }
 
@@ -373,7 +409,7 @@
       font-size:11px;
       color:var(--muted);
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 78%, transparent);
+      background:color-mix(in oklab,var(--card) 78%,transparent);
       padding:6px 10px;
       border-radius:999px;
       white-space:nowrap;
@@ -390,7 +426,7 @@
     .termArt{
       border:1px solid var(--border);
       border-radius:14px;
-      background: color-mix(in oklab, var(--card) 74%, transparent);
+      background:color-mix(in oklab,var(--card) 74%,transparent);
       padding:10px;
       overflow:hidden;
     }
@@ -409,7 +445,7 @@
     details{
       border:1px solid rgba(255,255,255,.12);
       border-radius:14px;
-      background: color-mix(in oklab, var(--card) 86%, transparent);
+      background:color-mix(in oklab,var(--card) 86%,transparent);
       overflow:hidden;
     }
 
@@ -465,7 +501,7 @@
 
     .btn{
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card2) 74%, transparent);
+      background:color-mix(in oklab,var(--card2) 74%,transparent);
       padding:8px 12px;
       border-radius:10px;
       font-size:12px;
@@ -477,19 +513,19 @@
     }
 
     .btn:hover{
-      background: color-mix(in oklab, var(--card2) 94%, transparent);
+      background:color-mix(in oklab,var(--card2) 94%,transparent);
     }
 
     .btn[aria-disabled="true"]{
       opacity:.55;
       pointer-events:none;
-      filter: grayscale(1);
+      filter:grayscale(1);
     }
 
     .preview{
       border-top:1px solid rgba(255,255,255,.10);
       padding:12px;
-      background: rgba(0,0,0,.12);
+      background:rgba(0,0,0,.12);
     }
 
     iframe{
@@ -497,16 +533,16 @@
       height:420px;
       border:0;
       border-radius:12px;
-      background: color-mix(in oklab, var(--card) 70%, transparent);
+      background:color-mix(in oklab,var(--card) 70%,transparent);
     }
 
     .links{
       margin-top:16px;
       border:1px solid var(--border);
-      background: color-mix(in oklab, var(--card) 90%, transparent);
+      background:color-mix(in oklab,var(--card) 90%,transparent);
       border-radius:var(--r);
       padding:14px 16px;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
     }
 
     .linksHeader{
@@ -536,21 +572,23 @@
     }
 
     .links a{
-      color: color-mix(in oklab, var(--leaf) 42%, var(--text));
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      color:color-mix(in oklab,var(--leaf) 42%,var(--text));
+      text-decoration:underline;
+      text-underline-offset:3px;
       overflow-wrap:anywhere;
     }
 
     .siteFooter{
       margin-top:18px;
       border:1px solid var(--border);
-      background: linear-gradient(180deg,
-        color-mix(in oklab, var(--card2) 58%, transparent),
-        color-mix(in oklab, var(--card) 80%, transparent));
+      background:linear-gradient(
+        180deg,
+        color-mix(in oklab,var(--card2) 58%,transparent),
+        color-mix(in oklab,var(--card) 80%,transparent)
+      );
       box-shadow:0 14px 45px rgba(0,0,0,.22);
       overflow:hidden;
-      backdrop-filter: blur(8px);
+      backdrop-filter:blur(8px);
     }
 
     .footerGrid{
@@ -560,9 +598,9 @@
       padding:14px 16px;
     }
 
-    @media (min-width: 920px){
+    @media (min-width:920px){
       .footerGrid{
-        grid-template-columns: 1.15fr 1fr .85fr;
+        grid-template-columns:1.15fr 1fr .85fr;
         align-items:start;
       }
     }
@@ -599,7 +637,7 @@
       padding-top:10px;
     }
 
-    @media (min-width: 920px){
+    @media (min-width:920px){
       .footerCenter{
         border-top:0;
         padding-top:0;
@@ -613,7 +651,7 @@
       padding-top:10px;
     }
 
-    @media (min-width: 920px){
+    @media (min-width:920px){
       .footerLinks{
         border-top:0;
         padding-top:0;
@@ -635,8 +673,8 @@
       gap:8px;
       align-items:flex-start;
       font-size:12px;
-      color: color-mix(in oklab, var(--leaf) 42%, var(--text));
-      text-decoration: underline;
+      color:color-mix(in oklab,var(--leaf) 42%,var(--text));
+      text-decoration:underline;
       text-underline-offset:3px;
       overflow-wrap:anywhere;
     }
@@ -650,7 +688,7 @@
       border-top:1px solid rgba(255,255,255,.10);
       color:var(--muted);
       font-size:12px;
-      background: rgba(0,0,0,.12);
+      background:rgba(0,0,0,.12);
       text-align:center;
     }
 
@@ -658,9 +696,9 @@
       opacity:.7;
     }
 
-    @media (max-width: 860px){
+    @media (max-width:860px){
       .topbarInner{
-        grid-template-columns: 1fr auto;
+        grid-template-columns:1fr auto;
       }
 
       .navToggle{
@@ -669,7 +707,7 @@
       }
 
       .navPills{
-        grid-column: 1 / -1;
+        grid-column:1 / -1;
         display:none;
         flex-direction:column;
         align-items:stretch;
@@ -688,7 +726,7 @@
       }
 
       .topbarInner.navOpen .navToggle span:nth-child(1){
-        transform: translateY(6px) rotate(45deg);
+        transform:translateY(6px) rotate(45deg);
       }
 
       .topbarInner.navOpen .navToggle span:nth-child(2){
@@ -696,7 +734,7 @@
       }
 
       .topbarInner.navOpen .navToggle span:nth-child(3){
-        transform: translateY(-6px) rotate(-45deg);
+        transform:translateY(-6px) rotate(-45deg);
       }
 
       .brandText strong,
@@ -712,7 +750,7 @@
       }
     }
 
-    @media (max-width: 640px){
+    @media (max-width:640px){
       .wrap{
         padding:14px 12px 56px;
       }
@@ -726,7 +764,7 @@
       }
 
       h1{
-        font-size: clamp(22px, 7vw, 30px);
+        font-size:clamp(22px,7vw,30px);
       }
 
       .sub{
@@ -784,7 +822,7 @@
       }
     }
 
-    @media (max-width: 480px){
+    @media (max-width:480px){
       .topbarInner{
         padding:10px 12px;
       }
@@ -814,7 +852,7 @@
       }
 
       h1{
-        font-size: clamp(21px, 7.5vw, 28px);
+        font-size:clamp(21px,7.5vw,28px);
       }
 
       .heroArt{
@@ -841,22 +879,41 @@
 </head>
 
 <body>
+
   <div class="topbar" role="navigation" aria-label="Term navigation">
     <div class="topbarInner">
+
       <div class="brand">
         <div class="brandMark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
-            <path d="M7 19c3.6-1.2 6.2-3.7 8.8-7.2" stroke="currentColor" stroke-width="1.6" opacity=".9"/>
+            <path
+              d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              opacity=".9"
+            />
+            <path
+              d="M7 19c3.6-1.2 6.2-3.7 8.8-7.2"
+              stroke="currentColor"
+              stroke-width="1.6"
+              opacity=".9"
+            />
           </svg>
         </div>
+
         <div class="brandText">
           <strong id="brandName">Honours Portfolio</strong>
           <span id="brandLine">BSc Honours Computer Science • DRL for maize irrigation</span>
         </div>
       </div>
 
-      <button class="navToggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Open navigation">
+      <button
+        class="navToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Open navigation"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -868,26 +925,48 @@
         <button class="pill" type="button" data-goto="term3">Term 3</button>
         <button class="pill" type="button" data-goto="term4">Term 4</button>
       </div>
+
     </div>
   </div>
 
   <div class="wrap">
+
     <header class="hero" id="top">
       <div class="heroGrid">
+
         <div>
           <p class="kicker">Honours project</p>
+
           <h1 id="thesisTitleH1">
             A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling
           </h1>
+
           <p class="sub">
-            A term-by-term project portfolio hub containing a report, slides, and video for each term. Each term documents progress from analysis and design to implementation and final testing.
+            A term-by-term project portfolio hub containing a report, slides,
+            and video for each term. Each term documents progress from analysis
+            and design to implementation and final testing.
           </p>
 
           <div class="metaRow" aria-label="Student and project details">
-            <div class="chip">👤 <b>Student:</b> <span id="studentNameChip"></span></div>
-            <div class="chip">🎓 <b>Program:</b> <span id="degreeChip"></span></div>
-            <div class="chip">🧑‍🏫 <b>Supervisor:</b> <span id="supervisorChip"></span></div>
-            <div class="chip">🆔 <b>Student No.:</b> <span id="studentNoChip"></span></div>
+            <div class="chip">
+              👤 <b>Student:</b>
+              <span id="studentNameChip"></span>
+            </div>
+
+            <div class="chip">
+              🎓 <b>Program:</b>
+              <span id="degreeChip"></span>
+            </div>
+
+            <div class="chip">
+              🧑‍🏫 <b>Supervisor:</b>
+              <span id="supervisorChip"></span>
+            </div>
+
+            <div class="chip">
+              🆔 <b>Student No.:</b>
+              <span id="studentNoChip"></span>
+            </div>
           </div>
 
           <div class="metaRow" aria-label="Research snapshot">
@@ -898,556 +977,1928 @@
           </div>
 
           <div class="heroCTARow" aria-label="Quick actions">
-            <a class="ctaBtn" href="#terms" aria-label="Jump to the term submissions">📌 Jump to submissions</a>
-            <a class="ctaBtn" href="#project-links" aria-label="Jump to project links">🔗 Project links</a>
+            <a
+              class="ctaBtn"
+              href="#terms"
+              aria-label="Jump to the term submissions"
+            >
+              📌 Jump to submissions
+            </a>
+
+            <a
+              class="ctaBtn"
+              href="#project-links"
+              aria-label="Jump to project links"
+            >
+              🔗 Project links
+            </a>
           </div>
         </div>
 
         <div class="heroArt" aria-label="AgriTech hero artwork">
-          <svg viewBox="0 0 720 480" role="img" aria-label="Maize, irrigation, and RL network illustration">
+
+          <svg
+            viewBox="0 0 720 480"
+            role="img"
+            aria-label="Maize, irrigation, and RL network illustration"
+          >
+
             <defs>
+
               <linearGradient id="gSky" x1="0" x2="0" y1="0" y2="1">
                 <stop offset="0" stop-color="rgba(134,239,172,.25)"/>
                 <stop offset="1" stop-color="rgba(52,211,153,.12)"/>
               </linearGradient>
+
               <linearGradient id="gSoil" x1="0" x2="1" y1="0" y2="0">
                 <stop offset="0" stop-color="rgba(255,204,51,.20)"/>
                 <stop offset="1" stop-color="rgba(134,239,172,.12)"/>
               </linearGradient>
+
               <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
                 <feGaussianBlur stdDeviation="8" result="b"/>
-                <feColorMatrix in="b" type="matrix"
-                  values="1 0 0 0 0
-                          0 1 0 0 0
-                          0 0 1 0 0
-                          0 0 0 .8 0"/>
-                <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+                <feColorMatrix
+                  in="b"
+                  type="matrix"
+                  values="
+                    1 0 0 0 0
+                    0 1 0 0 0
+                    0 0 1 0 0
+                    0 0 0 .8 0"
+                />
+                <feMerge>
+                  <feMergeNode/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
               </filter>
+
             </defs>
 
             <rect x="0" y="0" width="720" height="480" rx="22" fill="url(#gSky)"/>
 
             <g opacity=".75" filter="url(#soft)">
-              <path d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190" fill="none" stroke="rgba(134,239,172,.45)" stroke-width="3"/>
-              <path d="M110 260 C230 210, 300 240, 380 290 S 540 360, 660 330" fill="none" stroke="rgba(96,165,250,.45)" stroke-width="3"/>
+
+              <path
+                d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190"
+                fill="none"
+                stroke="rgba(134,239,172,.45)"
+                stroke-width="3"
+              />
+
+              <path
+                d="M110 260 C230 210, 300 240, 380 290 S 540 360, 660 330"
+                fill="none"
+                stroke="rgba(96,165,250,.45)"
+                stroke-width="3"
+              />
+
               <g fill="rgba(255,255,255,.85)">
-                <circle cx="70" cy="130" r="6"/><circle cx="210" cy="98" r="6"/><circle cx="350" cy="150" r="6"/>
-                <circle cx="520" cy="250" r="6"/><circle cx="650" cy="190" r="6"/>
-                <circle cx="110" cy="260" r="6"/><circle cx="280" cy="235" r="6"/><circle cx="380" cy="290" r="6"/>
-                <circle cx="540" cy="360" r="6"/><circle cx="660" cy="330" r="6"/>
+                <circle cx="70" cy="130" r="6"/>
+                <circle cx="210" cy="98" r="6"/>
+                <circle cx="350" cy="150" r="6"/>
+                <circle cx="520" cy="250" r="6"/>
+                <circle cx="650" cy="190" r="6"/>
+
+                <circle cx="110" cy="260" r="6"/>
+                <circle cx="280" cy="235" r="6"/>
+                <circle cx="380" cy="290" r="6"/>
+                <circle cx="540" cy="360" r="6"/>
+                <circle cx="660" cy="330" r="6"/>
               </g>
+
             </g>
 
-            <path d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z" fill="url(#gSoil)" opacity=".9"/>
-            <path d="M0 356 C160 322, 260 380, 360 356 S 560 318, 720 356" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="3"/>
+            <path
+              d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z"
+              fill="url(#gSoil)"
+              opacity=".9"
+            />
+
+            <path
+              d="M0 356 C160 322, 260 380, 360 356 S 560 318, 720 356"
+              fill="none"
+              stroke="rgba(255,255,255,.16)"
+              stroke-width="3"
+            />
 
             <g transform="translate(310 150)">
-              <path d="M60 210 C50 140, 56 90, 72 30" fill="none" stroke="rgba(255,255,255,.68)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M68 94 C35 80, 18 66, 6 44 C34 42, 58 54, 72 72" fill="rgba(52,211,153,.30)" stroke="rgba(52,211,153,.75)" stroke-width="2"/>
-              <path d="M70 118 C104 108, 130 92, 148 64 C116 60, 90 74, 72 96" fill="rgba(74,222,128,.24)" stroke="rgba(74,222,128,.70)" stroke-width="2"/>
-              <path d="M70 150 C38 140, 18 126, 4 104 C36 100, 58 114, 72 132" fill="rgba(34,197,94,.22)" stroke="rgba(34,197,94,.65)" stroke-width="2"/>
-              <path d="M72 170 C104 165, 132 150, 156 126 C124 120, 96 132, 74 150" fill="rgba(52,211,153,.20)" stroke="rgba(52,211,153,.62)" stroke-width="2"/>
-              <ellipse cx="92" cy="142" rx="16" ry="34" fill="rgba(255,204,51,.35)" stroke="rgba(255,204,51,.85)" stroke-width="2"/>
-              <path d="M82 122 L102 162" stroke="rgba(255,204,51,.55)" stroke-width="2" opacity=".9"/>
-              <path d="M82 136 L102 176" stroke="rgba(255,204,51,.55)" stroke-width="2" opacity=".9"/>
+
+              <path
+                d="M60 210 C50 140, 56 90, 72 30"
+                fill="none"
+                stroke="rgba(255,255,255,.68)"
+                stroke-width="6"
+                stroke-linecap="round"
+              />
+
+              <path
+                d="M68 94 C35 80, 18 66, 6 44 C34 42, 58 54, 72 72"
+                fill="rgba(52,211,153,.30)"
+                stroke="rgba(52,211,153,.75)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M70 118 C104 108, 130 92, 148 64 C116 60, 90 74, 72 96"
+                fill="rgba(74,222,128,.24)"
+                stroke="rgba(74,222,128,.70)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M70 150 C38 140, 18 126, 4 104 C36 100, 58 114, 72 132"
+                fill="rgba(34,197,94,.22)"
+                stroke="rgba(34,197,94,.65)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M72 170 C104 165, 132 150, 156 126 C124 120, 96 132, 74 150"
+                fill="rgba(52,211,153,.20)"
+                stroke="rgba(52,211,153,.62)"
+                stroke-width="2"
+              />
+
+              <ellipse
+                cx="92"
+                cy="142"
+                rx="16"
+                ry="34"
+                fill="rgba(255,204,51,.35)"
+                stroke="rgba(255,204,51,.85)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M82 122 L102 162"
+                stroke="rgba(255,204,51,.55)"
+                stroke-width="2"
+                opacity=".9"
+              />
+
+              <path
+                d="M82 136 L102 176"
+                stroke="rgba(255,204,51,.55)"
+                stroke-width="2"
+                opacity=".9"
+              />
+
             </g>
 
             <g opacity=".95">
-              <path d="M570 92 C548 120, 536 142, 536 162 a34 34 0 0 0 68 0 c0-20-12-42-34-70Z" fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.68)" stroke-width="2"/>
-              <path d="M610 130 C598 146, 592 158, 592 170 a18 18 0 0 0 36 0 c0-12-6-24-18-40Z" fill="rgba(96,165,250,.14)" stroke="rgba(96,165,250,.58)" stroke-width="2"/>
+
+              <path
+                d="M570 92 C548 120, 536 142, 536 162 a34 34 0 0 0 68 0 c0-20-12-42-34-70Z"
+                fill="rgba(96,165,250,.18)"
+                stroke="rgba(96,165,250,.68)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M610 130 C598 146, 592 158, 592 170 a18 18 0 0 0 36 0 c0-12-6-24-18-40Z"
+                fill="rgba(96,165,250,.14)"
+                stroke="rgba(96,165,250,.58)"
+                stroke-width="2"
+              />
+
               <circle cx="560" cy="212" r="6" fill="rgba(96,165,250,.45)"/>
               <circle cx="610" cy="226" r="5" fill="rgba(96,165,250,.38)"/>
               <circle cx="585" cy="244" r="4" fill="rgba(96,165,250,.34)"/>
+
             </g>
 
             <g opacity=".9">
-              <rect x="26" y="26" rx="12" width="330" height="44" fill="rgba(0,0,0,.20)" stroke="rgba(255,255,255,.14)"/>
-              <text x="44" y="54" fill="rgba(255,255,255,.86)" font-size="14" font-family="ui-sans-serif, system-ui">
+
+              <rect
+                x="26"
+                y="26"
+                rx="12"
+                width="330"
+                height="44"
+                fill="rgba(0,0,0,.20)"
+                stroke="rgba(255,255,255,.14)"
+              />
+
+              <text
+                x="44"
+                y="54"
+                fill="rgba(255,255,255,.86)"
+                font-size="14"
+                font-family="ui-sans-serif, system-ui"
+              >
                 DRL policy → irrigation decisions
               </text>
+
             </g>
+
           </svg>
+
         </div>
+
       </div>
     </header>
 
     <div class="sectionTitle">
       <h2>Terms & submissions</h2>
-      <p>Report • Slides • Presentation (VoiceOver) • Prototype Demo(Video) (preview + open)</p>
+      <p>
+        Report • Slides • Presentation (VoiceOver) • Prototype/System Demo
+        (Video) • preview + open
+      </p>
     </div>
 
     <section class="grid" id="terms" aria-label="Term cards"></section>
 
     <section class="links" id="project-links" aria-label="Project links">
+
       <div class="linksHeader">
         <strong>Project links</strong>
         <span>References, datasets, and starter code</span>
       </div>
+
       <ul id="projectLinks"></ul>
+
     </section>
+
   </div>
 
   <footer class="siteFooter" aria-label="Footer">
+
     <div class="footerGrid">
+
       <div class="footerCol">
-        <div class="footerTitle"><strong>Empowering Sustainable Agriculture</strong></div>
-        <div class="footerMeta">
-          Bringing the power of AI to farming: improving crop yields, conserving water, and enabling smarter, more resilient agricultural practices.
-          Our mission is to support farmers with innovative solutions that make food production sustainable, efficient, and future-ready.
+
+        <div class="footerTitle">
+          <strong>Empowering Sustainable Agriculture</strong>
         </div>
+
+        <div class="footerMeta">
+          Bringing the power of AI to farming: improving crop yields,
+          conserving water, and enabling smarter, more resilient agricultural
+          practices. Our mission is to support farmers with innovative
+          solutions that make food production sustainable, efficient,
+          and future-ready.
+        </div>
+
       </div>
 
       <div class="footerCol footerCenter">
-        <div class="footerKicker"><strong>Thesis</strong></div>
+
+        <div class="footerKicker">
+          <strong>Thesis</strong>
+        </div>
+
         <div class="footerThesis" id="footerThesis"></div>
+
       </div>
 
       <div class="footerCol footerLinks">
-        <div class="footerKicker"><strong>Quick links</strong></div>
+
+        <div class="footerKicker">
+          <strong>Quick links</strong>
+        </div>
+
         <ul class="footerList" id="footerLinks"></ul>
+
       </div>
+
     </div>
 
     <div class="footerBottom" id="footerBottom"></div>
+
   </footer>
 
+
   <script>
+
     const CONFIG = {
-      studentName: "Vukosi Jayson Maluleke",
-      degree: "BSc Honours Computer Science",
-      studentNumber: "4279123",
-      supervisor: "Prof. Clement N. Nyirenda",
+
+      studentName:"Vukosi Jayson Maluleke",
+
+      degree:"BSc Honours Computer Science",
+
+      studentNumber:"4279123",
+
+      supervisor:"Prof. Clement N. Nyirenda",
+
       thesisTitle:
         "A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling",
-      links: [
-        { label: "MDPI — Data Availability Statement", url: "https://www.mdpi.com/2227-7390/13/4/595#Data_Availability_Statement" },
-        { label: "AquaCropGymnasium — startup code", url: "https://github.com/alkaffulm/aquacropgymnasium" }
-      ],
-      terms: [
+
+      links:[
         {
-          id: "term1",
-          title: "Term 1",
-          badge: "Project Analysis",
+          label:"MDPI — Data Availability Statement",
+          url:"https://www.mdpi.com/2227-7390/13/4/595#Data_Availability_Statement"
+        },
+        {
+          label:"AquaCropGymnasium — startup code",
+          url:"https://github.com/alkaffulm/aquacropgymnasium"
+        }
+      ],
+
+      terms:[
+
+        {
+          id:"term1",
+
+          title:"Term 1",
+
+          badge:"Project Analysis",
+
           summary:
             "Define the research problem and benchmarking goals for adaptive maize irrigation, focusing on water conservation, crop yield, and climate-resilient farming. Review DRL and irrigation scheduling literature, set up the AquaCropGymnasium/AquaCrop simulation workflow, establish fixed and rule-based baseline policies, and define evaluation criteria such as yield, water use, water-use efficiency, reward, training stability, and reproducibility.",
-          art: "analysis",
-          items: {
-            report: { url: "https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link" },
-            slides: { url: "https://docs.google.com/presentation/d/1zi6z14HVEv3RKb4IdeorgHlfXZud0x6c/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true" },
-            video: { url: "https://drive.google.com/file/d/1fVHormta0Zn48foNDMMCIGamwHkeTN7Y/view?usp=drive_link" }
+
+          art:"analysis",
+
+          items:{
+
+            report:{
+              url:"https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link"
+            },
+
+            slides:{
+              url:"https://docs.google.com/presentation/d/1zi6z14HVEv3RKb4IdeorgHlfXZud0x6c/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
+            },
+
+            video:{
+              url:"https://drive.google.com/file/d/1fVHormta0Zn48foNDMMCIGamwHkeTN7Y/view?usp=drive_link"
+            }
+
           }
+
         },
+
+
         {
-          id: "term2",
-          title: "Term 2",
-          badge: "Project Design",
+          id:"term2",
+
+          title:"Term 2",
+
+          badge:"Project Design",
+
           summary:
             "Finalize the benchmark design: state/action/reward definitions for adaptive maize irrigation; select DRL algorithms for comparison; implement the training pipeline; run initial experiments, sanity checks, and the prototype demo video.",
-          art: "design",
-          items: {
-            report: { url: "https://drive.google.com/file/d/17VyJqLPiGc1MOezfUtSbaEc2bhMJ5XNN/view?usp=sharing" },
-            slides: { url: "https://docs.google.com/presentation/d/15tHue_AA27vYGeLVBoAy5KBm6OPhUvW5/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true" },
-            video: { url: "https://drive.google.com/file/d/1Y9rdwiHsqWsHociD8PoAaJm_m9h_Gu-8/view?usp=sharing" },
-            prototypeDemo: { url: "https://drive.google.com/file/d/1dAZF6iX8bRnhjwMiTYjIEmDv1Ky8Ff38/view?usp=sharing" }
+
+          art:"design",
+
+          items:{
+
+            report:{
+              url:"https://drive.google.com/file/d/17VyJqLPiGc1MOezfUtSbaEc2bhMJ5XNN/view?usp=sharing"
+            },
+
+            slides:{
+              url:"https://docs.google.com/presentation/d/15tHue_AA27vYGeLVBoAy5KBm6OPhUvW5/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true"
+            },
+
+            video:{
+              url:"https://drive.google.com/file/d/1Y9rdwiHsqWsHociD8PoAaJm_m9h_Gu-8/view?usp=sharing"
+            },
+
+            prototypeDemo:{
+              url:"https://drive.google.com/file/d/1dAZF6iX8bRnhjwMiTYjIEmDv1Ky8Ff38/view?usp=sharing"
+            }
+
           }
+
         },
+
+
         {
-          id: "term3",
-          title: "Term 3",
-          badge: "Project Implementation",
+          id:"term3",
+
+          title:"Term 3",
+
+          badge:"Project Implementation",
+
           summary:
             "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics (yield/water-use efficiency/stability); conduct ablations and robustness analysis.",
-          art: "implementation",
-          items: {
-            report: { url: "TERM3_REPORT_URL_OR_ID" },
-            slides: { url: "TERM3_SLIDES_URL_OR_ID" },
-            video: { url: "TERM3_VIDEO_URL_OR_ID" }
+
+          art:"implementation",
+
+          items:{
+
+            report:{
+              url:"https://drive.google.com/file/d/16TeUKFgZbYnqCQuItpFkf9yDM5hCjTWQ/view?usp=drive_link"
+            },
+
+            slides:{
+              url:"https://docs.google.com/presentation/d/1R7kv1J9f7tnKk8V3SNsCPPSl8OyztYuT/edit?usp=drive_link&rtpof=true&sd=true"
+            },
+
+            video:{
+              url:"https://drive.google.com/file/d/1ycuI7xf87qa-C0uSEzAM3VcbxOMC_UrS/view?usp=sharing"
+            },
+
+            /* FIXED: Term 3 system demo is now explicitly supported */
+            systemDemo:{
+              url:"https://drive.google.com/file/d/141lXVcsdYYjcScuF-Dc5KS6dttutrnxe/view?usp=drive_link"
+            }
+
           }
+
         },
+
+
         {
-          id: "term4",
-          title: "Term 4",
-          badge: "Project Testing",
+          id:"term4",
+
+          title:"Term 4",
+
+          badge:"Project Testing",
+
           summary:
             "Validate final results with rigorous testing (generalization, stress scenarios, statistical comparisons); finalize thesis write-up; produce the final presentation and demo video; clean up and document the code/reproducibility bundle.",
-          art: "testing",
-          items: {
-            report: { url: "TERM4_REPORT_URL_OR_ID" },
-            slides: { url: "TERM4_SLIDES_URL_OR_ID" },
-            video: { url: "TERM4_VIDEO_URL_OR_ID" }
+
+          art:"testing",
+
+          items:{
+
+            report:{
+              url:"TERM4_REPORT_URL_OR_ID"
+            },
+
+            slides:{
+              url:"TERM4_SLIDES_URL_OR_ID"
+            },
+
+            video:{
+              url:"TERM4_VIDEO_URL_OR_ID"
+            }
+
           }
+
         }
+
       ]
+
     };
 
-    const isLikelyGoogleId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{20,}$/.test(s.trim());
-    const isLikelyYoutubeId = (s) => typeof s === "string" && /^[a-zA-Z0-9_-]{6,15}$/.test(s.trim());
+
+    /* =========================
+       URL NORMALISATION
+       ========================= */
+
+    const isLikelyGoogleId = (s) =>
+      typeof s === "string" &&
+      /^[a-zA-Z0-9_-]{20,}$/.test(s.trim());
+
+
+    const isLikelyYoutubeId = (s) =>
+      typeof s === "string" &&
+      /^[a-zA-Z0-9_-]{6,15}$/.test(s.trim());
+
 
     function normalizeDriveFileUrl(input){
-      if(!input || typeof input !== "string") return null;
+
+      if(!input || typeof input !== "string"){
+        return null;
+      }
+
       const s = input.trim();
-      if(isLikelyGoogleId(s)) return { open:`https://drive.google.com/file/d/${s}/view`, embed:`https://drive.google.com/file/d/${s}/preview` };
-      const m = s.match(/drive\.google\.com\/file\/d\/([^/]+)/i);
-      if(m) return { open:`https://drive.google.com/file/d/${m[1]}/view`, embed:`https://drive.google.com/file/d/${m[1]}/preview` };
+
+      if(isLikelyGoogleId(s)){
+
+        return {
+          open:`https://drive.google.com/file/d/${s}/view`,
+          embed:`https://drive.google.com/file/d/${s}/preview`
+        };
+
+      }
+
+      const m = s.match(
+        /drive\.google\.com\/file\/d\/([^/]+)/i
+      );
+
+      if(m){
+
+        return {
+          open:`https://drive.google.com/file/d/${m[1]}/view`,
+          embed:`https://drive.google.com/file/d/${m[1]}/preview`
+        };
+
+      }
+
       return null;
+
     }
+
 
     function normalizeDocsUrl(input){
-      if(!input || typeof input !== "string") return null;
+
+      if(!input || typeof input !== "string"){
+        return null;
+      }
+
       const s = input.trim();
-      const m = s.match(/docs\.google\.com\/document\/d\/([^/]+)/i);
-      if(m) return { open:`https://docs.google.com/document/d/${m[1]}/edit`, embed:`https://docs.google.com/document/d/${m[1]}/preview` };
-      if(isLikelyGoogleId(s)) return { open:`https://docs.google.com/document/d/${s}/edit`, embed:`https://docs.google.com/document/d/${s}/preview` };
+
+      const m = s.match(
+        /docs\.google\.com\/document\/d\/([^/]+)/i
+      );
+
+      if(m){
+
+        return {
+          open:`https://docs.google.com/document/d/${m[1]}/edit`,
+          embed:`https://docs.google.com/document/d/${m[1]}/preview`
+        };
+
+      }
+
+      if(isLikelyGoogleId(s)){
+
+        return {
+          open:`https://docs.google.com/document/d/${s}/edit`,
+          embed:`https://docs.google.com/document/d/${s}/preview`
+        };
+
+      }
+
       return null;
+
     }
+
 
     function normalizeSlidesUrl(input){
-      if(!input || typeof input !== "string") return null;
+
+      if(!input || typeof input !== "string"){
+        return null;
+      }
+
       const s = input.trim();
-      const m = s.match(/docs\.google\.com\/presentation\/d\/([^/]+)/i);
-      const id = (m && m[1]) || (isLikelyGoogleId(s) ? s : null);
-      if(!id) return null;
+
+      const m = s.match(
+        /docs\.google\.com\/presentation\/d\/([^/]+)/i
+      );
+
+      const id =
+        (m && m[1]) ||
+        (isLikelyGoogleId(s) ? s : null);
+
+      if(!id){
+        return null;
+      }
+
       return {
-        open: `https://docs.google.com/presentation/d/${id}/edit`,
-        embed: `https://docs.google.com/presentation/d/${id}/embed?start=false&loop=false&delayms=3000`
+
+        open:
+          `https://docs.google.com/presentation/d/${id}/edit`,
+
+        embed:
+          `https://docs.google.com/presentation/d/${id}/embed?start=false&loop=false&delayms=3000`
+
       };
+
     }
 
+
+    /* FIXED YOUTUBE NORMALISATION */
     function normalizeYoutubeUrl(input){
-      if(!input || typeof input !== "string") return null;
+
+      if(!input || typeof input !== "string"){
+        return null;
+      }
+
       const s = input.trim();
+
       let id = null;
 
-      let m = s.match(/youtu\.be\/([^?]+)/i);
-      if(m) id = m[1];
+      let m = s.match(
+        /youtu\.be\/([^?&/]+)/i
+      );
 
-      m = s.match(/[?&]v=([^&]+)/i);
-      if(m) id = m[1];
+      if(m){
+        id = m[1];
+      }
 
-      m = s.match(/youtube\.com\/embed\/([^?]+)/i);
-      if(m) id = m[1];
+      m = s.match(
+        /[?&]v=([^&]+)/i
+      );
 
-      if(!id && isLikelyYoutubeId(s)) id = s;
+      if(m){
+        id = m[1];
+      }
 
-      if(!id) return null;
-      return { open: `https://www.youtube.com/watch?v=${id}`, embed: `https://www.youtube.com/embed/${id}` };
+      m = s.match(
+        /youtube\.com\/embed\/([^?&/]+)/i
+      );
+
+      if(m){
+        id = m[1];
+      }
+
+      if(!id && isLikelyYoutubeId(s)){
+        id = s;
+      }
+
+      if(!id){
+        return null;
+      }
+
+      return {
+
+        open:
+          `https://www.youtube.com/watch?v=${id}`,
+
+        embed:
+          `https://www.youtube.com/embed/${id}`
+
+      };
+
     }
+
 
     function bestReport(input){
-      return normalizeDriveFileUrl(input) || normalizeDocsUrl(input);
+
+      return (
+        normalizeDriveFileUrl(input) ||
+        normalizeDocsUrl(input)
+      );
+
     }
+
 
     function safeId(s){
-      return (s || "").toString().replace(/[^a-zA-Z0-9_-]/g, "-");
+
+      return (s || "")
+        .toString()
+        .replace(/[^a-zA-Z0-9_-]/g,"-");
+
     }
 
-    function termArtSvg(kind, uid){
-      const common = `viewBox="0 0 720 240" role="img" aria-label="Term illustration"`;
-      const u = safeId(uid || kind || "term");
-      const grad = `${u}-grad`;
+
+    /* =========================
+       TERM ARTWORK
+       ========================= */
+
+    function termArtSvg(kind,uid){
+
+      const common =
+        `viewBox="0 0 720 240" role="img" aria-label="Term illustration"`;
+
+      const u =
+        safeId(uid || kind || "term");
+
+      const grad =
+        `${u}-grad`;
+
 
       if(kind === "analysis"){
-        return `<svg ${common}>
-          <defs>
-            <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(74,222,128,.22)"/>
-              <stop offset="1" stop-color="rgba(96,165,250,.18)"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-          <path d="M28 176 C140 110, 250 208, 360 150 S 570 86, 692 150" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="4"/>
-          <g>
-            <rect x="52" y="48" rx="12" width="300" height="120" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.14)"/>
-            <text x="74" y="82" fill="rgba(255,255,255,.88)" font-size="16" font-family="ui-sans-serif,system-ui">Project analysis</text>
-            <text x="74" y="110" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• problem definition</text>
-            <text x="74" y="134" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• literature review</text>
-            <text x="74" y="158" fill="rgba(255,255,255,.70)" font-size="13" font-family="ui-sans-serif,system-ui">• baselines + metrics</text>
-          </g>
-          <g transform="translate(500 14)">
-            <path d="M70 20c-30 30-50 58-50 84a50 50 0 0 0 100 0c0-26-20-54-50-84Z" fill="rgba(96,165,250,.18)" stroke="rgba(96,165,250,.68)" stroke-width="2"/>
-            <path d="M32 116c18 18 52 18 76 0" stroke="rgba(255,255,255,.30)" stroke-width="3" fill="none"/>
-            <text x="8" y="170" fill="rgba(255,255,255,.70)" font-size="12" font-family="ui-sans-serif,system-ui">data + environment</text>
-          </g>
-        </svg>`;
+
+        return `
+
+          <svg ${common}>
+
+            <defs>
+
+              <linearGradient id="${grad}" x1="0" x2="1">
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(74,222,128,.22)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(96,165,250,.18)"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <rect
+              x="0"
+              y="0"
+              width="720"
+              height="240"
+              rx="18"
+              fill="url(#${grad})"
+            />
+
+            <path
+              d="M28 176 C140 110,250 208,360 150 S570 86,692 150"
+              fill="none"
+              stroke="rgba(255,255,255,.22)"
+              stroke-width="4"
+            />
+
+            <g>
+
+              <rect
+                x="52"
+                y="48"
+                rx="12"
+                width="300"
+                height="120"
+                fill="rgba(0,0,0,.18)"
+                stroke="rgba(255,255,255,.14)"
+              />
+
+              <text
+                x="74"
+                y="82"
+                fill="rgba(255,255,255,.88)"
+                font-size="16"
+                font-family="ui-sans-serif,system-ui"
+              >
+                Project analysis
+              </text>
+
+              <text
+                x="74"
+                y="110"
+                fill="rgba(255,255,255,.70)"
+                font-size="13"
+                font-family="ui-sans-serif,system-ui"
+              >
+                • problem definition
+              </text>
+
+              <text
+                x="74"
+                y="134"
+                fill="rgba(255,255,255,.70)"
+                font-size="13"
+                font-family="ui-sans-serif,system-ui"
+              >
+                • literature review
+              </text>
+
+              <text
+                x="74"
+                y="158"
+                fill="rgba(255,255,255,.70)"
+                font-size="13"
+                font-family="ui-sans-serif,system-ui"
+              >
+                • baselines + metrics
+              </text>
+
+            </g>
+
+            <g
+              transform="translate(500 14)"
+            >
+
+              <path
+                d="M70 20c-30 30-50 58-50 84a50 50 0 0 0 100 0c0-26-20-54-50-84Z"
+                fill="rgba(96,165,250,.18)"
+                stroke="rgba(96,165,250,.68)"
+                stroke-width="2"
+              />
+
+              <path
+                d="M32 116c18 18 52 18 76 0"
+                stroke="rgba(255,255,255,.30)"
+                stroke-width="3"
+                fill="none"
+              />
+
+              <text
+                x="8"
+                y="170"
+                fill="rgba(255,255,255,.70)"
+                font-size="12"
+                font-family="ui-sans-serif,system-ui"
+              >
+                data + environment
+              </text>
+
+            </g>
+
+          </svg>
+        `;
+
       }
+
 
       if(kind === "design"){
-        return `<svg ${common}>
-          <defs>
-            <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(134,239,172,.18)"/>
-              <stop offset="1" stop-color="rgba(96,165,250,.16)"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-          <g transform="translate(52 44)">
-            <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
-            <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project design</text>
-            <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">state • action • reward • scenarios</text>
-            <g transform="translate(22 88)" opacity=".95">
-              <rect x="0" y="0" width="160" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
-              <text x="16" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Environment</text>
-              <path d="M170 22 H240" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
-              <polygon points="240,22 232,16 232,28" fill="rgba(255,255,255,.22)"/>
-              <rect x="252" y="0" width="170" height="44" rx="12" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
-              <text x="268" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">DRL Agent</text>
-              <path d="M434 22 H504" stroke="rgba(255,255,255,.22)" stroke-width="3"/>
-              <polygon points="504,22 496,16 496,28" fill="rgba(255,255,255,.22)"/>
-              <rect x="516" y="0" width="60" height="44" rx="12" fill="rgba(52,211,153,.14)" stroke="rgba(52,211,153,.40)"/>
-              <text x="530" y="28" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">Policy</text>
+
+        return `
+
+          <svg ${common}>
+
+            <defs>
+
+              <linearGradient id="${grad}" x1="0" x2="1">
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(134,239,172,.18)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(96,165,250,.16)"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <rect
+              x="0"
+              y="0"
+              width="720"
+              height="240"
+              rx="18"
+              fill="url(#${grad})"
+            />
+
+            <g transform="translate(52 44)">
+
+              <rect
+                x="0"
+                y="0"
+                width="616"
+                height="152"
+                rx="18"
+                fill="rgba(0,0,0,.16)"
+                stroke="rgba(255,255,255,.14)"
+              />
+
+              <text
+                x="22"
+                y="40"
+                fill="rgba(255,255,255,.88)"
+                font-size="15"
+                font-family="ui-sans-serif,system-ui"
+              >
+                Project design
+              </text>
+
+              <text
+                x="22"
+                y="66"
+                fill="rgba(255,255,255,.68)"
+                font-size="12"
+                font-family="ui-sans-serif,system-ui"
+              >
+                state • action • reward • scenarios
+              </text>
+
+              <g transform="translate(22 88)" opacity=".95">
+
+                <rect
+                  x="0"
+                  y="0"
+                  width="160"
+                  height="44"
+                  rx="12"
+                  fill="rgba(255,255,255,.10)"
+                  stroke="rgba(255,255,255,.14)"
+                />
+
+                <text
+                  x="16"
+                  y="28"
+                  fill="rgba(255,255,255,.78)"
+                  font-size="12"
+                  font-family="ui-sans-serif,system-ui"
+                >
+                  Environment
+                </text>
+
+                <path
+                  d="M170 22 H240"
+                  stroke="rgba(255,255,255,.22)"
+                  stroke-width="3"
+                />
+
+                <polygon
+                  points="240,22 232,16 232,28"
+                  fill="rgba(255,255,255,.22)"
+                />
+
+                <rect
+                  x="252"
+                  y="0"
+                  width="170"
+                  height="44"
+                  rx="12"
+                  fill="rgba(255,255,255,.10)"
+                  stroke="rgba(255,255,255,.14)"
+                />
+
+                <text
+                  x="268"
+                  y="28"
+                  fill="rgba(255,255,255,.78)"
+                  font-size="12"
+                  font-family="ui-sans-serif,system-ui"
+                >
+                  DRL Agent
+                </text>
+
+                <path
+                  d="M434 22 H504"
+                  stroke="rgba(255,255,255,.22)"
+                  stroke-width="3"
+                />
+
+                <polygon
+                  points="504,22 496,16 496,28"
+                  fill="rgba(255,255,255,.22)"
+                />
+
+                <rect
+                  x="516"
+                  y="0"
+                  width="60"
+                  height="44"
+                  rx="12"
+                  fill="rgba(52,211,153,.14)"
+                  stroke="rgba(52,211,153,.40)"
+                />
+
+                <text
+                  x="530"
+                  y="28"
+                  fill="rgba(255,255,255,.78)"
+                  font-size="12"
+                  font-family="ui-sans-serif,system-ui"
+                >
+                  Policy
+                </text>
+
+              </g>
+
             </g>
-          </g>
-        </svg>`;
+
+          </svg>
+        `;
+
       }
+
 
       if(kind === "implementation"){
-        return `<svg ${common}>
-          <defs>
-            <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(255,204,51,.18)"/>
-              <stop offset="1" stop-color="rgba(74,222,128,.16)"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-          <g opacity=".9">
-            <path d="M40 70 H300" stroke="rgba(255,255,255,.22)" stroke-width="4"/>
-            <path d="M40 120 H380" stroke="rgba(255,255,255,.18)" stroke-width="4"/>
-            <path d="M40 170 H260" stroke="rgba(255,255,255,.14)" stroke-width="4"/>
-          </g>
-          <g transform="translate(390 40)" opacity=".95">
-            <rect x="0" y="0" width="290" height="160" rx="16" fill="rgba(0,0,0,.18)" stroke="rgba(255,255,255,.14)"/>
-            <path d="M26 122 C66 72, 112 140, 152 88 S 224 46, 258 78" fill="none" stroke="rgba(74,222,128,.55)" stroke-width="4"/>
-            <g fill="rgba(255,255,255,.86)">
-              <circle cx="26" cy="122" r="5"/><circle cx="92" cy="114" r="5"/><circle cx="152" cy="88" r="5"/>
-              <circle cx="224" cy="46" r="5"/><circle cx="258" cy="78" r="5"/>
+
+        return `
+
+          <svg ${common}>
+
+            <defs>
+
+              <linearGradient id="${grad}" x1="0" x2="1">
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(255,204,51,.18)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(74,222,128,.16)"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <rect
+              x="0"
+              y="0"
+              width="720"
+              height="240"
+              rx="18"
+              fill="url(#${grad})"
+            />
+
+            <g opacity=".9">
+
+              <path
+                d="M40 70 H300"
+                stroke="rgba(255,255,255,.22)"
+                stroke-width="4"
+              />
+
+              <path
+                d="M40 120 H380"
+                stroke="rgba(255,255,255,.18)"
+                stroke-width="4"
+              />
+
+              <path
+                d="M40 170 H260"
+                stroke="rgba(255,255,255,.14)"
+                stroke-width="4"
+              />
+
             </g>
-            <text x="22" y="32" fill="rgba(255,255,255,.86)" font-size="15" font-family="ui-sans-serif,system-ui">Implementation</text>
-            <text x="22" y="56" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">training • logging • reproducibility</text>
-          </g>
-        </svg>`;
+
+            <g
+              transform="translate(390 40)"
+              opacity=".95"
+            >
+
+              <rect
+                x="0"
+                y="0"
+                width="290"
+                height="160"
+                rx="16"
+                fill="rgba(0,0,0,.18)"
+                stroke="rgba(255,255,255,.14)"
+              />
+
+              <path
+                d="M26 122 C66 72,112 140,152 88 S224 46,258 78"
+                fill="none"
+                stroke="rgba(74,222,128,.55)"
+                stroke-width="4"
+              />
+
+              <g fill="rgba(255,255,255,.86)">
+
+                <circle cx="26" cy="122" r="5"/>
+                <circle cx="92" cy="114" r="5"/>
+                <circle cx="152" cy="88" r="5"/>
+                <circle cx="224" cy="46" r="5"/>
+                <circle cx="258" cy="78" r="5"/>
+
+              </g>
+
+              <text
+                x="22"
+                y="32"
+                fill="rgba(255,255,255,.86)"
+                font-size="15"
+                font-family="ui-sans-serif,system-ui"
+              >
+                Implementation
+              </text>
+
+              <text
+                x="22"
+                y="56"
+                fill="rgba(255,255,255,.68)"
+                font-size="12"
+                font-family="ui-sans-serif,system-ui"
+              >
+                training • logging • reproducibility
+              </text>
+
+            </g>
+
+          </svg>
+        `;
+
       }
+
 
       if(kind === "testing"){
-        return `<svg ${common}>
-          <defs>
-            <linearGradient id="${grad}" x1="0" x2="1">
-              <stop offset="0" stop-color="rgba(96,165,250,.18)"/>
-              <stop offset="1" stop-color="rgba(134,239,172,.18)"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="720" height="240" rx="18" fill="url(#${grad})"/>
-          <g transform="translate(52 44)">
-            <rect x="0" y="0" width="616" height="152" rx="18" fill="rgba(0,0,0,.16)" stroke="rgba(255,255,255,.14)"/>
-            <text x="22" y="40" fill="rgba(255,255,255,.88)" font-size="15" font-family="ui-sans-serif,system-ui">Project testing</text>
-            <text x="22" y="66" fill="rgba(255,255,255,.68)" font-size="12" font-family="ui-sans-serif,system-ui">generalization • stress tests • statistical comparisons</text>
-            <g transform="translate(22 86)" opacity=".95">
-              <path d="M0 30 L18 48 L54 10" fill="none" stroke="rgba(74,222,128,.78)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-              <text x="70" y="36" fill="rgba(255,255,255,.78)" font-size="12" font-family="ui-sans-serif,system-ui">validation checklist</text>
-              <g transform="translate(300 -60)">
-                <rect x="0" y="0" width="250" height="96" rx="14" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.14)"/>
-                <path d="M18 40 C44 20, 68 48, 92 28 S 140 12, 190 26" fill="none" stroke="rgba(255,204,51,.55)" stroke-width="4"/>
-                <circle cx="18" cy="40" r="4" fill="rgba(255,255,255,.86)"/>
-                <circle cx="92" cy="28" r="4" fill="rgba(255,255,255,.86)"/>
-                <circle cx="190" cy="26" r="4" fill="rgba(255,255,255,.86)"/>
+
+        return `
+
+          <svg ${common}>
+
+            <defs>
+
+              <linearGradient id="${grad}" x1="0" x2="1">
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(96,165,250,.18)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(134,239,172,.18)"
+                />
+
+              </linearGradient>
+
+            </defs>
+
+            <rect
+              x="0"
+              y="0"
+              width="720"
+              height="240"
+              rx="18"
+              fill="url(#${grad})"
+            />
+
+            <g transform="translate(52 44)">
+
+              <rect
+                x="0"
+                y="0"
+                width="616"
+                height="152"
+                rx="18"
+                fill="rgba(0,0,0,.16)"
+                stroke="rgba(255,255,255,.14)"
+              />
+
+              <text
+                x="22"
+                y="40"
+                fill="rgba(255,255,255,.88)"
+                font-size="15"
+                font-family="ui-sans-serif,system-ui"
+              >
+                Project testing
+              </text>
+
+              <text
+                x="22"
+                y="66"
+                fill="rgba(255,255,255,.68)"
+                font-size="12"
+                font-family="ui-sans-serif,system-ui"
+              >
+                generalization • stress tests • statistical comparisons
+              </text>
+
+              <g
+                transform="translate(22 86)"
+                opacity=".95"
+              >
+
+                <path
+                  d="M0 30 L18 48 L54 10"
+                  fill="none"
+                  stroke="rgba(74,222,128,.78)"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+
+                <text
+                  x="70"
+                  y="36"
+                  fill="rgba(255,255,255,.78)"
+                  font-size="12"
+                  font-family="ui-sans-serif,system-ui"
+                >
+                  validation checklist
+                </text>
+
+                <g transform="translate(300 -60)">
+
+                  <rect
+                    x="0"
+                    y="0"
+                    width="250"
+                    height="96"
+                    rx="14"
+                    fill="rgba(255,255,255,.10)"
+                    stroke="rgba(255,255,255,.14)"
+                  />
+
+                  <path
+                    d="M18 40 C44 20,68 48,92 28 S140 12,190 26"
+                    fill="none"
+                    stroke="rgba(255,204,51,.55)"
+                    stroke-width="4"
+                  />
+
+                  <circle
+                    cx="18"
+                    cy="40"
+                    r="4"
+                    fill="rgba(255,255,255,.86)"
+                  />
+
+                  <circle
+                    cx="92"
+                    cy="28"
+                    r="4"
+                    fill="rgba(255,255,255,.86)"
+                  />
+
+                  <circle
+                    cx="190"
+                    cy="26"
+                    r="4"
+                    fill="rgba(255,255,255,.86)"
+                  />
+
+                </g>
+
               </g>
+
             </g>
-          </g>
-        </svg>`;
+
+          </svg>
+        `;
+
       }
 
-      return `<svg ${common}><rect x="0" y="0" width="720" height="240" rx="18" fill="rgba(255,255,255,.06)"/></svg>`;
+
+      return `
+
+        <svg ${common}>
+          <rect
+            x="0"
+            y="0"
+            width="720"
+            height="240"
+            rx="18"
+            fill="rgba(255,255,255,.06)"
+          />
+        </svg>
+
+      `;
+
     }
 
-    function buildDeliverable(kind, raw){
+
+    /* =========================
+       DELIVERABLE BUILDER
+       ========================= */
+
+    function buildDeliverable(kind,raw){
+
       const labels = {
-        report: "Report (PDF)",
-        slides: "Presentation (Slides)",
-        video: "Presentation (VoiceOver)",
-        prototypeDemo: "Prototype Demo(Video)"
+
+        report:"Report (PDF)",
+
+        slides:"Presentation (Slides)",
+
+        video:"Presentation (VoiceOver)",
+
+        prototypeDemo:"Prototype Demo (Video)",
+
+        /* FIXED: new System Demo type */
+        systemDemo:"System Demo (Video)"
+
       };
+
+
       const icons = {
-        report: "📄",
-        slides: "🖥️",
-        video: "🎥",
-        prototypeDemo: "🎬"
+
+        report:"📄",
+
+        slides:"🖥️",
+
+        video:"🎥",
+
+        prototypeDemo:"🎬",
+
+        /* FIXED */
+        systemDemo:"🧪"
+
       };
-      const label = labels[kind] || "Submission";
-      const icon = icons[kind] || "📌";
+
+
+      const label =
+        labels[kind] || "Submission";
+
+      const icon =
+        icons[kind] || "📌";
+
 
       let norm = null;
-      if(kind === "report") norm = bestReport(raw);
-      if(kind === "slides") norm = normalizeSlidesUrl(raw);
-      if(kind === "video" || kind === "prototypeDemo") norm = normalizeYoutubeUrl(raw) || normalizeDriveFileUrl(raw);
+
+
+      if(kind === "report"){
+        norm = bestReport(raw);
+      }
+
+
+      if(kind === "slides"){
+        norm = normalizeSlidesUrl(raw);
+      }
+
+
+      /* FIXED: systemDemo is treated like a video */
+      if(
+        kind === "video" ||
+        kind === "prototypeDemo" ||
+        kind === "systemDemo"
+      ){
+
+        norm =
+          normalizeYoutubeUrl(raw) ||
+          normalizeDriveFileUrl(raw);
+
+      }
+
 
       const missing = !norm;
-      const open = missing ? "#" : norm.open;
-      const embed = missing ? "" : norm.embed;
+
+      const open =
+        missing ? "#" : norm.open;
+
+      const embed =
+        missing ? "" : norm.embed;
+
+
+      const isVideoLike =
+        kind === "video" ||
+        kind === "prototypeDemo" ||
+        kind === "systemDemo";
+
 
       const subtitle = missing
-        ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
-        : ((kind === "video" || kind === "prototypeDemo") ? "Embedded player" : "Preview inside this page");
 
-      const previewHtml = missing ? `
-        <div class="preview">
-          <div style="padding:14px; color: var(--muted); border:1px dashed rgba(255,255,255,.16); border-radius:12px;">
-            Add your ${label} link in <code>CONFIG</code> → <code>terms[].items.${kind}.url</code>.
+        ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
+
+        : (
+            isVideoLike
+            ? "Embedded player"
+            : "Preview inside this page"
+          );
+
+
+      const previewHtml = missing
+
+        ? `
+
+          <div class="preview">
+
+            <div
+              style="
+                padding:14px;
+                color:var(--muted);
+                border:1px dashed rgba(255,255,255,.16);
+                border-radius:12px;
+              "
+            >
+
+              Add your ${label} link in
+              <code>CONFIG</code> →
+              <code>terms[].items.${kind}.url</code>.
+
+            </div>
+
           </div>
-        </div>` : `
-        <div class="preview">
-          <iframe src="${embed}" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-        </div>`;
+
+        `
+
+        : `
+
+          <div class="preview">
+
+            <iframe
+              src="${embed}"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+              title="${label}"
+            ></iframe>
+
+          </div>
+
+        `;
+
 
       return `
+
         <details>
+
           <summary>
+
             <div class="row">
-              <div class="icon" aria-hidden="true">${icon}</div>
-              <div class="label">
-                <strong>${label}</strong>
-                <span>${subtitle}</span>
+
+              <div
+                class="icon"
+                aria-hidden="true"
+              >
+                ${icon}
               </div>
+
+              <div class="label">
+
+                <strong>${label}</strong>
+
+                <span>${subtitle}</span>
+
+              </div>
+
             </div>
+
             <div class="actions">
-              <a class="btn" ${missing ? 'aria-disabled="true"' : ''} target="_blank" rel="noopener" href="${open}">Open</a>
+
+              <a
+                class="btn"
+                ${missing ? 'aria-disabled="true"' : ''}
+                target="_blank"
+                rel="noopener"
+                href="${open}"
+              >
+                Open
+              </a>
+
             </div>
+
           </summary>
+
           ${previewHtml}
-        </details>`;
+
+        </details>
+
+      `;
+
     }
 
+
+    /* =========================
+       TERM CARD
+       ========================= */
+
     function buildTermCard(t){
+
       return `
-        <article class="card" id="${t.id}" data-term="${t.id}">
+
+        <article
+          class="card"
+          id="${t.id}"
+          data-term="${t.id}"
+        >
+
           <div class="cardHead">
+
             <div>
-              <h3 class="termTitle">${t.title}</h3>
-              <p class="termMeta">${t.summary}</p>
+
+              <h3 class="termTitle">
+                ${t.title}
+              </h3>
+
+              <p class="termMeta">
+                ${t.summary}
+              </p>
+
             </div>
-            <div class="badge">${t.badge}</div>
+
+            <div class="badge">
+              ${t.badge}
+            </div>
+
           </div>
 
           <div class="cardBody">
-            <div class="termArt" aria-label="${t.title} illustration">
-              ${termArtSvg(t.art, t.id)}
+
+            <div
+              class="termArt"
+              aria-label="${t.title} illustration"
+            >
+              ${termArtSvg(t.art,t.id)}
             </div>
 
-            <div class="deliverables" aria-label="${t.title} deliverables">
-              ${buildDeliverable("report", t.items?.report?.url)}
-              ${buildDeliverable("slides", t.items?.slides?.url)}
-              ${buildDeliverable("video", t.items?.video?.url)}
-              ${t.items?.prototypeDemo ? buildDeliverable("prototypeDemo", t.items.prototypeDemo.url) : ""}
+            <div
+              class="deliverables"
+              aria-label="${t.title} deliverables"
+            >
+
+              ${buildDeliverable(
+                "report",
+                t.items?.report?.url
+              )}
+
+              ${buildDeliverable(
+                "slides",
+                t.items?.slides?.url
+              )}
+
+              ${buildDeliverable(
+                "video",
+                t.items?.video?.url
+              )}
+
+              ${
+                t.items?.prototypeDemo
+                  ? buildDeliverable(
+                      "prototypeDemo",
+                      t.items.prototypeDemo.url
+                    )
+                  : ""
+              }
+
+              ${
+                /* FIXED: Term 3 System Demo */
+                t.items?.systemDemo
+                  ? buildDeliverable(
+                      "systemDemo",
+                      t.items.systemDemo.url
+                    )
+                  : ""
+              }
+
             </div>
+
           </div>
-        </article>`;
+
+        </article>
+
+      `;
+
     }
+
+
+    /* =========================
+       PAGE INITIALISATION
+       ========================= */
 
     const now = new Date();
-    const year = now.getFullYear();
-    const updatedStr = now.toLocaleDateString(undefined, { year:"numeric", month:"short", day:"2-digit" });
 
-    function updateBrandText() {
-    const isSmallScreen = window.innerWidth <= 640;
+    const year =
+      now.getFullYear();
 
-    document.getElementById("brandName").textContent = isSmallScreen
-      ? "Vukosi Maluleke"
-      : `${CONFIG.studentName} — Honours Project`;
+    const updatedStr =
+      now.toLocaleDateString(
+        undefined,
+        {
+          year:"numeric",
+          month:"short",
+          day:"2-digit"
+        }
+      );
 
-    document.getElementById("brandLine").textContent = isSmallScreen
-      ? "Honours Portfolio • DRL Irrigation"
-      : `${CONFIG.degree} • DRL for maize irrigation`;
-  }
 
-updateBrandText();
-window.addEventListener("resize", updateBrandText);
-    document.getElementById("studentNameChip").textContent = CONFIG.studentName;
-    document.getElementById("degreeChip").textContent = CONFIG.degree;
-    document.getElementById("supervisorChip").textContent = CONFIG.supervisor;
-    document.getElementById("studentNoChip").textContent = CONFIG.studentNumber;
+    function updateBrandText(){
 
-    document.getElementById("thesisTitleH1").textContent = CONFIG.thesisTitle;
-    document.getElementById("footerThesis").textContent = CONFIG.thesisTitle;
+      const isSmallScreen =
+        window.innerWidth <= 640;
 
-    const termsEl = document.getElementById("terms");
-    termsEl.innerHTML = CONFIG.terms.map(buildTermCard).join("");
 
-    const linksEl = document.getElementById("projectLinks");
-    linksEl.innerHTML = CONFIG.links
-      .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">${l.label}</a></li>`)
-      .join("");
+      document.getElementById(
+        "brandName"
+      ).textContent =
 
-    document.getElementById("footerLinks").innerHTML = CONFIG.links
-      .slice(0, 3)
-      .map(l => `<li><a target="_blank" rel="noopener" href="${l.url}">↗ ${l.label}</a></li>`)
-      .join("");
+        isSmallScreen
 
-    document.getElementById("footerBottom").innerHTML =
-      `© ${year} <span class="dot">•</span> ` +
-      `Academic Portfolio in Computer Science ` +
-      `<span class="dot">•</span> All rights reserved` +
-      `<span class="dot">•</span> Updated ${updatedStr}`;
+          ? "Vukosi Maluleke"
+
+          : `${CONFIG.studentName} — Honours Project`;
+
+
+      document.getElementById(
+        "brandLine"
+      ).textContent =
+
+        isSmallScreen
+
+          ? "Honours Portfolio • DRL Irrigation"
+
+          : `${CONFIG.degree} • DRL for maize irrigation`;
+
+    }
+
+
+    updateBrandText();
+
+    window.addEventListener(
+      "resize",
+      updateBrandText
+    );
+
+
+    document.getElementById(
+      "studentNameChip"
+    ).textContent =
+      CONFIG.studentName;
+
+
+    document.getElementById(
+      "degreeChip"
+    ).textContent =
+      CONFIG.degree;
+
+
+    document.getElementById(
+      "supervisorChip"
+    ).textContent =
+      CONFIG.supervisor;
+
+
+    document.getElementById(
+      "studentNoChip"
+    ).textContent =
+      CONFIG.studentNumber;
+
+
+    document.getElementById(
+      "thesisTitleH1"
+    ).textContent =
+      CONFIG.thesisTitle;
+
+
+    document.getElementById(
+      "footerThesis"
+    ).textContent =
+      CONFIG.thesisTitle;
+
+
+    const termsEl =
+      document.getElementById("terms");
+
+
+    termsEl.innerHTML =
+      CONFIG.terms
+        .map(buildTermCard)
+        .join("");
+
+
+    const linksEl =
+      document.getElementById("projectLinks");
+
+
+    linksEl.innerHTML =
+      CONFIG.links
+
+        .map(
+          l =>
+            `
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="${l.url}"
+                >
+                  ${l.label}
+                </a>
+              </li>
+            `
+        )
+
+        .join("");
+
+
+    document.getElementById(
+      "footerLinks"
+    ).innerHTML =
+
+      CONFIG.links
+        .slice(0,3)
+
+        .map(
+          l =>
+            `
+              <li>
+                <a
+                  target="_blank"
+                  rel="noopener"
+                  href="${l.url}"
+                >
+                  ↗ ${l.label}
+                </a>
+              </li>
+            `
+        )
+
+        .join("");
+
+
+    document.getElementById(
+      "footerBottom"
+    ).innerHTML =
+
+      `© ${year}
+       <span class="dot">•</span>
+       Academic Portfolio in Computer Science
+       <span class="dot">•</span>
+       All rights reserved
+       <span class="dot">•</span>
+       Updated ${updatedStr}`;
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    const navToggle =
+      document.querySelector(".navToggle");
+
+    const topbarInner =
+      document.querySelector(".topbarInner");
+
+    const siteNav =
+      document.getElementById("siteNav");
+
 
     function goToTerm(id){
-      const el = document.getElementById(id);
-      if(!el) return;
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      try { history.replaceState(null, "", "#" + id); } catch {}
+
+      const el =
+        document.getElementById(id);
+
+      if(!el){
+        return;
+      }
+
+      el.scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+      try{
+
+        history.replaceState(
+          null,
+          "",
+          "#" + id
+        );
+
+      }catch{}
+
     }
 
-    document.querySelectorAll("[data-goto]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        goToTerm(btn.getAttribute("data-goto"));
-        if (window.innerWidth <= 860) {
-          topbarInner.classList.remove("navOpen");
-          navToggle.setAttribute("aria-expanded", "false");
-        }
+
+    document
+      .querySelectorAll("[data-goto]")
+      .forEach(btn => {
+
+        btn.addEventListener(
+          "click",
+          () => {
+
+            goToTerm(
+              btn.getAttribute("data-goto")
+            );
+
+            if(window.innerWidth <= 860){
+
+              topbarInner.classList.remove(
+                "navOpen"
+              );
+
+              navToggle.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+        );
+
       });
-    });
+
 
     function scrollToHash(){
-      const id = (location.hash || "").replace("#", "");
-      if(!id) return;
-      const el = document.getElementById(id);
-      if(!el) return;
-      setTimeout(() => el.scrollIntoView({ behavior:"smooth", block:"start" }), 60);
-    }
-    window.addEventListener("load", scrollToHash);
 
-    const pills = Array.from(document.querySelectorAll(".pill[data-goto]"));
-    const setActive = (id) => {
-      pills.forEach(p => p.setAttribute("aria-current", p.getAttribute("data-goto") === id ? "true" : "false"));
+      const id =
+        (location.hash || "")
+        .replace("#","");
+
+      if(!id){
+        return;
+      }
+
+      const el =
+        document.getElementById(id);
+
+      if(!el){
+        return;
+      }
+
+      setTimeout(
+        () => {
+
+          el.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+          });
+
+        },
+        60
+      );
+
+    }
+
+
+    window.addEventListener(
+      "load",
+      scrollToHash
+    );
+
+
+    const pills =
+      Array.from(
+        document.querySelectorAll(
+          ".pill[data-goto]"
+        )
+      );
+
+
+    const setActive = id => {
+
+      pills.forEach(p => {
+
+        p.setAttribute(
+          "aria-current",
+          p.getAttribute("data-goto") === id
+            ? "true"
+            : "false"
+        );
+
+      });
+
     };
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
-      if(visible?.target?.id) setActive(visible.target.id);
-    }, { root: null, threshold: [0.25, 0.35, 0.5, 0.65] });
+
+    const observer =
+      new IntersectionObserver(
+
+        entries => {
+
+          const visible =
+            entries
+
+              .filter(
+                e => e.isIntersecting
+              )
+
+              .sort(
+                (a,b) =>
+                  b.intersectionRatio -
+                  a.intersectionRatio
+              )[0];
+
+
+          if(
+            visible?.target?.id
+          ){
+
+            setActive(
+              visible.target.id
+            );
+
+          }
+
+        },
+
+        {
+          root:null,
+          threshold:[
+            0.25,
+            0.35,
+            0.5,
+            0.65
+          ]
+        }
+
+      );
+
 
     CONFIG.terms.forEach(t => {
-      const el = document.getElementById(t.id);
-      if(el) observer.observe(el);
+
+      const el =
+        document.getElementById(t.id);
+
+      if(el){
+        observer.observe(el);
+      }
+
     });
+
 
     setActive("term1");
 
-    const navToggle = document.querySelector(".navToggle");
-    const topbarInner = document.querySelector(".topbarInner");
-    const siteNav = document.getElementById("siteNav");
 
-    if (navToggle && topbarInner && siteNav) {
-      navToggle.addEventListener("click", () => {
-        const isOpen = topbarInner.classList.toggle("navOpen");
-        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      });
+    /* =========================
+       MOBILE NAVIGATION
+       ========================= */
 
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 860) {
-          topbarInner.classList.remove("navOpen");
-          navToggle.setAttribute("aria-expanded", "false");
+    if(
+      navToggle &&
+      topbarInner &&
+      siteNav
+    ){
+
+      navToggle.addEventListener(
+        "click",
+        () => {
+
+          const isOpen =
+            topbarInner.classList.toggle(
+              "navOpen"
+            );
+
+          navToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+          );
+
         }
-      });
+      );
+
+
+      window.addEventListener(
+        "resize",
+        () => {
+
+          if(window.innerWidth > 860){
+
+            topbarInner.classList.remove(
+              "navOpen"
+            );
+
+            navToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+
+        }
+      );
+
     }
+
   </script>
+
 </body>
 </html>
+```
