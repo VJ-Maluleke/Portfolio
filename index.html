@@ -8,6 +8,7 @@
     name="description"
     content="Honours project: A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling."
   />
+
   <title>
     Vukosi Jayson Maluleke • BSc Honours Computer Science • Honours Portfolio
   </title>
@@ -32,7 +33,9 @@
       --bg-image:url("MAIZE IRRIGATION.png");
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
     html{
       scroll-behavior:smooth;
@@ -40,15 +43,47 @@
 
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      font-family:
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji";
+
       color:var(--text);
+
       background:
-        linear-gradient(rgba(4,16,10,.72),rgba(9,30,18,.78)),
-        radial-gradient(900px 520px at 18% 10%,rgba(52,211,153,.14),transparent 60%),
-        radial-gradient(860px 520px at 82% 18%,rgba(163,230,53,.12),transparent 55%),
-        radial-gradient(1000px 700px at 50% 102%,rgba(22,163,74,.16),transparent 60%),
+        linear-gradient(
+          rgba(4,16,10,.72),
+          rgba(9,30,18,.78)
+        ),
+        radial-gradient(
+          900px 520px at 18% 10%,
+          rgba(52,211,153,.14),
+          transparent 60%
+        ),
+        radial-gradient(
+          860px 520px at 82% 18%,
+          rgba(163,230,53,.12),
+          transparent 55%
+        ),
+        radial-gradient(
+          1000px 700px at 50% 102%,
+          rgba(22,163,74,.16),
+          transparent 60%
+        ),
         var(--bg-image) center center / cover no-repeat fixed,
-        linear-gradient(180deg,var(--bg0),var(--bg1));
+        linear-gradient(
+          180deg,
+          var(--bg0),
+          var(--bg1)
+        );
+
       min-height:100vh;
     }
 
@@ -68,23 +103,39 @@
       padding:18px 16px 72px;
     }
 
+    /* =========================
+       TOP NAVIGATION
+       ========================= */
+
     .topbar{
       position:sticky;
       top:0;
       z-index:50;
+
       backdrop-filter:blur(14px);
-      background:color-mix(in oklab,var(--bg0) 78%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--bg0) 78%,
+          transparent
+        );
+
       border-bottom:1px solid var(--border);
     }
 
     .topbarInner{
       max-width:var(--maxw);
       margin:0 auto;
+
       display:grid;
       grid-template-columns:1fr auto;
+
       align-items:center;
       gap:12px;
+
       padding:10px 16px;
+
       min-height:var(--stickyH);
     }
 
@@ -99,17 +150,36 @@
       width:36px;
       height:36px;
       min-width:36px;
+
       border-radius:10px;
+
       border:1px solid var(--border);
-      background:linear-gradient(
-        135deg,
-        color-mix(in oklab,var(--leaf) 46%,transparent),
-        color-mix(in oklab,var(--water) 32%,transparent),
-        color-mix(in oklab,var(--maize) 34%,transparent)
-      );
+
+      background:
+        linear-gradient(
+          135deg,
+          color-mix(
+            in oklab,
+            var(--leaf) 46%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--water) 32%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--maize) 34%,
+            transparent
+          )
+        );
+
       box-shadow:0 10px 30px rgba(0,0,0,.25);
+
       display:grid;
       place-items:center;
+
       overflow:hidden;
     }
 
@@ -128,6 +198,7 @@
     .brandText strong{
       font-size:13px;
       letter-spacing:.2px;
+
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -136,6 +207,7 @@
     .brandText span{
       font-size:12px;
       color:var(--muted);
+
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
@@ -143,51 +215,93 @@
 
     .navToggle{
       display:none;
+
       width:42px;
       height:42px;
+
       border-radius:12px;
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 90%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 90%,
+          transparent
+        );
+
       align-items:center;
       justify-content:center;
+
       gap:4px;
       padding:0;
+
       cursor:pointer;
     }
 
     .navToggle span{
       display:block;
+
       width:18px;
       height:2px;
+
       border-radius:999px;
+
       background:var(--text);
-      transition:transform .2s ease,opacity .2s ease;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
     }
 
     .navPills{
       display:flex;
       flex-wrap:wrap;
+
       gap:8px;
+
       justify-content:flex-end;
       align-items:center;
     }
 
     .pill{
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 86%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 86%,
+          transparent
+        );
+
       padding:8px 12px;
+
       border-radius:999px;
+
       font-size:12px;
       color:var(--muted);
+
       cursor:pointer;
       user-select:none;
-      transition:transform .12s ease,background .12s ease,color .12s ease,border-color .12s ease;
+
+      transition:
+        transform .12s ease,
+        background .12s ease,
+        color .12s ease,
+        border-color .12s ease;
+
       outline:none;
+
       min-height:38px;
     }
 
     .pill:hover{
-      background:color-mix(in oklab,var(--card2) 92%,transparent);
+      background:
+        color-mix(
+          in oklab,
+          var(--card2) 92%,
+          transparent
+        );
+
       color:var(--text);
     }
 
@@ -197,116 +311,220 @@
 
     .pill[aria-current="true"]{
       color:var(--text);
-      border-color:color-mix(in oklab,var(--leaf) 52%,var(--border));
-      background:linear-gradient(
-        135deg,
-        color-mix(in oklab,var(--leaf) 22%,transparent),
-        color-mix(in oklab,var(--water) 16%,transparent)
-      );
+
+      border-color:
+        color-mix(
+          in oklab,
+          var(--leaf) 52%,
+          var(--border)
+        );
+
+      background:
+        linear-gradient(
+          135deg,
+          color-mix(
+            in oklab,
+            var(--leaf) 22%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--water) 16%,
+            transparent
+          )
+        );
     }
+
+    /* =========================
+       HERO
+       ========================= */
 
     header.hero{
       margin-top:16px;
+
       border:1px solid var(--border);
-      background:linear-gradient(
-        180deg,
-        color-mix(in oklab,var(--card2) 72%,transparent),
-        color-mix(in oklab,var(--card) 66%,transparent)
-      );
+
+      background:
+        linear-gradient(
+          180deg,
+          color-mix(
+            in oklab,
+            var(--card2) 72%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--card) 66%,
+            transparent
+          )
+        );
+
       border-radius:calc(var(--r) + 6px);
+
       box-shadow:var(--shadow);
+
       overflow:hidden;
+
       backdrop-filter:blur(8px);
     }
 
     .heroGrid{
       display:grid;
+
       grid-template-columns:1fr;
+
       gap:16px;
+
       padding:18px;
+
       align-items:center;
     }
 
     @media (min-width:920px){
       .heroGrid{
         grid-template-columns:1.08fr .92fr;
+
         padding:26px;
+
         gap:18px;
       }
     }
 
     .kicker{
       margin:0 0 8px;
+
       font-size:13px;
+
       color:var(--muted);
+
       letter-spacing:.2px;
     }
 
     h1{
       margin:0 0 10px;
-      font-size:clamp(24px,3.1vw,38px);
+
+      font-size:
+        clamp(
+          24px,
+          3.1vw,
+          38px
+        );
+
       line-height:1.14;
+
       text-wrap:balance;
     }
 
     .sub{
       margin:0;
+
       color:var(--muted);
+
       max-width:78ch;
+
       line-height:1.6;
     }
 
     .metaRow{
       display:flex;
       flex-wrap:wrap;
+
       gap:10px;
+
       margin-top:14px;
     }
 
     .chip{
       display:inline-flex;
+
       align-items:center;
+
       gap:8px;
+
       font-size:12px;
+
       color:var(--muted);
+
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 88%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 88%,
+          transparent
+        );
+
       padding:8px 10px;
+
       border-radius:999px;
+
       backdrop-filter:blur(8px);
+
       min-height:38px;
+
       max-width:100%;
     }
 
     .chip b{
       color:var(--text);
+
       font-weight:600;
     }
 
     .heroCTARow{
       display:flex;
       flex-wrap:wrap;
+
       gap:10px;
+
       margin-top:14px;
+
       align-items:center;
     }
 
     .ctaBtn{
       display:inline-flex;
+
       align-items:center;
       justify-content:center;
+
       gap:10px;
-      border:1px solid color-mix(in oklab,var(--leaf) 48%,var(--border));
-      background:linear-gradient(
-        135deg,
-        color-mix(in oklab,var(--leaf) 16%,transparent),
-        color-mix(in oklab,var(--water) 12%,transparent)
-      );
+
+      border:
+        1px solid
+        color-mix(
+          in oklab,
+          var(--leaf) 48%,
+          var(--border)
+        );
+
+      background:
+        linear-gradient(
+          135deg,
+          color-mix(
+            in oklab,
+            var(--leaf) 16%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--water) 12%,
+            transparent
+          )
+        );
+
       color:var(--text);
+
       padding:10px 14px;
+
       border-radius:999px;
+
       font-size:12px;
-      box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+      box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.18);
+
       min-height:40px;
     }
 
@@ -314,18 +532,59 @@
       filter:brightness(1.05);
     }
 
+    /* =========================
+       HERO ART
+       ========================= */
+
     .heroArt{
       border-radius:calc(var(--r) + 2px);
+
       border:1px solid var(--border);
+
       background:
-        linear-gradient(rgba(8,24,14,.26),rgba(8,24,14,.26)),
-        radial-gradient(700px 280px at 30% 0%,color-mix(in oklab,var(--maize) 20%,transparent),transparent 60%),
-        radial-gradient(700px 300px at 65% 10%,color-mix(in oklab,var(--water) 20%,transparent),transparent 62%),
-        radial-gradient(900px 340px at 50% 120%,color-mix(in oklab,var(--leaf) 18%,transparent),transparent 60%),
-        color-mix(in oklab,var(--card) 72%,transparent);
+        linear-gradient(
+          rgba(8,24,14,.26),
+          rgba(8,24,14,.26)
+        ),
+        radial-gradient(
+          700px 280px at 30% 0%,
+          color-mix(
+            in oklab,
+            var(--maize) 20%,
+            transparent
+          ),
+          transparent 60%
+        ),
+        radial-gradient(
+          700px 300px at 65% 10%,
+          color-mix(
+            in oklab,
+            var(--water) 20%,
+            transparent
+          ),
+          transparent 62%
+        ),
+        radial-gradient(
+          900px 340px at 50% 120%,
+          color-mix(
+            in oklab,
+            var(--leaf) 18%,
+            transparent
+          ),
+          transparent 60%
+        ),
+        color-mix(
+          in oklab,
+          var(--card) 72%,
+          transparent
+        );
+
       padding:12px;
+
       overflow:hidden;
+
       backdrop-filter:blur(8px);
+
       min-height:220px;
     }
 
@@ -335,39 +594,76 @@
       display:block;
     }
 
+    /* =========================
+       SECTION TITLES
+       ========================= */
+
     .sectionTitle{
       margin:22px 0 10px;
+
       display:flex;
+
       align-items:flex-end;
       justify-content:space-between;
+
       gap:10px;
     }
 
     .sectionTitle h2{
       margin:0;
+
       font-size:16px;
     }
 
     .sectionTitle p{
       margin:0;
+
       font-size:12px;
+
       color:var(--muted);
     }
 
+    /* =========================
+       TERM GRID
+       ========================= */
+
     .grid{
       display:grid;
-      grid-template-columns:repeat(12,1fr);
+
+      grid-template-columns:
+        repeat(
+          12,
+          1fr
+        );
+
       gap:14px;
     }
 
     .card{
       grid-column:span 12;
+
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 90%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 90%,
+          transparent
+        );
+
       border-radius:var(--r);
-      box-shadow:0 12px 40px rgba(0,0,0,.25);
+
+      box-shadow:
+        0 12px 40px
+        rgba(0,0,0,.25);
+
       overflow:hidden;
-      scroll-margin-top:calc(var(--stickyH) + 18px);
+
+      scroll-margin-top:
+        calc(
+          var(--stickyH) + 18px
+        );
+
       backdrop-filter:blur(8px);
     }
 
@@ -379,54 +675,99 @@
 
     .cardHead{
       display:flex;
+
       align-items:flex-start;
       justify-content:space-between;
+
       gap:12px;
+
       padding:16px 16px 12px;
-      background:linear-gradient(
-        180deg,
-        color-mix(in oklab,var(--card2) 70%,transparent),
-        transparent
-      );
-      border-bottom:1px solid rgba(255,255,255,.06);
+
+      background:
+        linear-gradient(
+          180deg,
+          color-mix(
+            in oklab,
+            var(--card2) 70%,
+            transparent
+          ),
+          transparent
+        );
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.06);
     }
 
     .termTitle{
       margin:0;
+
       font-size:15px;
     }
 
     .termMeta{
       margin:6px 0 0;
+
       font-size:12px;
+
       color:var(--muted);
+
       max-width:60ch;
+
       line-height:1.6;
     }
 
     .badge{
       font-size:11px;
+
       color:var(--muted);
+
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 78%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 78%,
+          transparent
+        );
+
       padding:6px 10px;
+
       border-radius:999px;
+
       white-space:nowrap;
+
       flex-shrink:0;
     }
 
     .cardBody{
       padding:14px 16px 16px;
+
       display:grid;
+
       grid-template-columns:1fr;
+
       gap:12px;
     }
 
+    /* =========================
+       TERM ART
+       ========================= */
+
     .termArt{
       border:1px solid var(--border);
+
       border-radius:14px;
-      background:color-mix(in oklab,var(--card) 74%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 74%,
+          transparent
+        );
+
       padding:10px;
+
       overflow:hidden;
     }
 
@@ -436,25 +777,45 @@
       display:block;
     }
 
+    /* =========================
+       DELIVERABLES
+       ========================= */
+
     .deliverables{
       display:grid;
+
       gap:10px;
     }
 
     details{
-      border:1px solid rgba(255,255,255,.12);
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
       border-radius:14px;
-      background:color-mix(in oklab,var(--card) 86%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 86%,
+          transparent
+        );
+
       overflow:hidden;
     }
 
     summary{
       list-style:none;
+
       cursor:pointer;
+
       padding:12px;
+
       display:flex;
+
       align-items:center;
       justify-content:space-between;
+
       gap:10px;
     }
 
@@ -464,8 +825,11 @@
 
     .row{
       display:flex;
+
       align-items:center;
+
       gap:10px;
+
       min-width:0;
     }
 
@@ -475,8 +839,11 @@
 
     .label{
       display:flex;
+
       flex-direction:column;
+
       gap:2px;
+
       min-width:0;
     }
 
@@ -486,68 +853,162 @@
 
     .label span{
       font-size:12px;
+
       color:var(--muted);
+
       white-space:nowrap;
+
       overflow:hidden;
+
       text-overflow:ellipsis;
     }
 
     .actions{
       display:flex;
+
       gap:8px;
+
       flex-shrink:0;
     }
 
     .btn{
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card2) 74%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card2) 74%,
+          transparent
+        );
+
       padding:8px 12px;
+
       border-radius:10px;
+
       font-size:12px;
+
       color:var(--text);
+
       min-height:38px;
+
       display:inline-flex;
+
       align-items:center;
+
       justify-content:center;
     }
 
     .btn:hover{
-      background:color-mix(in oklab,var(--card2) 94%,transparent);
+      background:
+        color-mix(
+          in oklab,
+          var(--card2) 94%,
+          transparent
+        );
     }
 
     .btn[aria-disabled="true"]{
       opacity:.55;
+
       pointer-events:none;
+
       filter:grayscale(1);
     }
 
+    /* =========================
+       PREVIEW
+       ========================= */
+
     .preview{
-      border-top:1px solid rgba(255,255,255,.10);
+      border-top:
+        1px solid
+        rgba(255,255,255,.10);
+
       padding:12px;
-      background:rgba(0,0,0,.12);
+
+      background:
+        rgba(0,0,0,.12);
     }
 
     iframe{
       width:100%;
+
       height:420px;
+
       border:0;
+
       border-radius:12px;
-      background:color-mix(in oklab,var(--card) 70%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 70%,
+          transparent
+        );
     }
+
+    .embedFallback{
+      margin-top:10px;
+
+      padding:10px 12px;
+
+      border:1px dashed
+        rgba(255,255,255,.16);
+
+      border-radius:12px;
+
+      font-size:12px;
+
+      line-height:1.5;
+
+      color:var(--muted);
+
+      background:
+        rgba(0,0,0,.12);
+    }
+
+    .embedFallback a{
+      color:
+        color-mix(
+          in oklab,
+          var(--leaf) 55%,
+          var(--text)
+        );
+
+      text-decoration:underline;
+
+      text-underline-offset:3px;
+    }
+
+    /* =========================
+       PROJECT LINKS
+       ========================= */
 
     .links{
       margin-top:16px;
+
       border:1px solid var(--border);
-      background:color-mix(in oklab,var(--card) 90%,transparent);
+
+      background:
+        color-mix(
+          in oklab,
+          var(--card) 90%,
+          transparent
+        );
+
       border-radius:var(--r);
+
       padding:14px 16px;
+
       backdrop-filter:blur(8px);
     }
 
     .linksHeader{
       display:flex;
+
       align-items:flex-end;
       justify-content:space-between;
+
       gap:10px;
     }
 
@@ -557,12 +1018,15 @@
 
     .linksHeader span{
       color:var(--muted);
+
       font-size:12px;
     }
 
     .links ul{
       margin:10px 0 0;
+
       padding:0 0 0 18px;
+
       color:var(--muted);
     }
 
@@ -571,123 +1035,213 @@
     }
 
     .links a{
-      color:color-mix(in oklab,var(--leaf) 42%,var(--text));
+      color:
+        color-mix(
+          in oklab,
+          var(--leaf) 42%,
+          var(--text)
+        );
+
       text-decoration:underline;
+
       text-underline-offset:3px;
+
       overflow-wrap:anywhere;
     }
 
+    /* =========================
+       FOOTER
+       ========================= */
+
     .siteFooter{
       margin-top:18px;
+
       border:1px solid var(--border);
-      background:linear-gradient(
-        180deg,
-        color-mix(in oklab,var(--card2) 58%,transparent),
-        color-mix(in oklab,var(--card) 80%,transparent)
-      );
-      box-shadow:0 14px 45px rgba(0,0,0,.22);
+
+      background:
+        linear-gradient(
+          180deg,
+          color-mix(
+            in oklab,
+            var(--card2) 58%,
+            transparent
+          ),
+          color-mix(
+            in oklab,
+            var(--card) 80%,
+            transparent
+          )
+        );
+
+      box-shadow:
+        0 14px 45px
+        rgba(0,0,0,.22);
+
       overflow:hidden;
+
       backdrop-filter:blur(8px);
     }
 
     .footerGrid{
       display:grid;
+
       grid-template-columns:1fr;
+
       gap:12px;
+
       padding:14px 16px;
     }
 
     @media (min-width:920px){
       .footerGrid{
-        grid-template-columns:1.15fr 1fr .85fr;
+        grid-template-columns:
+          1.15fr
+          1fr
+          .85fr;
+
         align-items:start;
       }
     }
 
     .footerTitle{
       font-weight:700;
+
       letter-spacing:.2px;
+
       font-size:13px;
     }
 
     .footerMeta{
       margin-top:6px;
+
       color:var(--muted);
+
       font-size:12px;
+
       line-height:1.55;
     }
 
     .footerKicker{
       color:var(--muted);
+
       font-size:12px;
+
       letter-spacing:.2px;
     }
 
     .footerThesis{
       margin-top:6px;
+
       font-size:12px;
+
       color:var(--text);
+
       opacity:.9;
+
       line-height:1.55;
     }
 
     .footerCenter{
-      border-top:1px solid rgba(255,255,255,.08);
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
       padding-top:10px;
     }
 
     @media (min-width:920px){
       .footerCenter{
         border-top:0;
+
         padding-top:0;
+
         padding-left:12px;
-        border-left:1px solid rgba(255,255,255,.08);
+
+        border-left:
+          1px solid
+          rgba(255,255,255,.08);
       }
     }
 
     .footerLinks{
-      border-top:1px solid rgba(255,255,255,.08);
+      border-top:
+        1px solid
+        rgba(255,255,255,.08);
+
       padding-top:10px;
     }
 
     @media (min-width:920px){
       .footerLinks{
         border-top:0;
+
         padding-top:0;
+
         padding-left:12px;
-        border-left:1px solid rgba(255,255,255,.08);
+
+        border-left:
+          1px solid
+          rgba(255,255,255,.08);
       }
     }
 
     .footerList{
       margin:8px 0 0;
+
       padding:0;
+
       list-style:none;
+
       display:grid;
+
       gap:8px;
     }
 
     .footerList a{
       display:inline-flex;
+
       gap:8px;
+
       align-items:flex-start;
+
       font-size:12px;
-      color:color-mix(in oklab,var(--leaf) 42%,var(--text));
+
+      color:
+        color-mix(
+          in oklab,
+          var(--leaf) 42%,
+          var(--text)
+        );
+
       text-decoration:underline;
+
       text-underline-offset:3px;
+
       overflow-wrap:anywhere;
     }
 
     .footerBottom{
       display:flex;
+
       flex-wrap:wrap;
+
       gap:8px;
+
       justify-content:center;
+
       padding:10px 14px;
-      border-top:1px solid rgba(255,255,255,.10);
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.10);
+
       color:var(--muted);
+
       font-size:12px;
-      background:rgba(0,0,0,.12);
+
+      background:
+        rgba(0,0,0,.12);
+
       text-align:center;
     }
 
@@ -695,22 +1249,33 @@
       opacity:.7;
     }
 
+    /* =========================
+       RESPONSIVE
+       ========================= */
+
     @media (max-width:860px){
+
       .topbarInner{
         grid-template-columns:1fr auto;
       }
 
       .navToggle{
         display:inline-flex;
+
         flex-direction:column;
       }
 
       .navPills{
         grid-column:1 / -1;
+
         display:none;
+
         flex-direction:column;
+
         align-items:stretch;
+
         width:100%;
+
         padding-top:4px;
       }
 
@@ -720,42 +1285,63 @@
 
       .topbarInner.navOpen .pill{
         width:100%;
+
         text-align:left;
+
         border-radius:14px;
       }
 
-      .topbarInner.navOpen .navToggle span:nth-child(1){
-        transform:translateY(6px) rotate(45deg);
+      .topbarInner.navOpen
+      .navToggle
+      span:nth-child(1){
+        transform:
+          translateY(6px)
+          rotate(45deg);
       }
 
-      .topbarInner.navOpen .navToggle span:nth-child(2){
+      .topbarInner.navOpen
+      .navToggle
+      span:nth-child(2){
         opacity:0;
       }
 
-      .topbarInner.navOpen .navToggle span:nth-child(3){
-        transform:translateY(-6px) rotate(-45deg);
+      .topbarInner.navOpen
+      .navToggle
+      span:nth-child(3){
+        transform:
+          translateY(-6px)
+          rotate(-45deg);
       }
 
       .brandText strong,
       .brandText span{
         white-space:normal;
+
         overflow:visible;
+
         text-overflow:unset;
       }
 
       .sectionTitle{
         flex-direction:column;
+
         align-items:flex-start;
       }
     }
 
     @media (max-width:640px){
+
       .wrap{
-        padding:14px 12px 56px;
+        padding:
+          14px
+          12px
+          56px;
       }
 
       .topbarInner{
-        padding:10px 12px;
+        padding:
+          10px
+          12px;
       }
 
       .heroGrid{
@@ -763,7 +1349,12 @@
       }
 
       h1{
-        font-size:clamp(22px,7vw,30px);
+        font-size:
+          clamp(
+            22px,
+            7vw,
+            30px
+          );
       }
 
       .sub{
@@ -776,12 +1367,15 @@
 
       .chip{
         width:100%;
+
         justify-content:flex-start;
+
         border-radius:14px;
       }
 
       .heroCTARow{
         flex-direction:column;
+
         align-items:stretch;
       }
 
@@ -791,6 +1385,7 @@
 
       .cardHead{
         flex-direction:column;
+
         align-items:flex-start;
       }
 
@@ -800,6 +1395,7 @@
 
       summary{
         flex-direction:column;
+
         align-items:stretch;
       }
 
@@ -822,8 +1418,11 @@
     }
 
     @media (max-width:480px){
+
       .topbarInner{
-        padding:10px 12px;
+        padding:
+          10px
+          12px;
       }
 
       .brandMark{
@@ -851,7 +1450,12 @@
       }
 
       h1{
-        font-size:clamp(21px,7.5vw,28px);
+        font-size:
+          clamp(
+            21px,
+            7.5vw,
+            28px
+          );
       }
 
       .heroArt{
@@ -879,32 +1483,62 @@
 
 <body>
 
-  <div class="topbar" role="navigation" aria-label="Term navigation">
+  <!-- =========================
+       TOP BAR
+       ========================= -->
+
+  <div
+    class="topbar"
+    role="navigation"
+    aria-label="Term navigation"
+  >
+
     <div class="topbarInner">
 
       <div class="brand">
-        <div class="brandMark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none">
+
+        <div
+          class="brandMark"
+          aria-hidden="true"
+        >
+
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+
             <path
               d="M12 2c-3.6 3.7-6 7-6 10.2A6 6 0 0 0 12 18a6 6 0 0 0 6-5.8C18 9 15.6 5.7 12 2Z"
               stroke="currentColor"
               stroke-width="1.6"
               opacity=".9"
             />
+
             <path
               d="M7 19c3.6-1.2 6.2-3.7 8.8-7.2"
               stroke="currentColor"
               stroke-width="1.6"
               opacity=".9"
             />
+
           </svg>
+
         </div>
 
         <div class="brandText">
-          <strong id="brandName">Honours Portfolio</strong>
-          <span id="brandLine">BSc Honours Computer Science • DRL for maize irrigation</span>
+
+          <strong id="brandName">
+            Honours Portfolio
+          </strong>
+
+          <span id="brandLine">
+            BSc Honours Computer Science • DRL for maize irrigation
+          </span>
+
         </div>
+
       </div>
+
 
       <button
         class="navToggle"
@@ -913,28 +1547,79 @@
         aria-controls="siteNav"
         aria-label="Open navigation"
       >
+
         <span></span>
         <span></span>
         <span></span>
+
       </button>
 
-      <div class="navPills" id="siteNav" aria-label="Term links">
-        <button class="pill" type="button" data-goto="term1">Term 1</button>
-        <button class="pill" type="button" data-goto="term2">Term 2</button>
-        <button class="pill" type="button" data-goto="term3">Term 3</button>
-        <button class="pill" type="button" data-goto="term4">Term 4</button>
+
+      <div
+        class="navPills"
+        id="siteNav"
+        aria-label="Term links"
+      >
+
+        <button
+          class="pill"
+          type="button"
+          data-goto="term1"
+        >
+          Term 1
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-goto="term2"
+        >
+          Term 2
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-goto="term3"
+        >
+          Term 3
+        </button>
+
+        <button
+          class="pill"
+          type="button"
+          data-goto="term4"
+        >
+          Term 4
+        </button>
+
       </div>
 
     </div>
+
   </div>
+
+
+  <!-- =========================
+       MAIN
+       ========================= -->
 
   <div class="wrap">
 
-    <header class="hero" id="top">
+    <!-- HERO -->
+
+    <header
+      class="hero"
+      id="top"
+    >
+
       <div class="heroGrid">
 
         <div>
-          <p class="kicker">Honours project</p>
+
+          <p class="kicker">
+            Honours project
+          </p>
 
           <h1 id="thesisTitleH1">
             A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling
@@ -946,7 +1631,12 @@
             and design to implementation and final testing.
           </p>
 
-          <div class="metaRow" aria-label="Student and project details">
+
+          <div
+            class="metaRow"
+            aria-label="Student and project details"
+          >
+
             <div class="chip">
               👤 <b>Student:</b>
               <span id="studentNameChip"></span>
@@ -966,16 +1656,39 @@
               🆔 <b>Student No.:</b>
               <span id="studentNoChip"></span>
             </div>
+
           </div>
 
-          <div class="metaRow" aria-label="Research snapshot">
-            <div class="chip">🌽 <b>Crop:</b> Maize</div>
-            <div class="chip">💧 <b>Goal:</b> Adaptive irrigation</div>
-            <div class="chip">🤖 <b>Methods:</b> DRL algorithms</div>
-            <div class="chip">📊 <b>Output:</b> Benchmark + analysis</div>
+
+          <div
+            class="metaRow"
+            aria-label="Research snapshot"
+          >
+
+            <div class="chip">
+              🌽 <b>Crop:</b> Maize
+            </div>
+
+            <div class="chip">
+              💧 <b>Goal:</b> Adaptive irrigation
+            </div>
+
+            <div class="chip">
+              🤖 <b>Methods:</b> DRL algorithms
+            </div>
+
+            <div class="chip">
+              📊 <b>Output:</b> Benchmark + analysis
+            </div>
+
           </div>
 
-          <div class="heroCTARow" aria-label="Quick actions">
+
+          <div
+            class="heroCTARow"
+            aria-label="Quick actions"
+          >
+
             <a
               class="ctaBtn"
               href="#terms"
@@ -991,10 +1704,18 @@
             >
               🔗 Project links
             </a>
+
           </div>
+
         </div>
 
-        <div class="heroArt" aria-label="AgriTech hero artwork">
+
+        <!-- HERO ART -->
+
+        <div
+          class="heroArt"
+          aria-label="AgriTech hero artwork"
+        >
 
           <svg
             viewBox="0 0 720 480"
@@ -1004,18 +1725,61 @@
 
             <defs>
 
-              <linearGradient id="gSky" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0" stop-color="rgba(134,239,172,.25)"/>
-                <stop offset="1" stop-color="rgba(52,211,153,.12)"/>
+              <linearGradient
+                id="gSky"
+                x1="0"
+                x2="0"
+                y1="0"
+                y2="1"
+              >
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(134,239,172,.25)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(52,211,153,.12)"
+                />
+
               </linearGradient>
 
-              <linearGradient id="gSoil" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0" stop-color="rgba(255,204,51,.20)"/>
-                <stop offset="1" stop-color="rgba(134,239,172,.12)"/>
+
+              <linearGradient
+                id="gSoil"
+                x1="0"
+                x2="1"
+                y1="0"
+                y2="0"
+              >
+
+                <stop
+                  offset="0"
+                  stop-color="rgba(255,204,51,.20)"
+                />
+
+                <stop
+                  offset="1"
+                  stop-color="rgba(134,239,172,.12)"
+                />
+
               </linearGradient>
 
-              <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="8" result="b"/>
+
+              <filter
+                id="soft"
+                x="-20%"
+                y="-20%"
+                width="140%"
+                height="140%"
+              >
+
+                <feGaussianBlur
+                  stdDeviation="8"
+                  result="b"
+                />
+
                 <feColorMatrix
                   in="b"
                   type="matrix"
@@ -1025,17 +1789,36 @@
                     0 0 1 0 0
                     0 0 0 .8 0"
                 />
+
                 <feMerge>
+
                   <feMergeNode/>
-                  <feMergeNode in="SourceGraphic"/>
+
+                  <feMergeNode
+                    in="SourceGraphic"
+                  />
+
                 </feMerge>
+
               </filter>
 
             </defs>
 
-            <rect x="0" y="0" width="720" height="480" rx="22" fill="url(#gSky)"/>
 
-            <g opacity=".75" filter="url(#soft)">
+            <rect
+              x="0"
+              y="0"
+              width="720"
+              height="480"
+              rx="22"
+              fill="url(#gSky)"
+            />
+
+
+            <g
+              opacity=".75"
+              filter="url(#soft)"
+            >
 
               <path
                 d="M70 130 C180 80, 270 90, 350 150 S 520 250, 650 190"
@@ -1051,27 +1834,80 @@
                 stroke-width="3"
               />
 
-              <g fill="rgba(255,255,255,.85)">
-                <circle cx="70" cy="130" r="6"/>
-                <circle cx="210" cy="98" r="6"/>
-                <circle cx="350" cy="150" r="6"/>
-                <circle cx="520" cy="250" r="6"/>
-                <circle cx="650" cy="190" r="6"/>
 
-                <circle cx="110" cy="260" r="6"/>
-                <circle cx="280" cy="235" r="6"/>
-                <circle cx="380" cy="290" r="6"/>
-                <circle cx="540" cy="360" r="6"/>
-                <circle cx="660" cy="330" r="6"/>
+              <g fill="rgba(255,255,255,.85)">
+
+                <circle
+                  cx="70"
+                  cy="130"
+                  r="6"
+                />
+
+                <circle
+                  cx="210"
+                  cy="98"
+                  r="6"
+                />
+
+                <circle
+                  cx="350"
+                  cy="150"
+                  r="6"
+                />
+
+                <circle
+                  cx="520"
+                  cy="250"
+                  r="6"
+                />
+
+                <circle
+                  cx="650"
+                  cy="190"
+                  r="6"
+                />
+
+                <circle
+                  cx="110"
+                  cy="260"
+                  r="6"
+                />
+
+                <circle
+                  cx="280"
+                  cy="235"
+                  r="6"
+                />
+
+                <circle
+                  cx="380"
+                  cy="290"
+                  r="6"
+                />
+
+                <circle
+                  cx="540"
+                  cy="360"
+                  r="6"
+                />
+
+                <circle
+                  cx="660"
+                  cy="330"
+                  r="6"
+                />
+
               </g>
 
             </g>
+
 
             <path
               d="M0 340 C140 300, 260 360, 360 340 S 560 300, 720 340 L 720 480 L 0 480 Z"
               fill="url(#gSoil)"
               opacity=".9"
             />
+
 
             <path
               d="M0 356 C160 322, 260 380, 360 356 S 560 318, 720 356"
@@ -1080,7 +1916,10 @@
               stroke-width="3"
             />
 
-            <g transform="translate(310 150)">
+
+            <g
+              transform="translate(310 150)"
+            >
 
               <path
                 d="M60 210 C50 140, 56 90, 72 30"
@@ -1144,6 +1983,7 @@
 
             </g>
 
+
             <g opacity=".95">
 
               <path
@@ -1160,11 +2000,29 @@
                 stroke-width="2"
               />
 
-              <circle cx="560" cy="212" r="6" fill="rgba(96,165,250,.45)"/>
-              <circle cx="610" cy="226" r="5" fill="rgba(96,165,250,.38)"/>
-              <circle cx="585" cy="244" r="4" fill="rgba(96,165,250,.34)"/>
+              <circle
+                cx="560"
+                cy="212"
+                r="6"
+                fill="rgba(96,165,250,.45)"
+              />
+
+              <circle
+                cx="610"
+                cy="226"
+                r="5"
+                fill="rgba(96,165,250,.38)"
+              />
+
+              <circle
+                cx="585"
+                cy="244"
+                r="4"
+                fill="rgba(96,165,250,.34)"
+              />
 
             </g>
+
 
             <g opacity=".9">
 
@@ -1195,23 +2053,51 @@
         </div>
 
       </div>
+
     </header>
 
+
+    <!-- TERMS -->
+
     <div class="sectionTitle">
-      <h2>Terms & submissions</h2>
+
+      <h2>
+        Terms & submissions
+      </h2>
+
       <p>
         Report • Slides • Presentation (VoiceOver) • Prototype/System Demo
         (Video) • preview + open
       </p>
+
     </div>
 
-    <section class="grid" id="terms" aria-label="Term cards"></section>
 
-    <section class="links" id="project-links" aria-label="Project links">
+    <section
+      class="grid"
+      id="terms"
+      aria-label="Term cards"
+    ></section>
+
+
+    <!-- PROJECT LINKS -->
+
+    <section
+      class="links"
+      id="project-links"
+      aria-label="Project links"
+    >
 
       <div class="linksHeader">
-        <strong>Project links</strong>
-        <span>References, datasets, and starter code</span>
+
+        <strong>
+          Project links
+        </strong>
+
+        <span>
+          References, datasets, and starter code
+        </span>
+
       </div>
 
       <ul id="projectLinks"></ul>
@@ -1220,14 +2106,24 @@
 
   </div>
 
-  <footer class="siteFooter" aria-label="Footer">
+
+  <!-- =========================
+       FOOTER
+       ========================= -->
+
+  <footer
+    class="siteFooter"
+    aria-label="Footer"
+  >
 
     <div class="footerGrid">
 
       <div class="footerCol">
 
         <div class="footerTitle">
-          <strong>Empowering Sustainable Agriculture</strong>
+          <strong>
+            Empowering Sustainable Agriculture
+          </strong>
         </div>
 
         <div class="footerMeta">
@@ -1240,85 +2136,134 @@
 
       </div>
 
+
       <div class="footerCol footerCenter">
 
         <div class="footerKicker">
-          <strong>Thesis</strong>
+          <strong>
+            Thesis
+          </strong>
         </div>
 
-        <div class="footerThesis" id="footerThesis"></div>
+        <div
+          class="footerThesis"
+          id="footerThesis"
+        ></div>
 
       </div>
+
 
       <div class="footerCol footerLinks">
 
         <div class="footerKicker">
-          <strong>Quick links</strong>
+          <strong>
+            Quick links
+          </strong>
         </div>
 
-        <ul class="footerList" id="footerLinks"></ul>
+        <ul
+          class="footerList"
+          id="footerLinks"
+        ></ul>
 
       </div>
 
     </div>
 
-    <div class="footerBottom" id="footerBottom"></div>
+
+    <div
+      class="footerBottom"
+      id="footerBottom"
+    ></div>
 
   </footer>
 
 
   <script>
 
+    /* =========================
+       CONFIGURATION
+       ========================= */
+
     const CONFIG = {
 
-      studentName:"Vukosi Jayson Maluleke",
+      studentName:
+        "Vukosi Jayson Maluleke",
 
-      degree:"BSc Honours Computer Science",
+      degree:
+        "BSc Honours Computer Science",
 
-      studentNumber:"4279123",
+      studentNumber:
+        "4279123",
 
-      supervisor:"Prof. Clement N. Nyirenda",
+      supervisor:
+        "Prof. Clement N. Nyirenda",
 
       thesisTitle:
         "A Comparative Performance Benchmark of Deep Reinforcement Learning Algorithms for Adaptive Maize Irrigation Scheduling",
 
+
       links:[
+
         {
-          label:"MDPI — Data Availability Statement",
-          url:"https://www.mdpi.com/2227-7390/13/4/595#Data_Availability_Statement"
+          label:
+            "MDPI — Data Availability Statement",
+
+          url:
+            "https://www.mdpi.com/2227-7390/13/4/595#Data_Availability_Statement"
         },
+
         {
-          label:"AquaCropGymnasium — startup code",
-          url:"https://github.com/alkaffulm/aquacropgymnasium"
+          label:
+            "AquaCropGymnasium — startup code",
+
+          url:
+            "https://github.com/alkaffulm/aquacropgymnasium"
         }
+
       ],
+
 
       terms:[
 
+
+        /* =========================
+           TERM 1
+           ========================= */
+
         {
-          id:"term1",
 
-          title:"Term 1",
+          id:
+            "term1",
 
-          badge:"Project Analysis",
+          title:
+            "Term 1",
+
+          badge:
+            "Project Analysis",
 
           summary:
             "Define the research problem and benchmarking goals for adaptive maize irrigation, focusing on water conservation, crop yield, and climate-resilient farming. Review DRL and irrigation scheduling literature, set up the AquaCropGymnasium/AquaCrop simulation workflow, establish fixed and rule-based baseline policies, and define evaluation criteria such as yield, water use, water-use efficiency, reward, training stability, and reproducibility.",
 
-          art:"analysis",
+          art:
+            "analysis",
+
 
           items:{
 
             report:{
-              url:"https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link"
+              url:
+                "https://drive.google.com/file/d/1Au2gmZsce1THa8KwUHTgURYnRZ5etlRG/view?usp=drive_link"
             },
 
             slides:{
-              url:"https://docs.google.com/presentation/d/1zi6z14HVEv3RKb4IdeorgHlfXZud0x6c/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
+              url:
+                "https://docs.google.com/presentation/d/1zi6z14HVEv3RKb4IdeorgHlfXZud0x6c/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
             },
 
             video:{
-              url:"https://drive.google.com/file/d/1fVHormta0Zn48foNDMMCIGamwHkeTN7Y/view?usp=drive_link"
+              url:
+                "https://drive.google.com/file/d/1fVHormta0Zn48foNDMMCIGamwHkeTN7Y/view?usp=drive_link"
             }
 
           }
@@ -1326,34 +2271,48 @@
         },
 
 
+        /* =========================
+           TERM 2
+           ========================= */
+
         {
-          id:"term2",
 
-          title:"Term 2",
+          id:
+            "term2",
 
-          badge:"Project Design",
+          title:
+            "Term 2",
+
+          badge:
+            "Project Design",
 
           summary:
             "Finalize the benchmark design: state/action/reward definitions for adaptive maize irrigation; select DRL algorithms for comparison; implement the training pipeline; run initial experiments, sanity checks, and the prototype demo video.",
 
-          art:"design",
+          art:
+            "design",
+
 
           items:{
 
             report:{
-              url:"https://drive.google.com/file/d/17VyJqLPiGc1MOezfUtSbaEc2bhMJ5XNN/view?usp=sharing"
+              url:
+                "https://drive.google.com/file/d/17VyJqLPiGc1MOezfUtSbaEc2bhMJ5XNN/view?usp=sharing"
             },
 
             slides:{
-              url:"https://docs.google.com/presentation/d/15tHue_AA27vYGeLVBoAy5KBm6OPhUvW5/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true"
+              url:
+                "https://docs.google.com/presentation/d/15tHue_AA27vYGeLVBoAy5KBm6OPhUvW5/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true"
             },
 
             video:{
-              url:"https://drive.google.com/file/d/1Y9rdwiHsqWsHociD8PoAaJm_m9h_Gu-8/view?usp=sharing"
+              url:
+                "https://drive.google.com/file/d/1Y9rdwiHsqWsHociD8PoAaJm_m9h_Gu-8/view?usp=sharing"
             },
 
             prototypeDemo:{
-              url:"https://drive.google.com/file/d/1dAZF6iX8bRnhjwMiTYjIEmDv1Ky8Ff38/view?usp=sharing"
+              url:
+                "https://drive.google.com/file/d/1dAZF6iX8bRnhjwMiTYjIEmDv1Ky8Ff38/view?usp=sharing"
             }
 
           }
@@ -1361,35 +2320,62 @@
         },
 
 
+        /* =========================
+           TERM 3
+           ========================= */
+
         {
-          id:"term3",
 
-          title:"Term 3",
+          id:
+            "term3",
 
-          badge:"Project Implementation",
+          title:
+            "Term 3",
+
+          badge:
+            "Project Implementation",
 
           summary:
-            "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics (yield/water-use efficiency/stability); conduct ablations and robustness analysis.",
+            "Execute full benchmark experiments across algorithms and scenarios; tune hyperparameters; track learning curves and performance metrics (yield, water-use efficiency, and stability); and conduct robustness analysis.",
 
-          art:"implementation",
+          art:
+            "implementation",
+
 
           items:{
 
             report:{
-              url:"https://drive.google.com/file/d/16TeUKFgZbYnqCQuItpFkf9yDM5hCjTWQ/view?usp=drive_link"
+              url:
+                "https://drive.google.com/file/d/16TeUKFgZbYnqCQuItpFkf9yDM5hCjTWQ/view?usp=drive_link"
             },
+
+
+            /*
+             * TERM 3 SLIDES
+             * Google Slides URL can remain the normal /edit URL.
+             * normalizeSlidesUrl() below converts it to /preview
+             * for the embedded viewer.
+             */
 
             slides:{
-              url:"https://docs.google.com/presentation/d/13AYACgwLkaSi1aSnCou8Ao3YsI_2pSI2/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true"
+              url:
+                "https://docs.google.com/presentation/d/13AYACgwLkaSi1aSnCou8Ao3YsI_2pSI2/edit?usp=sharing&ouid=105854788243039915334&rtpof=true&sd=true"
             },
+
 
             video:{
-              url:"https://drive.google.com/file/d/1ycuI7xf87qa-C0uSEzAM3VcbxOMC_UrS/view?usp=sharing"
+              url:
+                "https://drive.google.com/file/d/1ycuI7xf87qa-C0uSEzAM3VcbxOMC_UrS/view?usp=sharing"
             },
 
-            /* FIXED: Term 3 system demo is now explicitly supported */
+
+            /*
+             * TERM 3 SYSTEM DEMO
+             */
+
             systemDemo:{
-              url:"https://drive.google.com/file/d/141lXVcsdYYjcScuF-Dc5KS6dttutrnxe/view?usp=drive_link"
+              url:
+                "https://drive.google.com/file/d/141lXVcsdYYjcScuF-Dc5KS6dttutrnxe/view?usp=drive_link"
             }
 
           }
@@ -1397,30 +2383,43 @@
         },
 
 
+        /* =========================
+           TERM 4
+           ========================= */
+
         {
-          id:"term4",
 
-          title:"Term 4",
+          id:
+            "term4",
 
-          badge:"Project Testing",
+          title:
+            "Term 4",
+
+          badge:
+            "Project Testing",
 
           summary:
             "Validate final results with rigorous testing (generalization, stress scenarios, statistical comparisons); finalize thesis write-up; produce the final presentation and demo video; clean up and document the code/reproducibility bundle.",
 
-          art:"testing",
+          art:
+            "testing",
+
 
           items:{
 
             report:{
-              url:"TERM4_REPORT_URL_OR_ID"
+              url:
+                "TERM4_REPORT_URL_OR_ID"
             },
 
             slides:{
-              url:"TERM4_SLIDES_URL_OR_ID"
+              url:
+                "TERM4_SLIDES_URL_OR_ID"
             },
 
             video:{
-              url:"TERM4_VIDEO_URL_OR_ID"
+              url:
+                "TERM4_VIDEO_URL_OR_ID"
             }
 
           }
@@ -1437,160 +2436,298 @@
        ========================= */
 
     const isLikelyGoogleId = (s) =>
+
       typeof s === "string" &&
-      /^[a-zA-Z0-9_-]{20,}$/.test(s.trim());
+
+      /^[a-zA-Z0-9_-]{20,}$/.test(
+        s.trim()
+      );
 
 
     const isLikelyYoutubeId = (s) =>
-      typeof s === "string" &&
-      /^[a-zA-Z0-9_-]{6,15}$/.test(s.trim());
 
+      typeof s === "string" &&
+
+      /^[a-zA-Z0-9_-]{6,15}$/.test(
+        s.trim()
+      );
+
+
+    /*
+     * Google Drive file
+     */
 
     function normalizeDriveFileUrl(input){
 
-      if(!input || typeof input !== "string"){
+      if(
+        !input ||
+        typeof input !== "string"
+      ){
         return null;
       }
 
-      const s = input.trim();
 
-      if(isLikelyGoogleId(s)){
+      const s =
+        input.trim();
+
+
+      if(
+        isLikelyGoogleId(s)
+      ){
 
         return {
-          open:`https://drive.google.com/file/d/${s}/view`,
-          embed:`https://drive.google.com/file/d/${s}/preview`
+
+          open:
+            `https://drive.google.com/file/d/${s}/view`,
+
+          embed:
+            `https://drive.google.com/file/d/${s}/preview`
+
         };
 
       }
 
-      const m = s.match(
-        /drive\.google\.com\/file\/d\/([^/]+)/i
-      );
+
+      const m =
+        s.match(
+          /drive\.google\.com\/file\/d\/([^/]+)/i
+        );
+
 
       if(m){
 
         return {
-          open:`https://drive.google.com/file/d/${m[1]}/view`,
-          embed:`https://drive.google.com/file/d/${m[1]}/preview`
+
+          open:
+            `https://drive.google.com/file/d/${m[1]}/view`,
+
+          embed:
+            `https://drive.google.com/file/d/${m[1]}/preview`
+
         };
 
       }
+
 
       return null;
 
     }
 
+
+    /*
+     * Google Docs
+     */
 
     function normalizeDocsUrl(input){
 
-      if(!input || typeof input !== "string"){
+      if(
+        !input ||
+        typeof input !== "string"
+      ){
         return null;
       }
 
-      const s = input.trim();
 
-      const m = s.match(
-        /docs\.google\.com\/document\/d\/([^/]+)/i
-      );
+      const s =
+        input.trim();
+
+
+      const m =
+        s.match(
+          /docs\.google\.com\/document\/d\/([^/]+)/i
+        );
+
 
       if(m){
 
         return {
-          open:`https://docs.google.com/document/d/${m[1]}/edit`,
-          embed:`https://docs.google.com/document/d/${m[1]}/preview`
+
+          open:
+            `https://docs.google.com/document/d/${m[1]}/edit`,
+
+          embed:
+            `https://docs.google.com/document/d/${m[1]}/preview`
+
         };
 
       }
 
-      if(isLikelyGoogleId(s)){
+
+      if(
+        isLikelyGoogleId(s)
+      ){
 
         return {
-          open:`https://docs.google.com/document/d/${s}/edit`,
-          embed:`https://docs.google.com/document/d/${s}/preview`
+
+          open:
+            `https://docs.google.com/document/d/${s}/edit`,
+
+          embed:
+            `https://docs.google.com/document/d/${s}/preview`
+
         };
 
       }
+
 
       return null;
 
     }
 
 
+    /*
+     * GOOGLE SLIDES
+     *
+     * IMPORTANT FIX:
+     *
+     * The embedded presentation uses:
+     *
+     *   /preview
+     *
+     * rather than:
+     *
+     *   /embed
+     *
+     * This is more reliable for normal shared
+     * Google Slides links.
+     */
+
     function normalizeSlidesUrl(input){
 
-      if(!input || typeof input !== "string"){
+      if(
+        !input ||
+        typeof input !== "string"
+      ){
         return null;
       }
 
-      const s = input.trim();
 
-      const m = s.match(
-        /docs\.google\.com\/presentation\/d\/([^/]+)/i
-      );
+      const s =
+        input.trim();
+
+
+      /*
+       * Extract presentation ID from:
+       *
+       * https://docs.google.com/presentation/d/ID/edit
+       */
+
+      const m =
+        s.match(
+          /docs\.google\.com\/presentation\/d\/([^/]+)/i
+        );
+
 
       const id =
         (m && m[1]) ||
-        (isLikelyGoogleId(s) ? s : null);
+        (
+          isLikelyGoogleId(s)
+            ? s
+            : null
+        );
+
 
       if(!id){
         return null;
       }
 
+
       return {
+
+        /*
+         * Open in Google Slides
+         */
 
         open:
           `https://docs.google.com/presentation/d/${id}/edit`,
 
+
+        /*
+         * Embed/preview inside portfolio
+         *
+         * FIXED
+         */
+
         embed:
-          `https://docs.google.com/presentation/d/${id}/embed?start=false&loop=false&delayms=3000`
+          `https://docs.google.com/presentation/d/${id}/preview`
 
       };
 
     }
 
 
-    /* FIXED YOUTUBE NORMALISATION */
+    /*
+     * YouTube
+     */
+
     function normalizeYoutubeUrl(input){
 
-      if(!input || typeof input !== "string"){
+      if(
+        !input ||
+        typeof input !== "string"
+      ){
         return null;
       }
 
-      const s = input.trim();
+
+      const s =
+        input.trim();
+
 
       let id = null;
 
-      let m = s.match(
-        /youtu\.be\/([^?&/]+)/i
-      );
+
+      let m =
+        s.match(
+          /youtu\.be\/([^?&/]+)/i
+        );
+
 
       if(m){
-        id = m[1];
+        id =
+          m[1];
       }
 
-      m = s.match(
-        /[?&]v=([^&]+)/i
-      );
+
+      m =
+        s.match(
+          /[?&]v=([^&]+)/i
+        );
+
 
       if(m){
-        id = m[1];
+        id =
+          m[1];
       }
 
-      m = s.match(
-        /youtube\.com\/embed\/([^?&/]+)/i
-      );
+
+      m =
+        s.match(
+          /youtube\.com\/embed\/([^?&/]+)/i
+        );
+
 
       if(m){
-        id = m[1];
+        id =
+          m[1];
       }
 
-      if(!id && isLikelyYoutubeId(s)){
-        id = s;
+
+      if(
+        !id &&
+        isLikelyYoutubeId(s)
+      ){
+
+        id =
+          s;
+
       }
+
 
       if(!id){
         return null;
       }
+
 
       return {
 
@@ -1619,7 +2756,10 @@
 
       return (s || "")
         .toString()
-        .replace(/[^a-zA-Z0-9_-]/g,"-");
+        .replace(
+          /[^a-zA-Z0-9_-]/g,
+          "-"
+        );
 
     }
 
@@ -1633,12 +2773,22 @@
       const common =
         `viewBox="0 0 720 240" role="img" aria-label="Term illustration"`;
 
+
       const u =
-        safeId(uid || kind || "term");
+        safeId(
+          uid ||
+          kind ||
+          "term"
+        );
+
 
       const grad =
         `${u}-grad`;
 
+
+      /* =========================
+         ANALYSIS
+         ========================= */
 
       if(kind === "analysis"){
 
@@ -1648,7 +2798,11 @@
 
             <defs>
 
-              <linearGradient id="${grad}" x1="0" x2="1">
+              <linearGradient
+                id="${grad}"
+                x1="0"
+                x2="1"
+              >
 
                 <stop
                   offset="0"
@@ -1664,6 +2818,7 @@
 
             </defs>
 
+
             <rect
               x="0"
               y="0"
@@ -1673,12 +2828,14 @@
               fill="url(#${grad})"
             />
 
+
             <path
               d="M28 176 C140 110,250 208,360 150 S570 86,692 150"
               fill="none"
               stroke="rgba(255,255,255,.22)"
               stroke-width="4"
             />
+
 
             <g>
 
@@ -1692,6 +2849,7 @@
                 stroke="rgba(255,255,255,.14)"
               />
 
+
               <text
                 x="74"
                 y="82"
@@ -1701,6 +2859,7 @@
               >
                 Project analysis
               </text>
+
 
               <text
                 x="74"
@@ -1712,6 +2871,7 @@
                 • problem definition
               </text>
 
+
               <text
                 x="74"
                 y="134"
@@ -1721,6 +2881,7 @@
               >
                 • literature review
               </text>
+
 
               <text
                 x="74"
@@ -1734,6 +2895,7 @@
 
             </g>
 
+
             <g
               transform="translate(500 14)"
             >
@@ -1745,12 +2907,14 @@
                 stroke-width="2"
               />
 
+
               <path
                 d="M32 116c18 18 52 18 76 0"
                 stroke="rgba(255,255,255,.30)"
                 stroke-width="3"
                 fill="none"
               />
+
 
               <text
                 x="8"
@@ -1765,10 +2929,15 @@
             </g>
 
           </svg>
+
         `;
 
       }
 
+
+      /* =========================
+         DESIGN
+         ========================= */
 
       if(kind === "design"){
 
@@ -1778,7 +2947,11 @@
 
             <defs>
 
-              <linearGradient id="${grad}" x1="0" x2="1">
+              <linearGradient
+                id="${grad}"
+                x1="0"
+                x2="1"
+              >
 
                 <stop
                   offset="0"
@@ -1794,6 +2967,7 @@
 
             </defs>
 
+
             <rect
               x="0"
               y="0"
@@ -1802,6 +2976,7 @@
               rx="18"
               fill="url(#${grad})"
             />
+
 
             <g transform="translate(52 44)">
 
@@ -1815,6 +2990,7 @@
                 stroke="rgba(255,255,255,.14)"
               />
 
+
               <text
                 x="22"
                 y="40"
@@ -1824,6 +3000,7 @@
               >
                 Project design
               </text>
+
 
               <text
                 x="22"
@@ -1835,7 +3012,11 @@
                 state • action • reward • scenarios
               </text>
 
-              <g transform="translate(22 88)" opacity=".95">
+
+              <g
+                transform="translate(22 88)"
+                opacity=".95"
+              >
 
                 <rect
                   x="0"
@@ -1847,6 +3028,7 @@
                   stroke="rgba(255,255,255,.14)"
                 />
 
+
                 <text
                   x="16"
                   y="28"
@@ -1857,16 +3039,19 @@
                   Environment
                 </text>
 
+
                 <path
                   d="M170 22 H240"
                   stroke="rgba(255,255,255,.22)"
                   stroke-width="3"
                 />
 
+
                 <polygon
                   points="240,22 232,16 232,28"
                   fill="rgba(255,255,255,.22)"
                 />
+
 
                 <rect
                   x="252"
@@ -1878,6 +3063,7 @@
                   stroke="rgba(255,255,255,.14)"
                 />
 
+
                 <text
                   x="268"
                   y="28"
@@ -1888,16 +3074,19 @@
                   DRL Agent
                 </text>
 
+
                 <path
                   d="M434 22 H504"
                   stroke="rgba(255,255,255,.22)"
                   stroke-width="3"
                 />
 
+
                 <polygon
                   points="504,22 496,16 496,28"
                   fill="rgba(255,255,255,.22)"
                 />
+
 
                 <rect
                   x="516"
@@ -1908,6 +3097,7 @@
                   fill="rgba(52,211,153,.14)"
                   stroke="rgba(52,211,153,.40)"
                 />
+
 
                 <text
                   x="530"
@@ -1924,10 +3114,15 @@
             </g>
 
           </svg>
+
         `;
 
       }
 
+
+      /* =========================
+         IMPLEMENTATION
+         ========================= */
 
       if(kind === "implementation"){
 
@@ -1937,7 +3132,11 @@
 
             <defs>
 
-              <linearGradient id="${grad}" x1="0" x2="1">
+              <linearGradient
+                id="${grad}"
+                x1="0"
+                x2="1"
+              >
 
                 <stop
                   offset="0"
@@ -1953,6 +3152,7 @@
 
             </defs>
 
+
             <rect
               x="0"
               y="0"
@@ -1961,6 +3161,7 @@
               rx="18"
               fill="url(#${grad})"
             />
+
 
             <g opacity=".9">
 
@@ -1984,6 +3185,7 @@
 
             </g>
 
+
             <g
               transform="translate(390 40)"
               opacity=".95"
@@ -1999,6 +3201,7 @@
                 stroke="rgba(255,255,255,.14)"
               />
 
+
               <path
                 d="M26 122 C66 72,112 140,152 88 S224 46,258 78"
                 fill="none"
@@ -2006,15 +3209,41 @@
                 stroke-width="4"
               />
 
+
               <g fill="rgba(255,255,255,.86)">
 
-                <circle cx="26" cy="122" r="5"/>
-                <circle cx="92" cy="114" r="5"/>
-                <circle cx="152" cy="88" r="5"/>
-                <circle cx="224" cy="46" r="5"/>
-                <circle cx="258" cy="78" r="5"/>
+                <circle
+                  cx="26"
+                  cy="122"
+                  r="5"
+                />
+
+                <circle
+                  cx="92"
+                  cy="114"
+                  r="5"
+                />
+
+                <circle
+                  cx="152"
+                  cy="88"
+                  r="5"
+                />
+
+                <circle
+                  cx="224"
+                  cy="46"
+                  r="5"
+                />
+
+                <circle
+                  cx="258"
+                  cy="78"
+                  r="5"
+                />
 
               </g>
+
 
               <text
                 x="22"
@@ -2025,6 +3254,7 @@
               >
                 Implementation
               </text>
+
 
               <text
                 x="22"
@@ -2039,10 +3269,15 @@
             </g>
 
           </svg>
+
         `;
 
       }
 
+
+      /* =========================
+         TESTING
+         ========================= */
 
       if(kind === "testing"){
 
@@ -2052,7 +3287,11 @@
 
             <defs>
 
-              <linearGradient id="${grad}" x1="0" x2="1">
+              <linearGradient
+                id="${grad}"
+                x1="0"
+                x2="1"
+              >
 
                 <stop
                   offset="0"
@@ -2068,6 +3307,7 @@
 
             </defs>
 
+
             <rect
               x="0"
               y="0"
@@ -2076,6 +3316,7 @@
               rx="18"
               fill="url(#${grad})"
             />
+
 
             <g transform="translate(52 44)">
 
@@ -2089,6 +3330,7 @@
                 stroke="rgba(255,255,255,.14)"
               />
 
+
               <text
                 x="22"
                 y="40"
@@ -2099,6 +3341,7 @@
                 Project testing
               </text>
 
+
               <text
                 x="22"
                 y="66"
@@ -2108,6 +3351,7 @@
               >
                 generalization • stress tests • statistical comparisons
               </text>
+
 
               <g
                 transform="translate(22 86)"
@@ -2123,6 +3367,7 @@
                   stroke-linejoin="round"
                 />
 
+
                 <text
                   x="70"
                   y="36"
@@ -2133,7 +3378,10 @@
                   validation checklist
                 </text>
 
-                <g transform="translate(300 -60)">
+
+                <g
+                  transform="translate(300 -60)"
+                >
 
                   <rect
                     x="0"
@@ -2145,12 +3393,14 @@
                     stroke="rgba(255,255,255,.14)"
                   />
 
+
                   <path
                     d="M18 40 C44 20,68 48,92 28 S140 12,190 26"
                     fill="none"
                     stroke="rgba(255,204,51,.55)"
                     stroke-width="4"
                   />
+
 
                   <circle
                     cx="18"
@@ -2159,12 +3409,14 @@
                     fill="rgba(255,255,255,.86)"
                   />
 
+
                   <circle
                     cx="92"
                     cy="28"
                     r="4"
                     fill="rgba(255,255,255,.86)"
                   />
+
 
                   <circle
                     cx="190"
@@ -2180,6 +3432,7 @@
             </g>
 
           </svg>
+
         `;
 
       }
@@ -2188,6 +3441,7 @@
       return `
 
         <svg ${common}>
+
           <rect
             x="0"
             y="0"
@@ -2196,6 +3450,7 @@
             rx="18"
             fill="rgba(255,255,255,.06)"
           />
+
         </svg>
 
       `;
@@ -2207,61 +3462,92 @@
        DELIVERABLE BUILDER
        ========================= */
 
-    function buildDeliverable(kind,raw){
+    function buildDeliverable(
+      kind,
+      raw
+    ){
 
       const labels = {
 
-        report:"Report (PDF)",
+        report:
+          "Report (PDF)",
 
-        slides:"Presentation (Slides)",
+        slides:
+          "Presentation (Slides)",
 
-        video:"Presentation (VoiceOver)",
+        video:
+          "Presentation (VoiceOver)",
 
-        prototypeDemo:"Prototype Demo (Video)",
+        prototypeDemo:
+          "Prototype Demo (Video)",
 
-        /* FIXED: new System Demo type */
-        systemDemo:"System Demo (Video)"
+        systemDemo:
+          "System Demo (Video)"
 
       };
 
 
       const icons = {
 
-        report:"📄",
+        report:
+          "📄",
 
-        slides:"🖥️",
+        slides:
+          "🖥️",
 
-        video:"🎥",
+        video:
+          "🎥",
 
-        prototypeDemo:"🎬",
+        prototypeDemo:
+          "🎬",
 
-        /* FIXED */
-        systemDemo:"🧪"
+        systemDemo:
+          "🧪"
 
       };
 
 
       const label =
-        labels[kind] || "Submission";
+        labels[kind] ||
+        "Submission";
+
 
       const icon =
-        icons[kind] || "📌";
+        icons[kind] ||
+        "📌";
 
 
       let norm = null;
 
 
-      if(kind === "report"){
-        norm = bestReport(raw);
+      /* REPORT */
+
+      if(
+        kind === "report"
+      ){
+
+        norm =
+          bestReport(raw);
+
       }
 
 
-      if(kind === "slides"){
-        norm = normalizeSlidesUrl(raw);
+      /* SLIDES */
+
+      if(
+        kind === "slides"
+      ){
+
+        norm =
+          normalizeSlidesUrl(raw);
+
       }
 
 
-      /* FIXED: systemDemo is treated like a video */
+      /*
+       * VIDEOS / DEMOS
+       */
+
       if(
         kind === "video" ||
         kind === "prototypeDemo" ||
@@ -2275,13 +3561,20 @@
       }
 
 
-      const missing = !norm;
+      const missing =
+        !norm;
+
 
       const open =
-        missing ? "#" : norm.open;
+        missing
+          ? "#"
+          : norm.open;
+
 
       const embed =
-        missing ? "" : norm.embed;
+        missing
+          ? ""
+          : norm.embed;
 
 
       const isVideoLike =
@@ -2290,57 +3583,96 @@
         kind === "systemDemo";
 
 
-      const subtitle = missing
+      const subtitle =
 
-        ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
+        missing
 
-        : (
-            isVideoLike
-            ? "Embedded player"
-            : "Preview inside this page"
-          );
+          ? "Paste a Drive/Docs/Slides/YouTube link (or ID) into CONFIG"
+
+          : (
+              isVideoLike
+                ? "Embedded player"
+                : "Preview inside this page"
+            );
 
 
-      const previewHtml = missing
+      /*
+       * PREVIEW
+       */
 
-        ? `
+      const previewHtml =
 
-          <div class="preview">
+        missing
 
-            <div
-              style="
-                padding:14px;
-                color:var(--muted);
-                border:1px dashed rgba(255,255,255,.16);
-                border-radius:12px;
-              "
-            >
+          ? `
 
-              Add your ${label} link in
-              <code>CONFIG</code> →
-              <code>terms[].items.${kind}.url</code>.
+            <div class="preview">
+
+              <div
+                style="
+                  padding:14px;
+                  color:var(--muted);
+                  border:1px dashed rgba(255,255,255,.16);
+                  border-radius:12px;
+                "
+              >
+
+                Add your
+                ${label}
+                link in
+                <code>CONFIG</code>
+                →
+                <code>terms[].items.${kind}.url</code>.
+
+              </div>
 
             </div>
 
-          </div>
+          `
 
-        `
+          : `
 
-        : `
+            <div class="preview">
 
-          <div class="preview">
+              <iframe
+                src="${embed}"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; fullscreen"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="${label}"
+              ></iframe>
 
-            <iframe
-              src="${embed}"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-              title="${label}"
-            ></iframe>
 
-          </div>
+              ${
+                kind === "slides"
 
-        `;
+                  ? `
+
+                    <div class="embedFallback">
+
+                      If the Google Slides preview is blocked by
+                      Google sharing settings, use
+                      <a
+                        href="${open}"
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Open presentation
+                      </a>
+                      to view the slides directly.
+
+                    </div>
+
+                  `
+
+                  : ""
+
+              }
+
+            </div>
+
+          `;
 
 
       return `
@@ -2358,21 +3690,31 @@
                 ${icon}
               </div>
 
+
               <div class="label">
 
-                <strong>${label}</strong>
+                <strong>
+                  ${label}
+                </strong>
 
-                <span>${subtitle}</span>
+                <span>
+                  ${subtitle}
+                </span>
 
               </div>
 
             </div>
 
+
             <div class="actions">
 
               <a
                 class="btn"
-                ${missing ? 'aria-disabled="true"' : ''}
+                ${
+                  missing
+                    ? 'aria-disabled="true"'
+                    : ''
+                }
                 target="_blank"
                 rel="noopener"
                 href="${open}"
@@ -2383,6 +3725,7 @@
             </div>
 
           </summary>
+
 
           ${previewHtml}
 
@@ -2415,11 +3758,13 @@
                 ${t.title}
               </h3>
 
+
               <p class="termMeta">
                 ${t.summary}
               </p>
 
             </div>
+
 
             <div class="badge">
               ${t.badge}
@@ -2427,51 +3772,71 @@
 
           </div>
 
+
           <div class="cardBody">
 
             <div
               class="termArt"
               aria-label="${t.title} illustration"
             >
-              ${termArtSvg(t.art,t.id)}
+
+              ${termArtSvg(
+                t.art,
+                t.id
+              )}
+
             </div>
+
 
             <div
               class="deliverables"
               aria-label="${t.title} deliverables"
             >
 
-              ${buildDeliverable(
-                "report",
-                t.items?.report?.url
-              )}
+              ${
+                buildDeliverable(
+                  "report",
+                  t.items?.report?.url
+                )
+              }
 
-              ${buildDeliverable(
-                "slides",
-                t.items?.slides?.url
-              )}
 
-              ${buildDeliverable(
-                "video",
-                t.items?.video?.url
-              )}
+              ${
+                buildDeliverable(
+                  "slides",
+                  t.items?.slides?.url
+                )
+              }
+
+
+              ${
+                buildDeliverable(
+                  "video",
+                  t.items?.video?.url
+                )
+              }
+
 
               ${
                 t.items?.prototypeDemo
+
                   ? buildDeliverable(
                       "prototypeDemo",
                       t.items.prototypeDemo.url
                     )
+
                   : ""
               }
 
+
               ${
-                /* FIXED: Term 3 System Demo */
                 t.items?.systemDemo
+
                   ? buildDeliverable(
                       "systemDemo",
                       t.items.systemDemo.url
                     )
+
                   : ""
               }
 
@@ -2490,18 +3855,26 @@
        PAGE INITIALISATION
        ========================= */
 
-    const now = new Date();
+    const now =
+      new Date();
+
 
     const year =
       now.getFullYear();
+
 
     const updatedStr =
       now.toLocaleDateString(
         undefined,
         {
-          year:"numeric",
-          month:"short",
-          day:"2-digit"
+          year:
+            "numeric",
+
+          month:
+            "short",
+
+          day:
+            "2-digit"
         }
       );
 
@@ -2537,6 +3910,7 @@
 
 
     updateBrandText();
+
 
     window.addEventListener(
       "resize",
@@ -2581,7 +3955,9 @@
 
 
     const termsEl =
-      document.getElementById("terms");
+      document.getElementById(
+        "terms"
+      );
 
 
     termsEl.innerHTML =
@@ -2590,17 +3966,27 @@
         .join("");
 
 
+    /* =========================
+       PROJECT LINKS
+       ========================= */
+
     const linksEl =
-      document.getElementById("projectLinks");
+      document.getElementById(
+        "projectLinks"
+      );
 
 
     linksEl.innerHTML =
+
       CONFIG.links
 
         .map(
           l =>
+
             `
+
               <li>
+
                 <a
                   target="_blank"
                   rel="noopener"
@@ -2608,12 +3994,18 @@
                 >
                   ${l.label}
                 </a>
+
               </li>
+
             `
         )
 
         .join("");
 
+
+    /* =========================
+       FOOTER LINKS
+       ========================= */
 
     document.getElementById(
       "footerLinks"
@@ -2624,8 +4016,11 @@
 
         .map(
           l =>
+
             `
+
               <li>
+
                 <a
                   target="_blank"
                   rel="noopener"
@@ -2633,12 +4028,18 @@
                 >
                   ↗ ${l.label}
                 </a>
+
               </li>
+
             `
         )
 
         .join("");
 
+
+    /* =========================
+       FOOTER BOTTOM
+       ========================= */
 
     document.getElementById(
       "footerBottom"
@@ -2658,13 +4059,21 @@
        ========================= */
 
     const navToggle =
-      document.querySelector(".navToggle");
+      document.querySelector(
+        ".navToggle"
+      );
+
 
     const topbarInner =
-      document.querySelector(".topbarInner");
+      document.querySelector(
+        ".topbarInner"
+      );
+
 
     const siteNav =
-      document.getElementById("siteNav");
+      document.getElementById(
+        "siteNav"
+      );
 
 
     function goToTerm(id){
@@ -2672,14 +4081,22 @@
       const el =
         document.getElementById(id);
 
+
       if(!el){
         return;
       }
 
+
       el.scrollIntoView({
-        behavior:"smooth",
-        block:"start"
+
+        behavior:
+          "smooth",
+
+        block:
+          "start"
+
       });
+
 
       try{
 
@@ -2695,59 +4112,86 @@
 
 
     document
-      .querySelectorAll("[data-goto]")
-      .forEach(btn => {
+      .querySelectorAll(
+        "[data-goto]"
+      )
+      .forEach(
+        btn => {
 
-        btn.addEventListener(
-          "click",
-          () => {
+          btn.addEventListener(
+            "click",
+            () => {
 
-            goToTerm(
-              btn.getAttribute("data-goto")
-            );
-
-            if(window.innerWidth <= 860){
-
-              topbarInner.classList.remove(
-                "navOpen"
+              goToTerm(
+                btn.getAttribute(
+                  "data-goto"
+                )
               );
 
-              navToggle.setAttribute(
-                "aria-expanded",
-                "false"
-              );
+
+              if(
+                window.innerWidth <= 860
+              ){
+
+                topbarInner.classList.remove(
+                  "navOpen"
+                );
+
+
+                navToggle.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+              }
 
             }
+          );
 
-          }
-        );
+        }
+      );
 
-      });
 
+    /* =========================
+       HASH NAVIGATION
+       ========================= */
 
     function scrollToHash(){
 
       const id =
+
         (location.hash || "")
-        .replace("#","");
+          .replace(
+            "#",
+            ""
+          );
+
 
       if(!id){
         return;
       }
 
+
       const el =
         document.getElementById(id);
+
 
       if(!el){
         return;
       }
 
+
       setTimeout(
         () => {
 
           el.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
+
+            behavior:
+              "smooth",
+
+            block:
+              "start"
+
           });
 
         },
@@ -2763,6 +4207,10 @@
     );
 
 
+    /* =========================
+       ACTIVE TERM
+       ========================= */
+
     const pills =
       Array.from(
         document.querySelectorAll(
@@ -2771,20 +4219,30 @@
       );
 
 
-    const setActive = id => {
+    const setActive =
+      id => {
 
-      pills.forEach(p => {
+        pills.forEach(
+          p => {
 
-        p.setAttribute(
-          "aria-current",
-          p.getAttribute("data-goto") === id
-            ? "true"
-            : "false"
+            p.setAttribute(
+
+              "aria-current",
+
+              p.getAttribute(
+                "data-goto"
+              ) === id
+
+                ? "true"
+
+                : "false"
+
+            );
+
+          }
         );
 
-      });
-
-    };
+      };
 
 
     const observer =
@@ -2793,10 +4251,12 @@
         entries => {
 
           const visible =
+
             entries
 
               .filter(
-                e => e.isIntersecting
+                e =>
+                  e.isIntersecting
               )
 
               .sort(
@@ -2819,31 +4279,44 @@
         },
 
         {
-          root:null,
+
+          root:
+            null,
+
           threshold:[
             0.25,
             0.35,
             0.5,
             0.65
           ]
+
         }
 
       );
 
 
-    CONFIG.terms.forEach(t => {
+    CONFIG.terms.forEach(
+      t => {
 
-      const el =
-        document.getElementById(t.id);
+        const el =
+          document.getElementById(
+            t.id
+          );
 
-      if(el){
-        observer.observe(el);
+
+        if(el){
+
+          observer.observe(el);
+
+        }
+
       }
+    );
 
-    });
 
-
-    setActive("term1");
+    setActive(
+      "term1"
+    );
 
 
     /* =========================
@@ -2865,9 +4338,12 @@
               "navOpen"
             );
 
+
           navToggle.setAttribute(
             "aria-expanded",
-            isOpen ? "true" : "false"
+            isOpen
+              ? "true"
+              : "false"
           );
 
         }
@@ -2878,11 +4354,14 @@
         "resize",
         () => {
 
-          if(window.innerWidth > 860){
+          if(
+            window.innerWidth > 860
+          ){
 
             topbarInner.classList.remove(
               "navOpen"
             );
+
 
             navToggle.setAttribute(
               "aria-expanded",
