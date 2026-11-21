@@ -535,6 +535,19 @@
       background:color-mix(in oklab,var(--card) 70%,transparent);
     }
 
+    .previewFallback{
+      margin:10px 2px 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    .previewFallback a{
+      color:var(--ai);
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
     .links{
       margin-top:16px;
       border:1px solid var(--border);
@@ -1384,11 +1397,11 @@
             },
 
             slides:{
-              url:"https://docs.google.com/presentation/d/1R7kv1J9f7tnKk8V3SNsCPPSl8OyztYuT/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
+              url:"https://docs.google.com/presentation/d/13AYACgwLkaSi1aSnCou8Ao3YsI_2pSI2/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
             },
 
             video:{
-              url:"https://drive.google.com/file/d/1ycuI7xf87qa-C0uSEzAM3VcbxOMC_UrS/view?usp=sharing"
+              url:"https://drive.google.com/file/d/1xTCxkG2oabJUJ2jujWGIMSwYRFBiU_fv/view?usp=drive_link"
             },
 
             /* FIXED: Term 3 system demo is now explicitly supported */
@@ -1416,20 +1429,20 @@
           items:{
 
             report:{
-              url:"https://drive.google.com/file/d/1mH016W_qzojS2l325o9V2_Lv-1pcsgCa/view?usp=drive_link"
+              url:"https://drive.google.com/file/d/1f44JatKMsTGqZarLXqmaTh1CLqdLNhDk/view?usp=drive_link"
             },
 
             slides:{
-              url:"https://drive.google.com/file/d/1-sKMtHw6hKTmtGb24kwtXu0GsZyp0_gF/view?usp=drive_link"
+              url:"https://docs.google.com/presentation/d/1u0KfukHOpRk7CZ1xr7UsR5vIVBVUmX6E/edit?usp=drive_link&ouid=105854788243039915334&rtpof=true&sd=true"
             },
 
             video:{
-              url:"https://drive.google.com/file/d/1yLuI_eQIQMX9jvWPmPjDJ_hYozvi39nc/view?usp=drive_link"
+              url:"https://drive.google.com/file/d/1n5TEShSbQ_vuBEQbLMJ-jFZtrMAWg1BH/view?usp=drive_link"
             },
 
             // Add the link to your final project demo video here.
             systemDemo:{
-              url:"https://drive.google.com/file/d/14UYUepIHYND-IsudsMa_vZRkL_pubrOv/view?usp=drive_link"
+              url:"https://drive.google.com/file/d/1rtW0NWqKgLqSC0XT9uL6l7tUauVEKU67/view?usp=drive_link"
             }
 
           }
@@ -2340,12 +2353,18 @@
           <div class="preview">
 
             <iframe
-              src="${embed}"
+              data-preview-src="${embed}"
               allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
               allowfullscreen
               loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
               title="${label}"
             ></iframe>
+
+            <p class="previewFallback">
+              Preview not displaying? <a href="${open}" target="_blank" rel="noopener noreferrer">Open ${label} in a new tab</a>.
+              Google Drive files must be shared with viewers for public access.
+            </p>
 
           </div>
 
@@ -2598,6 +2617,23 @@
         .map(buildTermCard)
         .join("");
 
+
+    /* Load Google previews only when expanded to avoid 15 simultaneous embeds.
+       Unload on close so any playing videos stop automatically. */
+    document.querySelectorAll(".deliverables details").forEach(details => {
+      details.addEventListener("toggle", () => {
+        const frame = details.querySelector("iframe[data-preview-src]");
+        if(!frame) return;
+        if(details.open){
+          frame.src = frame.dataset.previewSrc;
+        }else{
+          frame.removeAttribute("src");
+        }
+      });
+      details.querySelectorAll("summary a").forEach(link => {
+        link.addEventListener("click", event => event.stopPropagation());
+      });
+    });
 
     const linksEl =
       document.getElementById("projectLinks");
